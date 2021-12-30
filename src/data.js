@@ -25,4 +25,31 @@ export const filterZA = (data) => {
   return sortLetterZA;
 }
 
+/* 
+export const filterDirector = (data) => {
+  const filterDataDirector
+}
 
+*/
+
+
+
+//Ordenar por año Asc
+export const filterDataYearAsc = (data) => {
+  const filterDataYear = data.sort((a, b) => {
+    if (a.release_date < b.release_date) {
+      return -1;
+    }
+  });
+  return filterDataYear;
+}
+
+// Ordenar por año Desc
+export const filterDataYearDesc = (data) => {
+  const filterDataYearDes = data.sort((a, b) => {
+    if (a.release_date > b.release_date) {
+      return -1;
+    }
+  });
+  return filterDataYearDes;
+} 

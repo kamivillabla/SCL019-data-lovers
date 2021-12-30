@@ -1,11 +1,12 @@
-import { filterAZ, filterZA } from './data.js';
+import { filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
 // Constantes
 const dataStudioGhibli = data.films;
-const containerAnimationes = document.getElementById('animations')
+const containerAnimationes = document.getElementById('animations');
 const filterLetterOrder = document.getElementById('filters__initial');
+const filterYear = document.getElementById('filters__year');
 
 
 /* 
@@ -44,6 +45,8 @@ document.getElementById("animations").innerHTML = theAnimation;
 //document.getElementById("animations").innerHTML = dataGhibli.join('');
 */
 
+//contador de peliculas
+document.getElementById("countFilms").innerHTML = "Estas visualizando: " + dataStudioGhibli.length + " peliculas";
 
 // Creación de tarjetas dinamicas que llama información del objeto.data.ghibli
 // Se crea una función que lleva dentro un forEach que recorre el parametro que le de creando así las tarjetas. Al final llamo a la función y le doy el parametro de la data del estudio ghibli para que pueda crear las tarjetas.
@@ -80,4 +83,19 @@ filterLetterOrder.addEventListener('change', () => {
     }
 })
 
+
+
+// Ordenar los años de menor a mayor y viceversa
+filterYear.addEventListener('change', () => {
+    if (filterYear.value === '0') {
+        const filterXYear = filterDataYearAsc(dataStudioGhibli)
+        containerAnimationes.innerHTML = '';
+        displayCardGhibli(filterXYear)
+    }
+    if (filterYear.value === '1') {
+        const filterXYear = filterDataYearDesc(dataStudioGhibli)
+        containerAnimationes.innerHTML = '';
+        displayCardGhibli(filterXYear)
+    }
+})
 
