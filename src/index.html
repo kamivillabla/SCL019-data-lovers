@@ -20,38 +20,39 @@
 
   <main>
     <h2 id="animationsTitle">Películas</h2>
-    <!-- No sé que estilo poner a los filtros! -->
-    <section class="filters">
-      <select id="filters__initial" class="filters__initial">
-        <option value="0">A-Z</option>
-        <option value="1">Z-A </option>
-      </select>
-      <select id="filters__director" class="filters__director">
-        <option selected="" selected="">Director</option>
-        <option value="0">Hayao Miyazaki</option>
-        <option value="1">Goro Miyazaki</option>
-        <option value="2">Isao Takahata</option>
-        <option value="3">Hiroyuki Morita</option>
-        <option value="4">Hiromasa Yonebayashi</option>
-        <option value="5">Yoshifumi Kondo</option>
-      </select>
-      <select id="filters__producer" class="filters__producer">
-        <option selected="" selected="">Productor</option>
-        <option value="0">Isao Takahata</option>
-        <option value="1">Toshio Suzuki</option>
-        <option value="2">Toru Hara</option>
-        <option value="3">Hayao Miyazaki</option>
-        <option value="4">Yoshiaki Nishimura</option>
-      </select>
-      <select id="filters__year" class="filters__year">
-        <option value="all" selected="" selected="">Año</option>
-        <option value="0">Asc</option>
-        <option value="1">Desc</option>
-      </select>
+    <!--contador de peliculas-->
+    <section class="main__filtersAndCount">
+      <p id="countFilms"></p>
+      <div class="filters">
+        <select id="filters__initial" class="filters__initial">
+          <option value="0">A-Z</option>
+          <option value="1">Z-A </option>
+        </select>
+        <select id="filters__director" class="filters__director">
+          <option selected="" disabled>Director</option>
+          <option value="0">Hayao Miyazaki</option>
+          <option value="1">Goro Miyazaki</option>
+          <option value="2">Isao Takahata</option>
+          <option value="3">Hiroyuki Morita</option>
+          <option value="4">Hiromasa Yonebayashi</option>
+          <option value="5">Yoshifumi Kondo</option>
+        </select>
+        <select id="filters__producer" class="filters__producer">
+          <option selected="" disabled>Productor</option>
+          <option value="0">Isao Takahata</option>
+          <option value="1">Toshio Suzuki</option>
+          <option value="2">Toru Hara</option>
+          <option value="3">Hayao Miyazaki</option>
+          <option value="4">Yoshiaki Nishimura</option>
+        </select>
+        <select id="filters__year" class="filters__year">
+          <option value="all" disabled>Año</option>
+          <option value="0">Asc</option>
+          <option value="1">Desc</option>
+        </select>
+      </div>
     </section>
-      <!--contador de peliculas-->
-    <p id="countFilms"></p>
-
+     
     <section class="animations" id="animations">
       <!-- Se crean las tarjetas de forma dinamica -->
     </section>
