@@ -92,15 +92,15 @@ margin-right: 13rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 70px;
+    margin-top: 50px;
 }
 
 .animations__card {
     width: 300px;
-    height: 330px;
+    height:450px;
     border-radius: 8px;
     box-shadow: 0px 1px 10px var(--shadow-black);
-    margin-top: 50px;
     /* ease-in-out: Comienza lentamente, será más rápido en la mitad de la animación y luego terminará lentamente. */
     transition: .3s ease-in-out;
     text-align: center;
@@ -111,8 +111,9 @@ margin-right: 13rem;
 }
 .animations__card__img {
     width: 100%;
-    height: 200px;
+    height: 300px;
     border-radius: 8px 8px 0px 0px;
+    
 }
 .animations__card h4 {
     
