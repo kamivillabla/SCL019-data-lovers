@@ -87,7 +87,6 @@ margin-right: 13rem;
     font-size: 16px;
     border-radius: 5px;
 }
-
 .animations {
     display: flex;
     justify-content: center;
@@ -95,10 +94,10 @@ margin-right: 13rem;
     gap: 70px;
     margin-top: 50px;
 }
-
 .animations__card {
     width: 300px;
-    height:450px;
+    /* height:450px; */
+    height: 480px;
     border-radius: 8px;
     box-shadow: 0px 1px 10px var(--shadow-black);
     /* ease-in-out: Comienza lentamente, será más rápido en la mitad de la animación y luego terminará lentamente. */
@@ -116,12 +115,14 @@ margin-right: 13rem;
     
 }
 .animations__card h4 {
-    
     padding: 15px;
 }
-
 .animations__card p {
     padding: 0 10px;
+}
+.animations__card .black{
+    font-weight: bold;
+    font-size: 1.8rem;
 }
 
 /*************************** Footer ***************************/
@@ -132,4 +133,5 @@ footer {
     text-align: center;
     line-height: 10rem;
     background-color: var(--blue--color);
+    color: var(--white-color);
 }

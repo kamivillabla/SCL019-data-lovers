@@ -45,17 +45,17 @@ document.getElementById("animations").innerHTML = theAnimation;
 */
 
 
-// Creación de tarjetas dinamicas, llamando la información de la data.
+// Creación de tarjetas dinamicas que llama información del objeto.data.ghibli
 // Se crea una función que lleva dentro un forEach que recorre el parametro que le de creando así las tarjetas. Al final llamo a la función y le doy el parametro de la data del estudio ghibli para que pueda crear las tarjetas.
-
 
 const displayCardGhibli = (ghibliData) => {
     ghibliData.forEach((arr) => {
         containerAnimationes.innerHTML += `<article class="animations__card"> <a href="#"><img class="animations__card__img" src="${arr.poster}"alt="Imagen de la película de animación"></a>
         <h4>${arr.title}</h4>
-        <p>Año: ${arr.release_date}</p>
-        <p>Productor: ${arr.producer}</p>
-        <p>Score: ${arr.rt_score} </p>
+        <p><span class="black">Año:</span> ${arr.release_date}</p>
+        <p><span class="black">Director:</span> ${arr.director}</p>
+        <p><span class="black">Productor:</span> ${arr.producer}</p>
+        <p><span class="black">Score:</span> ${arr.rt_score}</p>
        </article>`;
     });
 };
