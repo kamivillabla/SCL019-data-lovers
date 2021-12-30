@@ -12,7 +12,7 @@
 }
 
 h1 {
-    font-size: 7rem;
+    font-size: 8rem;
     margin-top: 2rem;
     color: var(--white-color);
 }
@@ -47,6 +47,7 @@ header h1, header p {
 header p {
     max-width: 50%;
     color: var(--white-color);
+    font-size: 2.3rem;
 }
 
 .header__container-img {
@@ -56,6 +57,27 @@ header p {
 .header__container-img__img {
     width: 4rem;
 }
+
+/* Se agregan cambios de estilo hasta pantalla de maximo 576 px o sea pantallas de telefono */
+@media (max-width: 575.98px) { 
+    h1 {
+        font-size: 6rem;
+    }
+    p {
+        font-size: 1.6rem;
+    }
+    header p {
+        max-width: 100%;
+        }
+
+}
+/* Se agregan cambios de estilo hasta pantallas máxima de 991. Osea de pantallas de tipo tablet. */
+@media (max-width: 991.98px) { 
+    .header {
+        height: 70vh;
+    }
+
+ }
 
 /***************************** Main ***********************************/
 
@@ -72,13 +94,18 @@ main h2 {
     text-align: center;
     margin-top: 10rem;
 }
-
+.main__filtersAndCount {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    margin-top: 50px;
+}
 /* falta posicionarlo correctamente en pantallas pequeñas */
 .filters {
-display: flex;
-justify-content: flex-end;
-gap: 10px;
-margin-right: 13rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0px 10px;
+    
 }
 
 .filters select {
@@ -86,6 +113,10 @@ margin-right: 13rem;
     height: 20px;
     font-size: 16px;
     border-radius: 5px;
+}
+
+select option {
+    font-size: 16px;
 }
 .animations {
     display: flex;
@@ -123,6 +154,15 @@ margin-right: 13rem;
 .animations__card .black{
     font-weight: bold;
     font-size: 1.8rem;
+}
+
+@media (max-width: 575.98px) { 
+    .filters {
+        width: 50%;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
 }
 
 /*************************** Footer ***************************/
