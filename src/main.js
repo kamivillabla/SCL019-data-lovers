@@ -1,4 +1,4 @@
-import { filterAZ } from './data.js';
+import { filterAZ, filterZA } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -67,9 +67,17 @@ displayCardGhibli(dataStudioGhibli);
 // Le di el método addEventListener a al input filterLetterOrder y le dije que si su valor esta en la opción 0, que llame a la función sortAZ creada en data.js y que esta la guarde en una nueva constante llamada filterZA además que como parametro le entregue la constante dataStudioGhibli donde se encuentra guardada la data. Luego le dije que coja la sección donde estan las peliculas y que borre todo dejando ese espacio vacio. Luego le dije que haga un llamado a la función DisplayCardGhibli que es la función loop encargada de crear las tarjetas y como parametro le di el filterAZ(El filtrado creado en data.js) para que solo cree esas tarjetas y las muestre. Si el valor del input es igual a 1 entonces que hago lo mismo pero al revés = de la Z a La Z.
 
 filterLetterOrder.addEventListener('change', () => {
-    if (filterLetterOrder.value === "0" || filterLetterOrder.value === "1") {
-        const filterLetterAZ = filterAZ(dataStudioGhibli);
+    if (filterLetterOrder.value === "0") {
+        const filterLetterAZ = filterAZ(dataStudioGhibli,);
         containerAnimationes.innerHTML = '';
         displayCardGhibli(filterLetterAZ);
+
+    }
+    if (filterLetterOrder.value === "1") {
+        const filterLetterZA = filterZA(dataStudioGhibli);
+        containerAnimationes.innerHTML = '';
+        displayCardGhibli(filterLetterZA);
     }
 })
+
+
