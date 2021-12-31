@@ -83,6 +83,7 @@ filterLetterOrder.addEventListener('change', () => {
         displayCardGhibli(filterLetterZA);
     }
 })
+
 //filtrar por director
 filterXDirector.addEventListener('change', () => {
     switch (filterXDirector.value){
@@ -109,6 +110,7 @@ filterXDirector.addEventListener('change', () => {
         break;
     }
 })
+
 //filtrar por productor
 filterXProducer.addEventListener('change', () => {
     switch (filterXProducer.value){

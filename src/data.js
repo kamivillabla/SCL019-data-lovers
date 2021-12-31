@@ -4,21 +4,23 @@ export const example = () => 'example';
 
 
 // Ordena las peliculas de la A a la Z y de la Z a la A
-// Creo una función donde le agrego el método sort con dos parametros. Luego le doy la condición de que a.title es menor que b.title entonces que retorne -1 lo que da como resultado que se vean primero las tarjetas que comiencen con la letra A hasta la Z  (Aún no logro entender de todo cuando usar return -1 y return 1, tengo que seguir estudiandolo, pero funciona xd!!! )
 
+/*Si son iguales, devolveremos 0.
+Si "a" debe ir ordenado antes que "b", entonces devolvemos un número menor que 0.
+Si "a" debe ir ordenado después que "b", entonces devolvemos un número mayor que 0.
+
+'localeCompare' permite comprarar dos cadenas teniendo en cuenta acentos y otras características específicas de cada idioma para la ordenación. Lo mejor de todo, es que esta función devuelve -1, 1 o 0 según si es mayor, menor o igual, que es exactamente lo que necesitamos:
+
+*/
 export const filterAZ = (data) => {
   const sortLettersAZ = data.sort((a, b) => {
-    if (a.title < b.title) {
-      return -1;
-    }
+    return a.title.localeCompare(b.title);
   });
   return sortLettersAZ;
 }
 export const filterZA = (data) => {
   const sortLetterZA = data.sort((a, b) => {
-    if (a.title > b.title) {
-      return -1;
-    }
+    return b.title.localeCompare(a.title);
   });
   return sortLetterZA;
 }
@@ -38,9 +40,7 @@ export const filterDataProducer = (data, nameProducer) => {
 //Ordenar por año Asc
 export const filterDataYearAsc = (data) => {
   const filterDataYear = data.sort((a, b) => {
-    if (a.release_date < b.release_date) {
-      return -1;
-    }
+    return a.release_date - b.release_date;
   });
   return filterDataYear;
 }
@@ -48,9 +48,7 @@ export const filterDataYearAsc = (data) => {
 // Ordenar por año Desc
 export const filterDataYearDesc = (data) => {
   const filterDataYearDes = data.sort((a, b) => {
-    if (a.release_date > b.release_date) {
-      return -1;
-    }
+    return b.release_date - a.release_date;
   });
   return filterDataYearDes;
 } 
