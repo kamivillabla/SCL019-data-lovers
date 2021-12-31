@@ -1,4 +1,4 @@
-import {filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector} from './data.js';
+import {filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector, filterDataProducer} from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -7,6 +7,7 @@ const dataStudioGhibli = data.films;
 const containerAnimationes = document.getElementById('animations');
 const filterLetterOrder = document.getElementById('filters__initial');
 const filterXDirector = document.getElementById('filters__director');
+const filterXProducer= document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 
 
@@ -51,7 +52,7 @@ document.getElementById("animations").innerHTML = theAnimation;
 
 const displayCardGhibli = (ghibliData) => {
     containerAnimationes.innerHTML = "";
-    //contador de peliculas
+    //contador de peliculas segun filtro
     document.getElementById("countFilms").innerHTML = `Estas visualizando: ${ghibliData.length} peliculas`;
     ghibliData.forEach((arr) => {
         containerAnimationes.innerHTML += `<article class="animations__card">
@@ -82,7 +83,7 @@ filterLetterOrder.addEventListener('change', () => {
         displayCardGhibli(filterLetterZA);
     }
 })
-//ordenar por director
+//filtrar por director
 filterXDirector.addEventListener('change', () => {
     switch (filterXDirector.value){
         case 'all':
@@ -105,6 +106,29 @@ filterXDirector.addEventListener('change', () => {
         break;
         case '5':
             displayCardGhibli(filterDataDirector(dataStudioGhibli, "Yoshifumi Kondō"));
+        break;
+    }
+})
+//filtrar por productor
+filterXProducer.addEventListener('change', () => {
+    switch (filterXProducer.value){
+        case 'all':
+            displayCardGhibli(dataStudioGhibli);
+        break;
+        case '0':
+            displayCardGhibli(filterDataProducer(dataStudioGhibli, "Isao Takahata"));
+        break;
+        case '1':
+            displayCardGhibli(filterDataProducer(dataStudioGhibli, "Toshio Suzuki"));
+        break;
+        case '2':
+            displayCardGhibli(filterDataProducer(dataStudioGhibli, "Toru Hara"));
+        break;
+        case '3':
+            displayCardGhibli(filterDataProducer(dataStudioGhibli, "Hayao Miyazaki"));
+        break;
+        case '4':
+            displayCardGhibli(filterDataProducer(dataStudioGhibli, "Yoshiaki Nishimura"));
         break;
     }
 })

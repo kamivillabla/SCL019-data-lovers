@@ -29,6 +29,12 @@ export const filterDataDirector = (data, nameDirector) => {
   return newDataDirector;
 }
 
+//filtro por productor
+export const filterDataProducer = (data, nameProducer) => {
+  const newDataProducer = data.filter( movie => movie.producer == nameProducer);
+  return newDataProducer;
+}
+
 //Ordenar por año Asc
 export const filterDataYearAsc = (data) => {
   const filterDataYear = data.sort((a, b) => {
