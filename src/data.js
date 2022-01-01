@@ -1,8 +1,6 @@
 // estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
-};
+export const example = () => 'example';
 
 
 // Ordena las peliculas de la A a la Z y de la Z a la A
@@ -27,13 +25,17 @@ export const filterZA = (data) => {
   return sortLetterZA;
 }
 
-/* 
-export const filterDirector = (data) => {
-  const filterDataDirector
+//filtro por director
+export const filterDataDirector = (data, nameDirector) => {
+  const newDataDirector = data.filter( movie => movie.director == nameDirector);
+  return newDataDirector;
 }
 
-*/
-
+//filtro por productor
+export const filterDataProducer = (data, nameProducer) => {
+  const newDataProducer = data.filter( movie => movie.producer == nameProducer);
+  return newDataProducer;
+}
 
 //Ordenar por año Asc
 export const filterDataYearAsc = (data) => {

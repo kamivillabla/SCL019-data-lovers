@@ -20,8 +20,8 @@
 
   <main>
     <h2 id="animationsTitle">Películas</h2>
-    <!--contador de peliculas-->
     <section class="main__filtersAndCount">
+      <!--contador de peliculas-->
       <p id="countFilms"></p>
       <div class="filters">
         <select id="filters__initial" class="filters__initial">
@@ -29,7 +29,7 @@
           <option value="1">Z-A </option>
         </select>
         <select id="filters__director" class="filters__director">
-          <option selected="" disabled>Director</option>
+          <option selected value="all">Director</option>
           <option value="0">Hayao Miyazaki</option>
           <option value="1">Goro Miyazaki</option>
           <option value="2">Isao Takahata</option>
@@ -38,7 +38,7 @@
           <option value="5">Yoshifumi Kondo</option>
         </select>
         <select id="filters__producer" class="filters__producer">
-          <option selected="" disabled>Productor</option>
+          <option selected value="all">Productor</option>
           <option value="0">Isao Takahata</option>
           <option value="1">Toshio Suzuki</option>
           <option value="2">Toru Hara</option>
@@ -52,7 +52,6 @@
         </select>
       </div>
     </section>
-     
     <section class="animations" id="animations">
       <!-- Se crean las tarjetas de forma dinamica -->
     </section>
