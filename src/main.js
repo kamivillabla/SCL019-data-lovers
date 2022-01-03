@@ -1,4 +1,4 @@
-import {filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector, filterDataProducer} from './data.js';
+import { filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector, filterDataProducer } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -7,7 +7,7 @@ const dataStudioGhibli = data.films;
 const containerAnimationes = document.getElementById('animations');
 const filterLetterOrder = document.getElementById('filters__initial');
 const filterXDirector = document.getElementById('filters__director');
-const filterXProducer= document.getElementById('filters__producer');
+const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 
 
@@ -73,65 +73,62 @@ displayCardGhibli(dataStudioGhibli);
 filterLetterOrder.addEventListener('change', () => {
     if (filterLetterOrder.value === "0") {
         const filterLetterAZ = filterAZ(dataStudioGhibli,);
-        containerAnimationes.innerHTML = '';
         displayCardGhibli(filterLetterAZ);
-
     }
     if (filterLetterOrder.value === "1") {
         const filterLetterZA = filterZA(dataStudioGhibli);
-        containerAnimationes.innerHTML = '';
         displayCardGhibli(filterLetterZA);
     }
 })
 
 //filtrar por director
 filterXDirector.addEventListener('change', () => {
-    switch (filterXDirector.value){
+    switch (filterXDirector.value) {
         case 'all':
             displayCardGhibli(dataStudioGhibli);
-        break;
+            break;
         case '0':
             displayCardGhibli(filterDataDirector(dataStudioGhibli, "Hayao Miyazaki"));
-        break;
+            break;
         case '1':
             displayCardGhibli(filterDataDirector(dataStudioGhibli, "Gorō Miyazaki"));
-        break;
+            break;
         case '2':
             displayCardGhibli(filterDataDirector(dataStudioGhibli, "Isao Takahata"));
-        break;
+            break;
         case '3':
             displayCardGhibli(filterDataDirector(dataStudioGhibli, "Hiroyuki Morita"));
-        break;
+            break;
         case '4':
             displayCardGhibli(filterDataDirector(dataStudioGhibli, "Hiromasa Yonebayashi"));
-        break;
+            break;
         case '5':
             displayCardGhibli(filterDataDirector(dataStudioGhibli, "Yoshifumi Kondō"));
-        break;
+            break;
     }
 })
 
 //filtrar por productor
 filterXProducer.addEventListener('change', () => {
-    switch (filterXProducer.value){
+    switch (filterXProducer.value) {
         case 'all':
             displayCardGhibli(dataStudioGhibli);
-        break;
+            break;
         case '0':
             displayCardGhibli(filterDataProducer(dataStudioGhibli, "Isao Takahata"));
-        break;
+            break;
         case '1':
             displayCardGhibli(filterDataProducer(dataStudioGhibli, "Toshio Suzuki"));
-        break;
+            break;
         case '2':
             displayCardGhibli(filterDataProducer(dataStudioGhibli, "Toru Hara"));
-        break;
+            break;
         case '3':
             displayCardGhibli(filterDataProducer(dataStudioGhibli, "Hayao Miyazaki"));
-        break;
+            break;
         case '4':
             displayCardGhibli(filterDataProducer(dataStudioGhibli, "Yoshiaki Nishimura"));
-        break;
+            break;
     }
 })
 
@@ -139,12 +136,10 @@ filterXProducer.addEventListener('change', () => {
 filterYear.addEventListener('change', () => {
     if (filterYear.value === '0') {
         const filterXYear = filterDataYearAsc(dataStudioGhibli)
-        containerAnimationes.innerHTML = '';
         displayCardGhibli(filterXYear)
     }
     if (filterYear.value === '1') {
         const filterXYear = filterDataYearDesc(dataStudioGhibli)
-        containerAnimationes.innerHTML = '';
         displayCardGhibli(filterXYear)
     }
 })
