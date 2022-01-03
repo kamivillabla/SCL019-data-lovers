@@ -56,7 +56,7 @@ const displayCardGhibli = (ghibliData) => {
     document.getElementById("countFilms").innerHTML = `Estas visualizando: ${ghibliData.length} peliculas`;
     ghibliData.forEach((arr) => {
         containerAnimationes.innerHTML += `<article class="animations__card">
-        <a href="#"><img class="animations__card__img" src="${arr.poster}"alt="Imagen de la película de animación"></a>
+        <a href="peliculas.html"><img class="animations__card__img" src="${arr.poster}"alt="Imagen de la película de animación"></a>
         <h4>${arr.title}</h4>
         <p><span class="black">Año:</span> ${arr.release_date}</p>
         <p><span class="black">Director:</span> ${arr.director}</p>

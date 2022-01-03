@@ -28,7 +28,7 @@ p {
 
 /******************** Header *************************/
 
-header {
+.header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -40,11 +40,11 @@ header {
     gap: 50px;
 }
 
-header h1, header p {
+.header h1, .header p {
     padding-left: 2rem;
 }
 
-header p {
+.header p {
     max-width: 50%;
     color: var(--white-color);
     font-size: 2.3rem;
@@ -66,7 +66,7 @@ header p {
     p {
         font-size: 1.6rem;
     }
-    header p {
+    .header p {
         max-width: 100%;
         }
 
@@ -81,7 +81,7 @@ header p {
 
 /***************************** Main ***********************************/
 
-main {
+.main__animations {
     width: 100%;
     max-width: 1400px;
     margin-right: auto;
@@ -90,7 +90,7 @@ main {
     margin-bottom: 100px;
  }
 
-main h2 {
+.main__animations h2 {
     text-align: center;
     margin-top: 10rem;
 }
@@ -174,4 +174,57 @@ footer {
     line-height: 10rem;
     background-color: var(--blue--color);
     color: var(--white-color);
+}
+
+
+
+/* Peliculas */
+
+.movie__header {
+    display: inline-block;
+    width: 100%;
+    height: 150px;
+    background-color: var(--blue--color);
+    text-align: center;
+}
+
+.movie__container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie__sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid var(--blue--color);
+    flex: 300px;
+    height: 100vh;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+}
+
+@media (max-width: 575.98px) { 
+    .movie__sidebar {
+        display: none;
+    }
+
+}
+.movie__sidebar__img {
+    width: 25em;
+    height: 20em;
+    margin: 50px 0px;
+}
+.movie__tab {
+    display: flex;
+    flex: 70%;
+    /* background-color: blue; */
+}
+
+.movie__description, .movie__characters, .movie__others {
+    width: 33.3%;
+    height: 50px;
+    border: 1px solid black;
+    background-color: yellow;
 }
