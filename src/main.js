@@ -1,5 +1,6 @@
 import { filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector, filterDataProducer } from './data.js';
 
+
 import data from './data/ghibli/ghibli.js';
 
 // Constantes
@@ -9,6 +10,8 @@ const filterLetterOrder = document.getElementById('filters__initial');
 const filterXDirector = document.getElementById('filters__director');
 const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
+
+
 
 
 /* 
@@ -44,12 +47,12 @@ document.getElementById("animations").innerHTML = theAnimation;
     return ghibliData;
 }) 
 
+
 //document.getElementById("animations").innerHTML = dataGhibli.join('');
 */
 
 // Creación de tarjetas dinamicas que llama información del objeto.data.ghibli
 // Se crea una función que lleva dentro un forEach que recorre el parametro que le de creando así las tarjetas. Al final llamo a la función y le doy el parametro de la data del estudio ghibli para que pueda crear las tarjetas.
-
 const displayCardGhibli = (ghibliData) => {
     containerAnimationes.innerHTML = "";
     //contador de peliculas segun filtro

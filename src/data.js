@@ -12,6 +12,14 @@ Si "a" debe ir ordenado después que "b", entonces devolvemos un número mayor q
 'localeCompare' permite comprarar dos cadenas teniendo en cuenta acentos y otras características específicas de cada idioma para la ordenación. Lo mejor de todo, es que esta función devuelve -1, 1 o 0 según si es mayor, menor o igual, que es exactamente lo que necesitamos:
 
 */
+
+// export const arrayData = (data) => {
+//   const arrayDataGhibli = data.map((arr) => {
+//     return arr;
+//   });
+//   return arrayDataGhibli;
+// }
+
 export const filterAZ = (data) => {
   const sortLettersAZ = data.sort((a, b) => {
     return a.title.localeCompare(b.title);
@@ -27,13 +35,13 @@ export const filterZA = (data) => {
 
 //filtro por director
 export const filterDataDirector = (data, nameDirector) => {
-  const newDataDirector = data.filter( movie => movie.director == nameDirector);
+  const newDataDirector = data.filter(movie => movie.director == nameDirector);
   return newDataDirector;
 }
 
 //filtro por productor
 export const filterDataProducer = (data, nameProducer) => {
-  const newDataProducer = data.filter( movie => movie.producer == nameProducer);
+  const newDataProducer = data.filter(movie => movie.producer == nameProducer);
   return newDataProducer;
 }
 
