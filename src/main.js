@@ -144,3 +144,5 @@ filterYear.addEventListener('change', () => {
     }
 })
 
+// pestañas de segunda pagina - descripcion, personaje, locacon
+

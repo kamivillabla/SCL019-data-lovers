@@ -3,37 +3,51 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Data Lovers</title>
+  <link rel="icon" type="image.png" href="img/iconTotoro.png">
+  <title>Fanpage Studio Ghibli</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header class="movie__header">
-    <h1>Studio Ghibli</h1>
+    <h3><a href="index.html">Studio Ghibli</a></h3>
   </header>
   <main class="movie__container">
-      <section class="movie__sidebar">
-        <h4>Nombre pelicula</h4>
-        <img class="movie__sidebar__img" src="https://picsum.photos/700/400?random" alt="Imagen de la pelicula seleccionada">
-        <p>año: 31321</p>
-        <p>Director: lorem</p>
-        <p>Productor: lorem</p>
-        <p>score: 3213</p>
-      </section>
-      <section class="movie__tab">
-        <div class="movie__description">
-            
+    <section class="movie__sidebar">
+      <h4>Nombre pelicula</h4>
+      <img class="movie__sidebar__img" src="https://picsum.photos/700/400?random"
+        alt="Imagen de la pelicula seleccionada">
+      <p>año: 31321</p>
+      <p>Director: lorem</p>
+      <p>Productor: lorem</p>
+      <p>score: 3213</p>
+    </section>
+    <section class="movie__sidecontent">
+      <ul class="movie__sidecontent__tab">
+        <li><a href="#description" id="desc">Descripción</a></li>
+        <li><a href="#characters" id="char">Personajes</a></li>
+        <li><a href="#location" id="loc">Locación y Vehículo</a></li>
+      </ul>
+      <div class="movie__sidecontent__articles">
+        <div id="description">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia assumenda excepturi libero eum, quos
+            atque dicta totam error dolor odit fug.
         </div>
-        <div class="movie__characters">
-
+        <div id="characters">
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia assumenda excepturi libero eum, quos
+            atque dicta totam error dolor odit fugiat repellat culpa tempora labore acci architecto
+            sapiente!</p>
         </div>
-        <div class="movie__others">
-
+        <div id="location">
+          <p>Lorem t. Officia assumenda excepturi libero eum, quos
+            atque dicta totam error dolor odit fugiat repellat culpa tempora labore accusantium eos deleniti architecto
+            sapiente!</p>
         </div>
-      </section>
+      </div>
+    </section>
   </main>
 
-  <!-- <div id="root"></div> -->
+  <div id="root"></div>
   <script src="main.js" type="module"></script>
 </body>
 
