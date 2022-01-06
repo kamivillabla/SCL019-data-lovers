@@ -3,12 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Data Lovers</title>
+  <link rel="icon" type="image.png" href="img/iconTotoro.png">
+  <title>Fanpage Studio Ghibli</title>
   <link rel="stylesheet" href="style.css" />
  </head>
 
 <body>
-  <header class="header">
+  <header id="header" class="header">
     <h1>Studio Ghibli</h1>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero vitae eos ut tempore qui velit sit dolorum nihil
       error cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, error.</p>
@@ -18,7 +19,7 @@
     </div>
   </header>
 
-  <main class="main__animations">
+  <main id="main__animations" class="main__animations">
     <h2 id="animationsTitle">Películas</h2>
     <section class="main__filtersAndCount">
       <!--contador de peliculas-->
@@ -46,22 +47,24 @@
           <option value="4">Yoshiaki Nishimura</option>
         </select>
         <select id="filters__year" class="filters__year">
-          <option value="all" disabled>Año</option>
           <option value="0">Asc</option>
           <option value="1">Desc</option>
         </select>
       </div>
     </section>
     <section class="animations" id="animations">
-      <!-- Se crean las tarjetas de forma dinamica -->
+         <!-- Se crean las tarjetas de forma dinamica -->
     </section>
   </main>
-   <footer>
+
+   <footer id="footer">
     <p>Copyright &copy; 2021 - Luna González & Kamila Villablanca.</p>
   </footer>
 
+  
   <div id="root"></div>
   <script src="main.js" type="module"></script>
+  <script src="peliculas.js" type="module"></script>
   
 </body>
 
