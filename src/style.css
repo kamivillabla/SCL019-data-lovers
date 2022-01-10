@@ -299,7 +299,7 @@ footer {
     opacity: 1;
 }
 #movie__mainContent__bloques__description{
-    margin: 0 50px;
+    margin: 0 40px;
 }
 .movie__mainContent__filterAndCount {
     display: flex;
@@ -320,6 +320,13 @@ footer {
         text-align: center;
         font-size: 5rem;
         margin-top: 50px;
+    }
+    .movie__mainContent__tab {
+       justify-content: center;
+        margin: 20px 0;
+    }
+    .movie__mainContent .li{
+        padding: 0;
     }
     
     
