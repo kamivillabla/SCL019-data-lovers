@@ -1,6 +1,5 @@
 import { filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector, filterDataProducer } from './data.js';
 
-
 import data from './data/ghibli/ghibli.js';
 
 // variables globales
