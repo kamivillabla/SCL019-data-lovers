@@ -5,7 +5,7 @@ import data from './data/ghibli/ghibli.js';
 
 // variables globales
 const dataStudioGhibli = data.films;
-//const headerMain = document.getElementById('header')
+const headerMain = document.getElementById('header')
 const containerMain = document.getElementById('main__animations');
 const footerMain = document.getElementById('footer');
 const containerAnimationes = document.getElementById('animations');
@@ -51,10 +51,22 @@ const displayCardGhibli = (ghibliData) => {
         //Evento a la tarjeta con el id incluido y llamá a la función que crea la nueva pantalla.
         cardAnimations.addEventListener("click", newContainer);
 
-        function newContainer() {
+        function newContainer(e) {
+            e.preventDefault;
+            // Hace que al ingresar a la nueva pantalla la vista se vea desde el comienzo del html.
+            window.scroll(0, 0);
             // Desaparece la pantalla donde se despliegan las tarjetas(Main)
+            headerMain.classList.remove('header');
+            const headerP = headerMain.querySelector('.header__p');
+            const headerRow = headerMain.querySelector('.header__container-img')
+            const headerH1 = document.querySelector('#header__h1')
+            headerMain.removeChild(headerP);
+            headerMain.removeChild(headerRow)
+            headerMain.classList.add('movie__header');
+            headerH1.classList.add('movie__header__h1')
             containerMain.style.display = 'none';
             footerMain.style.display = 'none';
+
             //Crea el nuevo contenedor main
             let peliContainer = document.createElement("main");
             // Agrego el estilo para el contenedor main creado en css.
@@ -77,6 +89,7 @@ const displayCardGhibli = (ghibliData) => {
             // Despliega en la pantalla el contenedor donde iras las pestallas tab.
             peliContainer.appendChild(tabContainer);
             // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
+
         }
 
     });
@@ -160,3 +173,8 @@ filterYear.addEventListener('change', () => {
         displayCardGhibli(filterXYear)
     }
 })
+
+
+
+
+
