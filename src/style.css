@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 9px;
+    font-size: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 /* Colores predeterminados */
@@ -305,6 +305,13 @@ footer {
         text-align: center;
         font-size: 5rem;
         margin-top: 50px;
+    }
+    .movie__mainContent__tab {
+       justify-content: center;
+        margin: 20px 0;
+    }
+    .movie__mainContent .li{
+        padding: 0;
     }
     
     

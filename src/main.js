@@ -89,7 +89,7 @@ const displayCardGhibli = (ghibliData) => {
                 <li class="li active">Descripción</li>
                 <li class="li">Personajes</li>
                 <li class="li">Locación y Vehículos</li></ul>
-            <div class="movie__mainContent__articles">
+                <div class="movie__mainContent__articles">
                 <div class="block active"><p>${arr.description}</p></div>
                 <div class="block"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima, cupiditate ea vel suscipit placeat. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p></div>
                 <div class="block"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p></div></div>`;
