@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 9px;
+    font-family: 'Didact Gothic', sans-serif;
 }
 /* Colores predeterminados */
 :root { 
     --white-color: white;
     --blue--color: #0080bd;
+    --bluedark--color: #006492;
     --shadow-black: rgba(14, 12, 28, 0.5);
 }
 a{
@@ -16,8 +17,7 @@ a{
 }
 
 h1 {
-    font-size: 8rem;
-    margin-top: 2rem;
+    font-size: 15rem;
     color: var(--white-color);
 }
 h2{
@@ -44,9 +44,8 @@ p {
     height: 100vh;
     gap: 50px;
 }
-
 .header h1, .header p {
-    padding-left: 2rem;
+    padding-left: 5rem;
 }
 
 .header p {
@@ -60,7 +59,12 @@ p {
     justify-content: center;
 }
 .header__container-img__img {
-    width: 4rem;
+    width: 14rem;
+    transition: .3s ease-in-out;
+}
+.header__container-img__img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 /* Se agregan cambios de estilo hasta pantalla de maximo 576 px o sea pantallas de telefono */
@@ -132,7 +136,7 @@ select option {
 }
 .animations__card {
     width: 300px;
-    height: 450px;
+    height: 460px;
     border-radius: 8px;
     box-shadow: 0px 1px 10px var(--shadow-black);
     /* ease-in-out: Comienza lentamente, será más rápido en la mitad de la animación y luego terminará lentamente. */
@@ -187,16 +191,15 @@ footer {
 .movie__header {
     display: inline-block;
     width: 100%;
-    height: 150px;
+    height: 100px;
     background-color: var(--blue--color);
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .movie__header__h1{
     font-size: 6rem;
     color: var(--white-color);
-
 }
 
 .movie__container{
@@ -235,6 +238,18 @@ footer {
     width: 30em;
     margin: 20px 0px;
 }
+.movie__sidebar__button{
+    background-color: var(--blue--color);
+    color: var(--white-color);
+    box-shadow: 0px 1px 10px var(--shadow-black);
+    font-size: 1.8rem;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-top: 30px;
+}
+.movie__sidebar__button:hover{
+    background-color: var(--bluedark--color);
+}
 .movie__mainContent{
     display: flex;
     flex: 70%;
@@ -267,17 +282,15 @@ footer {
     background-color: var(--blue--color);
     color: var(--white-color);
 }
-.movie__mainContent .movie__mainContent__articles {
+.movie__mainContent .movie__mainContent__bloques {
     position: relative;
 }
-.movie__mainContent__articles{
+.movie__mainContent__bloques{
     min-height: 30vh;
     width: 100%;
-    
 }
 .movie__mainContent .block {
     position: absolute;
-    top: 1rem;
     top: 0;
     opacity: 0;
     transition: all .5s ease;
@@ -285,7 +298,9 @@ footer {
 .movie__mainContent .block.active {
     opacity: 1;
 }
-
+#movie__mainContent__bloques__description{
+    margin: 0 40px;
+}
 .movie__mainContent__filterAndCount {
     display: flex;
     flex-wrap: wrap;
