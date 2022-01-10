@@ -11,7 +11,7 @@
 
 <body>
   <header class="movie__header">
-    <h3><a href="index.html">Studio Ghibli</a></h3>
+    <a href=""><h1 class="movie__header__h1">Studio Ghibli</h1></a>
   </header>
   <main class="movie__container">
     <section class="movie__sidebar">
@@ -31,11 +31,43 @@
         <li class="li">Locación y Vehículo</li>
       </ul>
       <div class="movie__mainContent__articles">
-        <div class="block active" id="description">
-          a
-        </div>
-        <div class="block" id="characters">
-          e
+        <section class="movie__mainContent__filterAndCount">
+          <!--contador de peliculas-->
+          <p id="countFilms"></p>
+          <div class="filters">
+            <select id="filters__initial" class="filters__initial">
+              <option value="0">A-Z</option>
+              <option value="1">Z-A </option>
+            </select>
+            <select id="filters__gender" class="filters__gender">
+              <option selected value="all">Género</option>
+              <option value="0">Mujer</option>
+              <option value="1">Hombre</option>
+              <option value="2">No binario</option>
+            </select>
+            <select id="filters__species" class="filters__species">
+              <option selected value="all">Especies</option>
+              <option value="0">Isao Takahata</option>
+              <option value="1">Toshio Suzuki</option>
+              <option value="2">Toru Hara</option>
+              <option value="3">Hayao Miyazaki</option>
+              <option value="4">Yoshiaki Nishimura</option>
+            </select>
+          </div>
+        </section>
+        <div class="block " id="description">
+          a 
+         </div>
+        <div class="block active movie__mainContent__card" id="characters">
+          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
         </div>
         <div class="block" id="location">
           i
