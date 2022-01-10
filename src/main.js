@@ -81,15 +81,16 @@ const displayCardGhibli = (ghibliData) => {
             <p><spam class="black">Año:</spam> ${arr.release_date}</p>
             <p><spam class="black">Director:</spam> ${arr.director}</p>
             <p><spam class="black">Productor:</spam> ${arr.producer}</p>
-            <p><spam class="black">Score:</spam> ${arr.rt_score} </p>`;
+            <p><spam class="black">Score:</spam> ${arr.rt_score} </p>
+            <a class="movie__sidebar__button" href="index.html">..volver</a>`;
             let tabContainer = document.createElement("section");
             tabContainer.classList.add('movie__mainContent')
             tabContainer.innerHTML = `<ul class="movie__mainContent__tab">
                 <li class="li active">Descripción</li>
                 <li class="li">Personajes</li>
                 <li class="li">Locación y Vehículos</li></ul>
-            <div class="movie__mainContent__articles">
-                <div class="block active"><p>${arr.description}</p></div>
+            <div class="movie__mainContent__bloques">
+                <div class="block active" id="movie__mainContent__bloques__description"><p>${arr.description}</p></div>
                 <div class="block"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima, cupiditate ea vel suscipit placeat. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p></div>
                 <div class="block"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p></div></div>`;
 
