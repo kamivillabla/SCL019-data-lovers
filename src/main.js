@@ -35,9 +35,10 @@ const displayCardGhibli = (ghibliData) => {
         // Se agrega el contenido a la tarjeta.
         cardAnimations.innerHTML += `<img class="animations__card__img" src="${arr.poster}"alt="Imagen de la película de animación">
         <h4>${arr.title}</h4>
-        <p>Año: ${arr.release_date}</p>
-        <p>Productor: ${arr.producer}</p>
-        <p>Score: ${arr.rt_score} </p>`;
+        <p><spam class="black">Año:</spam> ${arr.release_date}</p>
+        <p><spam class="black">Director:</spam> ${arr.director}</p>
+        <p><spam class="black">Productor:</spam> ${arr.producer}</p>
+        <p><spam class="black">Score:</spam> ${arr.rt_score} </p>`;
         // Guardo el id del objeto en una nueva constante.
         const idObjetCard = arr.id;
         // A la tarjeta le agrego el nuevo atributo de ID que toma el valor del id unico que trae el objeto. 
@@ -76,11 +77,22 @@ const displayCardGhibli = (ghibliData) => {
             // Agrega clase al sidebar
             sideBar.classList.add('movie__sidebar')
             // Crea contenido dinamico al sidebar.
-            sideBar.innerHTML = `<h4> ${arr.title}</ >
-            <img class="movie__sidebar__img" src="${arr.poster}"
-            alt="Imagen de la pelicula seleccionada">` ;
+            sideBar.innerHTML = `<h4>${arr.title}</h4>
+            <img class="movie__sidebar__img" src="${arr.poster}"alt="Poster de la animación">
+            <p><spam class="black">Año:</spam> ${arr.release_date}</p>
+            <p><spam class="black">Director:</spam> ${arr.director}</p>
+            <p><spam class="black">Productor:</spam> ${arr.producer}</p>
+            <p><spam class="black">Score:</spam> ${arr.rt_score} </p>`;
             let tabContainer = document.createElement("section");
             tabContainer.classList.add('movie__mainContent')
+            tabContainer.innerHTML = `<ul class="movie__mainContent__tab">
+                <li class="li active">Descripción</li>
+                <li class="li">Personajes</li>
+                <li class="li">Locación y Vehículos</li></ul>
+            <div class="movie__mainContent__articles">
+                <div class="block active"><p>${arr.description}</p></div>
+                <div class="block"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima, cupiditate ea vel suscipit placeat. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p></div>
+                <div class="block"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p></div></div>`;
 
             // Despliega en la pantalla el contenedor del Main
             body.appendChild(peliContainer);
@@ -174,7 +186,29 @@ filterYear.addEventListener('change', () => {
     }
 })
 
+const li = document.querySelectorAll(".li");
+const block = document.querySelectorAll(".block");
 
+//Click en li
+// TODOS .li quitar la clase active
+// TODOS .block quitar la clase active
+// .li con la posicion de se añade la clase activo
+// .block con la posicion de se añade la clase activo
 
-
-
+// recorriendo todos los li
+li.forEach((i) => {
+    //asignando un click a cada .li
+    li[i].addEventListener("click", () => {
+        //recorriendo todos los .li
+        li.forEach((i) => {
+            //quitamos la clase active cada li
+            li[i].classList.remove("active")
+            //quitamos la clase active a cada block
+            block[i].classList.remove("active")
+        })
+        //en el li hemos hecho click añadimos clase active
+        li[i].classList.add("active")
+        //en el block con la misma posición añadimos clase active
+        block[i].classList.add("avtive")
+    })
+})
