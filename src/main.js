@@ -82,7 +82,7 @@ const displayCardGhibli = (ghibliData) => {
             <p><spam class="black">Director:</spam> ${arr.director}</p>
             <p><spam class="black">Productor:</spam> ${arr.producer}</p>
             <p><spam class="black">Score:</spam> ${arr.rt_score} </p>
-            <a class="movie__sidebar__button" href="index.html">..volver</a>`;
+            <a class="movie__sidebar__button" href="index.html">volver</a>`;
             let tabContainer = document.createElement("section");
             tabContainer.classList.add('movie__mainContent')
             tabContainer.innerHTML = `<ul class="movie__mainContent__tab">
