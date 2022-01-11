@@ -82,25 +82,23 @@ const displayCardGhibli = (ghibliData) => {
             <p><spam class="black">Director:</spam> ${arr.director}</p>
             <p><spam class="black">Productor:</spam> ${arr.producer}</p>
             <p><spam class="black">Score:</spam> ${arr.rt_score} </p>
-            <a class="movie__sidebar__button" href="index.html">volver</a>`;
+            <a class="movie__sidebar__button" href="index.html">VOLVER</a>`;
             let tabContainer = document.createElement("section");
             tabContainer.classList.add('movie__mainContent')
-            tabContainer.innerHTML = `<ul class="movie__mainContent__tab">
-                <li class="li active">Descripción</li>
-                <li class="li">Personajes</li>
-                <li class="li">Locación y Vehículos</li></ul>
-            <div class="movie__mainContent__bloques">
-                <div class="block active" id="movie__mainContent__bloques__description">
-                    <p>${arr.description}</p>
-                </div>
-                <div class="block">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima, cupiditate ea vel suscipit placeat. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p>
-                </div>
-                <div class="block">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p>
-                </div>
-            </div>`;
-
+            tabContainer.innerHTML = `<input type="radio" name="tabs" id="tabone" checked="checked">
+            <label for="tabone">Descripción</label>
+            <div class="tab">
+              <p>${arr.description}</p>
+              </div>        
+            <input type="radio" name="tabs" id="tabtwo">
+            <label for="tabtwo">Personajes</label>
+            <div class="tab">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <input type="radio" name="tabs" id="tabthree">
+            <label for="tabthree">Locación y Vehículo</label>
+            <div class="tab">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>`;
             // Despliega en la pantalla el contenedor del Main
             body.appendChild(peliContainer);
             // Despliega en la pantalla el contenedor del sidebar.
