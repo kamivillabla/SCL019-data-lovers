@@ -5,7 +5,8 @@
     font-size: 9px;
     font-family: 'Didact Gothic', sans-serif;
 }
-/* Colores predeterminados */
+
+    /* Colores predeterminados */
 :root { 
     --white-color: white;
     --blue--color: #0080bd;
@@ -212,7 +213,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 4px solid var(--blue--color);
+    border-right: 1px solid;
     margin: 30px 0;
     flex: 300px;
     height: 100vh;
@@ -276,6 +277,9 @@ footer {
     transition: all .5s ease;
     cursor: pointer;
     vertical-align: center;
+}
+.movie__mainContent p {
+    font-size: 20px;
 }
 
 .movie__mainContent .li.active{
@@ -366,3 +370,4 @@ footer {
 }
 
 /****************** Sección vehiculos  **********************/
+

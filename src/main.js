@@ -90,9 +90,16 @@ const displayCardGhibli = (ghibliData) => {
                 <li class="li">Personajes</li>
                 <li class="li">Locación y Vehículos</li></ul>
             <div class="movie__mainContent__bloques">
-                <div class="block active" id="movie__mainContent__bloques__description"><p>${arr.description}</p></div>
-                <div class="block"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima, cupiditate ea vel suscipit placeat. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p></div>
-                <div class="block"><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p></div></div>`;
+                <div class="block active" id="movie__mainContent__bloques__description">
+                    <p>${arr.description}</p>
+                </div>
+                <div class="block">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima, cupiditate ea vel suscipit placeat. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p>
+                </div>
+                <div class="block">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente similique minima. Ullam officia corrupti facere, rem amet doloribus voluptatum beatae cupiditate, atque nihil laboriosam aut?</p>
+                </div>
+            </div>`;
 
             // Despliega en la pantalla el contenedor del Main
             body.appendChild(peliContainer);
@@ -186,6 +193,9 @@ filterYear.addEventListener('change', () => {
     }
 })
 
+
+// Pestañas
+
 const li = document.querySelectorAll(".li");
 const block = document.querySelectorAll(".block");
 
@@ -209,6 +219,6 @@ li.forEach((i) => {
         //en el li hemos hecho click añadimos clase active
         li[i].classList.add("active")
         //en el block con la misma posición añadimos clase active
-        block[i].classList.add("avtive")
+        block[i].classList.add("active")
     })
 })
