@@ -78,15 +78,13 @@ p {
     }
     .header p {
         max-width: 100%;
-        }
-
+    }
 }
 /* Se agregan cambios de estilo hasta pantallas máxima de 991. Osea de pantallas de tipo tablet. */
 @media (max-width: 991.98px) { 
     .header {
         height: 70vh;
     }
-
  }
 
 /***************************** Main ***********************************/
@@ -184,9 +182,6 @@ footer {
     background-color: var(--blue--color);
     color: var(--white-color);
 }
-
-
-
 /***************** Página peliculas Peliculas ***********************/
 
 .movie__header {

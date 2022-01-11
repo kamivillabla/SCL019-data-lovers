@@ -194,31 +194,4 @@ filterYear.addEventListener('change', () => {
 })
 
 
-// Pestañas
-
-const li = document.querySelectorAll(".li");
-const block = document.querySelectorAll(".block");
-
-//Click en li
-// TODOS .li quitar la clase active
-// TODOS .block quitar la clase active
-// .li con la posicion de se añade la clase activo
-// .block con la posicion de se añade la clase activo
-
-// recorriendo todos los li
-li.forEach((i) => {
-    //asignando un click a cada .li
-    li[i].addEventListener("click", () => {
-        //recorriendo todos los .li
-        li.forEach((i) => {
-            //quitamos la clase active cada li
-            li[i].classList.remove("active")
-            //quitamos la clase active a cada block
-            block[i].classList.remove("active")
-        })
-        //en el li hemos hecho click añadimos clase active
-        li[i].classList.add("active")
-        //en el block con la misma posición añadimos clase active
-        block[i].classList.add("active")
-    })
-})
+// Filter sección péliculas: 
