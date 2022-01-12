@@ -93,8 +93,24 @@ const displayCardGhibli = (ghibliData) => {
             <input type="radio" name="tabs" id="tabtwo">
             <label for="tabtwo">Personajes</label>
             <div class="tab">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
+                <p id="countCharacters"></p>
+                
+              <p>Función de tarjeta de personajes.</p>
+                        
+                    <div class="overlay active" id="overlay">
+                        <div class="popup active" id="popup">
+                            <img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg" alt="imagen del personaje">
+                            <div class="character__description">
+                                <h5>${arr.people.name}</h5>
+                                <p><spam class="black">Edad:</spam> ${arr.people.age}</p>
+                                <p><spam class="black">Género:</spam> ${arr.people.gender}</p>
+                                <p><spam class="black">Color de ojos:</spam> ${arr.people.eye_color}</p>
+                                <p><spam class="black">Color de pelo:</spam> ${arr.people.hair_color}</p>
+                                <p><spam class="black">Especie:</spam> ${arr.people.specie}</p>
+                            	        <!--agregar boton para cerrar popup-->         </div>
+                    </div></div>
+              </div>
+
             <input type="radio" name="tabs" id="tabthree">
             <label for="tabthree">Locación y Vehículo</label>
             <div class="tab">
@@ -107,6 +123,8 @@ const displayCardGhibli = (ghibliData) => {
             peliContainer.appendChild(tabContainer);
             // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
 
+            //contador de personajes - hay que agregarlo dentro de la funcion de tarjeta de personajes
+            document.getElementById("countCharacters").innerHTML = `Estas visualizando: ${arr.people.length} personajes`;
         }
 
     });
@@ -189,34 +207,14 @@ filterYear.addEventListener('change', () => {
         const filterXYear = filterDataYearDesc(dataStudioGhibli)
         displayCardGhibli(filterXYear)
     }
-})
+});
 
+//POPUP PERSONAJE
+let overlay = document.getElementById('overlay');
+let popup = document.getElementById('popup');
 
-// Pestañas
-
-const li = document.querySelectorAll(".li");
-const block = document.querySelectorAll(".block");
-
-//Click en li
-// TODOS .li quitar la clase active
-// TODOS .block quitar la clase active
-// .li con la posicion de se añade la clase activo
-// .block con la posicion de se añade la clase activo
-
-// recorriendo todos los li
-li.forEach((i) => {
-    //asignando un click a cada .li
-    li[i].addEventListener("click", () => {
-        //recorriendo todos los .li
-        li.forEach((i) => {
-            //quitamos la clase active cada li
-            li[i].classList.remove("active")
-            //quitamos la clase active a cada block
-            block[i].classList.remove("active")
-        })
-        //en el li hemos hecho click añadimos clase active
-        li[i].classList.add("active")
-        //en el block con la misma posición añadimos clase active
-        block[i].classList.add("active")
-    })
-})
+crearconst.addEventListener('click', function(e){     //agregar const de tarjeta personaje
+    e.preventDefault();
+    overlay.classList.add('active');
+    popup.classList.add('active');
+});
