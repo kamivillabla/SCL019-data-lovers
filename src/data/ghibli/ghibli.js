@@ -286,7 +286,7 @@ export default {
         {
           "id": "591524bc-04fe-4e60-8d61-2425e42ffb2a",
           "name": "Chu Totoro",
-          "img": "https://www.ghibli.jp/gallery/thumb-totoro019.png",
+          "img": "https://cdn.myanimelist.net/images/userimages/11589061.jpg?t=1637180400",
           "gender": "NA",
           "age": "",
           "eye_color": "Black",
@@ -296,7 +296,7 @@ export default {
         {
           "id": "c491755a-407d-4d6e-b58a-240ec78b5061",
           "name": "Chibi Totoro",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c5/Little_Totoro_spirit_moving.gif",
+          "img": "https://yt3.ggpht.com/P_SSbRjlb8Znjm-Pp92P1atu7pV4toOd8wnlGmqgipJ_s0zYS8luIXkCZ2v3I7ZxHfZCFSfk=s900-c-k-c0x00ffffff-no-rj", // arreglar
           "gender": "NA",
           "age": "",
           "eye_color": "Black",
@@ -306,7 +306,7 @@ export default {
         {
           "id": "f467e18e-3694-409f-bdb3-be891ade1106",
           "name": "Catbus",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/3/30/Catbus.jpg",
+          "img": "https://areajugones.sport.es/wp-content/uploads/2020/01/gatobus-totoro-studio-ghibli-2.jpg",
           "gender": "Male",
           "age": "NA",
           "eye_color": "Yellow",
@@ -448,7 +448,7 @@ export default {
         {
           "id": "62346d33-caa0-4c17-8016-0aca56f3066b",
           "name": "Karikiya",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/e3/Majo002.jpg",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/4/4a/Karikiya.jpg",
           "climate": "Mild",
           "terrain": "City",
           "surface_water": "30",
@@ -683,7 +683,7 @@ export default {
       "description": "Porco Rosso, known in Japan as Crimson Pig (Kurenai no Buta) is the sixth animated film by Hayao Miyazaki and released in 1992. You're introduced to an Italian World War I fighter ace, now living as a freelance bounty hunter chasing 'air pirates' in the Adriatic Sea. He has been given a curse that changed his head to that of a pig. Once called Marco Pagot, he is now known to the world as 'Porco Rosso', Italian for 'Red Pig.'",
       "director": "Hayao Miyazaki",
       "producer": "Toshio Suzuki",
-      "poster" : "https://static.wikia.nocookie.net/studio-ghibli/images/4/41/Porco_Rosso.jpg",
+      "poster": "https://static.wikia.nocookie.net/studio-ghibli/images/4/41/Porco_Rosso.jpg",
       "release_date": "1992",
       "rt_score": "94",
       "people": [
@@ -977,7 +977,7 @@ export default {
         {
           "id": "42f787d8-1fcb-4d3d-82f2-a74409869368",
           "name": "Seiji's House",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/a/a7/Mimi011.jpg",
+          "img": "https://4.bp.blogspot.com/-j6BLGsWk_-s/Vz0DVVDgGwI/AAAAAAAACw0/OgSwl4zFgZwBVSFTAaff-DfYOrxtzC6vwCLcB/s1600/2016-05-18%2B%252814%2529.png",
           "climate": "Continental",
           "terrain": "City",
           "surface_water": "0",
@@ -1438,7 +1438,7 @@ export default {
         {
           "id": "a8bd9c03-7c80-4a97-b7c0-6a668acaf576",
           "name": "The Cat Kingdom",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/a/a9/Baron022.jpg",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/3/3c/CatKingdom.jpeg",
           "climate": "Continental",
           "terrain": "Plain",
           "surface_water": "30",
@@ -1497,7 +1497,7 @@ export default {
         {
           "id": "1287b275-6c32-4113-947f-519316d4a6be",
           "name": "Witch of the Waste",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/e/e1/Howls-moving-castle-disneyscreencaps.com-10507.jpg",
+          "img": "https://static.wikia.nocookie.net/howlscastle/images/e/e7/64074.jpg",
           "gender": "Female",
           "age": "59",
           "eye_color": "Brown",
@@ -1527,7 +1527,7 @@ export default {
         {
           "id": "45237428-93bf-4dd6-97ce-f10647300429",
           "name": "Prince Justin or Turnip Head",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/d/d9/Prince_Justin.png",
+          "img": "https://static.wikia.nocookie.net/howlscastle/images/2/25/3613-447544121.jpg",
           "gender": "Male",
           "age": "20-30",
           "eye_color": "Grey",
@@ -1698,7 +1698,7 @@ export default {
         {
           "id": "bcc54f38-8847-45b0-97b1-307c94b2b517",
           "name": "Enland",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/0/0e/Ged007.jpg",
+          "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjDP1kE66wKK1uA8fjRJ3HrAJNvCuPWW517Q&usqp=CAU",
           "climate": "Wet",
           "terrain": "Earthsea",
           "surface_water": "100",
@@ -1848,7 +1848,7 @@ export default {
         {
           "id": "923d70c9-8f15-4972-ad53-0128b261d628",
           "name": "Sosuke's Boat",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/PonyoS%C5%8DsukeBoat.jpg",
+          "img": "https://i.pinimg.com/originals/f2/fc/3f/f2fc3f6e261e04054b7cd64c5019b494.png",
           "description": "A toy boat where Sosuke plays",
           "vehicle_class": "Boat",
           "length": "10",
@@ -1954,7 +1954,7 @@ export default {
         {
           "id": "1e7ed524-4b4f-466b-978c-69dda9777396",
           "name": "Sho's house",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/86/Karigurashi002.jpg",
+          "img": "https://asianwiki.com/images/f/f7/The_Secret_World_of_Arrietty.jpg",
           "climate": "Warm",
           "terrain": "Forest",
           "surface_water": "10",
@@ -2177,7 +2177,7 @@ export default {
         {
           "id": "2b380662-626d-42fb-9e3a-14f951201c8b",
           "name": "Nagoya",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/2/20/Kazetachinu009.jpg",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/2/2d/The_Wind_Rises.jpg",
           "climate": "Damp",
           "terrain": "Hill",
           "surface_water": "20",
@@ -2330,7 +2330,7 @@ export default {
         {
           "id": "28d07ace-c309-48c6-b48e-ae2ece3a238c",
           "name": "Anna Sasaki",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/a/ae/Anna.png",
+          "img": "https://64.media.tumblr.com/3340fa56afa3468ca85681d53804f920/tumblr_ns0061RupE1uzx0xzo1_500.png",
           "gender": "Female",
           "age": "12",
           "eye_color": "Blue",
@@ -2360,7 +2360,7 @@ export default {
         {
           "id": "66bca178-9920-4ec3-91e9-0d5b8a76dba1",
           "name": "Setsu Oiwa",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/6/6e/Setsu.jpg",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/7/78/Setsu_Ooiwa.jpg",
           "gender": "Female",
           "age": "50-60",
           "eye_color": "Dark brown",
@@ -2370,7 +2370,7 @@ export default {
         {
           "id": "5b8e4413-f943-40ba-8f9f-0ba059a401f0",
           "name": "Hisako",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/9/93/Hisako.png",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/6/61/Hisako.jpg",
           "gender": "Female",
           "age": "Elder",
           "eye_color": "Dark brown",
@@ -2400,7 +2400,7 @@ export default {
         {
           "id": "31b49ef6-ee60-4603-b983-e67fa0718aa9",
           "name": "Kiyomasa Ōiwa",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/d/d7/Kiyomasa.jpg",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/0/0f/Kiyomasa_Ooiwa.jpg",
           "gender": "Male",
           "age": "50-60",
           "eye_color": "Dark brown",
@@ -2410,7 +2410,7 @@ export default {
         {
           "id": "5d52d16f-ce72-41bd-8d88-436e206d9449",
           "name": "Doctor Yamashita",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/8/8a/Yamashita.jpg",
+          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/0/08/Doctor_Yamashita.jpg",
           "gender": "Male",
           "age": "Adult",
           "eye_color": "Black",

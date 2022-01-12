@@ -112,8 +112,7 @@ p {
 #countFilms{
     font-size: 18px;
 }
-/* falta posicionarlo correctamente en pantallas pequeñas */
-.filters {
+.filters, .movie__filters {
     display: flex;
     justify-content: flex-end;
     gap: 0px 10px;
@@ -307,6 +306,7 @@ footer {
     width: 100%;
     margin-right: 0;
     margin-top: 0.2rem;
+    padding: 0px;
   }
 }
 /*fin pestañas dinamicas*/
@@ -315,7 +315,7 @@ footer {
     .movie__mainContent__filterAndCount {
         justify-content:center;
         margin-right: 0px;
-    }
+     }
     .movie__header {
         height: 200px;
     }
@@ -329,7 +329,7 @@ footer {
     .movie__sidebar {
         display: none;
     }
-    
+   
 }
 
 /****************** Sección Personajes  **********************/
@@ -340,8 +340,7 @@ footer {
     justify-content:flex-end;
     margin-right: 78px;
 }
-#countCharacters{
-    font-size: 18px;
+.countCharacters{
     margin-bottom: 20px;
 }
 .movie__mainContent__card {
@@ -368,6 +367,41 @@ footer {
     cursor: pointer;
     transform: scale(1.05);
 }
+
+.movie__filtersAndCount {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 0px 25px;
+    margin-top: 50px;
+}
+.movie__filters select {
+    width: 95px;
+    height: 25px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.movie__filters select option {
+    font-size: 16px;
+}
+
+.movie__filters select {
+    width: 95px;
+    height: 25px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+@media (max-width: 575.98px) { 
+    .movie__mainContent__filterAndCount {
+        justify-content:center;
+    }
+    .movie__filtersAndCount {
+        padding: 0px;
+        justify-content:center;
+    }
+    
+}
+
 
 /*************** PopUp Personajes ************/
 .overlay {
