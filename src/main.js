@@ -66,7 +66,6 @@ const displayCardGhibli = (ghibliData) => {
             headerH1.classList.add('movie__header__h1')
             containerMain.style.display = 'none';
             footerMain.style.display = 'none';
-
             //Crea el nuevo contenedor main
             let peliContainer = document.createElement("main");
             // Agrego el estilo para el contenedor main creado en css.
@@ -83,30 +82,75 @@ const displayCardGhibli = (ghibliData) => {
             <p><spam class="black">Productor:</spam> ${arr.producer}</p>
             <p><spam class="black">Score:</spam> ${arr.rt_score} </p>
             <a class="movie__sidebar__button" href="index.html">VOLVER</a>`;
+            // Container de pestañas Tab
             let tabContainer = document.createElement("section");
-            tabContainer.classList.add('movie__mainContent')
-            tabContainer.innerHTML = `<input type="radio" name="tabs" id="tabone" checked="checked">
-            <label for="tabone">Descripción</label>
-            <div class="tab">
-              <p>${arr.description}</p>
-              </div>        
-            <input type="radio" name="tabs" id="tabtwo">
-            <label for="tabtwo">Personajes</label>
-            <div class="tab">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <input type="radio" name="tabs" id="tabthree">
-            <label for="tabthree">Locación y Vehículo</label>
-            <div class="tab">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>`;
+            tabContainer.classList.add('movie__mainContent');
+            // Sección Descripción pelicula.
+            let inputDescription = document.createElement('input');
+            let labelDescription = document.createElement('label');
+            let divDescription = document.createElement('div');
+            divDescription.classList.add('tab');
+            inputDescription.setAttribute("type", "radio");
+            inputDescription.setAttribute("name", "tabs");
+            inputDescription.setAttribute("id", "tabone");
+            inputDescription.setAttribute("checked", "checked");
+            labelDescription.setAttribute("for", "tabone");
+            labelDescription.innerHTML = `Descripción`;
+            divDescription.innerHTML = `<p>${arr.description}</p>`;
+            // Sección Personajes.
+            //  personajes
+            const characters = arr.people;
+            let inputCharacters = document.createElement('input');
+            let labelCharacters = document.createElement('label');
+            let divCharacters = document.createElement('div');
+            divCharacters.classList.add('tab');
+            let divCharactersSub = document.createElement('div');
+            divCharactersSub.classList.add('movie__mainContent__card');
+            inputCharacters.setAttribute("type", "radio");
+            inputCharacters.setAttribute("name", "tabs");
+            inputCharacters.setAttribute("id", "tabtwo");
+            labelCharacters.setAttribute("for", "tabtwo");
+            labelCharacters.innerHTML = `Personajes`;
+            for (let i = 0; i < characters.length; i++) {
+                divCharactersSub.innerHTML += `<div class="movie__div"><img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro"></div>`;
+            }
+            // Sección Vehiculos y locación;
+            let inputOther = document.createElement('input');
+            let labelOther = document.createElement('label');
+            let divOther = document.createElement('div');
+            divOther.classList.add('tab');
+            inputOther.setAttribute("type", "radio");
+            inputOther.setAttribute("name", "tabs");
+            inputOther.setAttribute("id", "tabthree");
+            labelOther.setAttribute("for", "tabthree");
+            labelOther.innerHTML = `Locación y Vehículo`;
+            divOther.innerHTML = `<p>aaaaaaaaaaaaaaaaaaa</p>`;
+
             // Despliega en la pantalla el contenedor del Main
             body.appendChild(peliContainer);
             // Despliega en la pantalla el contenedor del sidebar.
             peliContainer.appendChild(sideBar);
             // Despliega en la pantalla el contenedor donde iras las pestallas tab.
             peliContainer.appendChild(tabContainer);
-            // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
-
+            // Despliega en la pantalla el contenedor del Main
+            body.appendChild(peliContainer);
+            // Despliega en la pantalla el contenedor del sidebar.
+            peliContainer.appendChild(sideBar);
+            // Despliega en la pantalla el contenedor donde iras las pestallas tab.
+            peliContainer.appendChild(tabContainer);
+            // Despliegue sección descripción:
+            tabContainer.appendChild(inputDescription);
+            tabContainer.appendChild(labelDescription);
+            tabContainer.appendChild(divDescription);
+            //Despliegue sección imagenes personajes:
+            tabContainer.appendChild(inputCharacters);
+            tabContainer.appendChild(labelCharacters);
+            tabContainer.appendChild(divCharacters);
+            divCharacters.appendChild(divCharactersSub);
+            // Despliegue sección vehiculos y locación:
+            tabContainer.appendChild(inputOther);
+            tabContainer.appendChild(labelOther);
+            tabContainer.appendChild(divOther);
         }
 
     });
@@ -193,3 +237,4 @@ filterYear.addEventListener('change', () => {
 
 
 // Filter sección péliculas: 
+

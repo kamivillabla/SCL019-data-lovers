@@ -282,6 +282,7 @@ footer {
 	width: 100%;
 	display: none;
     margin-top: 30px;
+    
 }
 .movie__mainContent .tab p{
     font-size: 20px;
@@ -348,10 +349,10 @@ footer {
     flex-wrap: wrap;
     margin-top: 60px;
 }
-.movie__mainContent__card div {
+.movie__div {
     width: 30rem;
 }
-.movie__mainContent__card img {
+.movie__img {
     width: 100%;
     height: 25rem;
     border-radius: 8px;
