@@ -84,6 +84,40 @@ const displayCardGhibli = (ghibliData) => {
             <a class="movie__sidebar__button" href="index.html">VOLVER</a>`;
             // Container de pestañas Tab
             let tabContainer = document.createElement("section");
+
+         
+            tabContainer.classList.add('movie__mainContent')
+            tabContainer.innerHTML = `<input type="radio" name="tabs" id="tabone" checked="checked">
+            <label for="tabone">Descripción</label>
+            <div class="tab">
+              <p>${arr.description}</p>
+              </div>        
+            <input type="radio" name="tabs" id="tabtwo">
+            <label for="tabtwo">Personajes</label>
+            <div class="tab">
+                <p id="countCharacters"></p>
+                
+              <p>Función de tarjeta de personajes.</p>
+                        
+                    <div class="overlay active" id="overlay">
+                        <div class="popup active" id="popup">
+                            <img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg" alt="imagen del personaje">
+                            <div class="character__description">
+                                <h5>${arr.people.name}</h5>
+                                <p><spam class="black">Edad:</spam> ${arr.people.age}</p>
+                                <p><spam class="black">Género:</spam> ${arr.people.gender}</p>
+                                <p><spam class="black">Color de ojos:</spam> ${arr.people.eye_color}</p>
+                                <p><spam class="black">Color de pelo:</spam> ${arr.people.hair_color}</p>
+                                <p><spam class="black">Especie:</spam> ${arr.people.specie}</p>
+                            	        <!--agregar boton para cerrar popup-->         </div>
+                    </div></div>
+              </div>
+
+            <input type="radio" name="tabs" id="tabthree">
+            <label for="tabthree">Locación y Vehículo</label>
+            <div class="tab">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>`;
+
             tabContainer.classList.add('movie__mainContent');
             // Sección Descripción pelicula.
             let inputDescription = document.createElement('input');
@@ -126,12 +160,19 @@ const displayCardGhibli = (ghibliData) => {
             labelOther.innerHTML = `Locación y Vehículo`;
             divOther.innerHTML = `<p>aaaaaaaaaaaaaaaaaaa</p>`;
 
+
             // Despliega en la pantalla el contenedor del Main
             body.appendChild(peliContainer);
             // Despliega en la pantalla el contenedor del sidebar.
             peliContainer.appendChild(sideBar);
             // Despliega en la pantalla el contenedor donde iras las pestallas tab.
             peliContainer.appendChild(tabContainer);
+
+            // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
+
+            //contador de personajes - hay que agregarlo dentro de la funcion de tarjeta de personajes
+            document.getElementById("countCharacters").innerHTML = `Estas visualizando: ${arr.people.length} personajes`;
+
             // Despliega en la pantalla el contenedor del Main
             body.appendChild(peliContainer);
             // Despliega en la pantalla el contenedor del sidebar.
@@ -151,6 +192,7 @@ const displayCardGhibli = (ghibliData) => {
             tabContainer.appendChild(inputOther);
             tabContainer.appendChild(labelOther);
             tabContainer.appendChild(divOther);
+
         }
 
     });
@@ -233,8 +275,15 @@ filterYear.addEventListener('change', () => {
         const filterXYear = filterDataYearDesc(dataStudioGhibli)
         displayCardGhibli(filterXYear)
     }
-})
+});
 
+//POPUP PERSONAJE
+let overlay = document.getElementById('overlay');
+let popup = document.getElementById('popup');
 
-// Filter sección péliculas: 
+crearconst.addEventListener('click', function(e){     //agregar const de tarjeta personaje
+    e.preventDefault();
+    overlay.classList.add('active');
+    popup.classList.add('active');
+});
 

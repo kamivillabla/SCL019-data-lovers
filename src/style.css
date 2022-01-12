@@ -238,7 +238,7 @@ footer {
 .movie__sidebar__button{
     background-color: var(--blue--color);
     color: var(--white-color);
-    box-shadow: 0px 1px 10px var(--shadow-black);
+    box-shadow: 2px 2px 5px var(--shadow-black);
     font-size: 1.8rem;
     border-radius: 30px;
     padding: 5px 25px;
@@ -311,13 +311,6 @@ footer {
 }
 /*fin pestañas dinamicas*/
 
-.movie__mainContent__filterAndCount {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:flex-end;
-    margin-right: 78px;
-}
-
 @media (max-width: 575.98px) { 
     .movie__mainContent__filterAndCount {
         justify-content:center;
@@ -341,6 +334,16 @@ footer {
 
 /****************** Sección Personajes  **********************/
 
+.movie__mainContent__filterAndCount {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-end;
+    margin-right: 78px;
+}
+#countCharacters{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
 .movie__mainContent__card {
     display: flex;
     justify-content: space-around;
@@ -364,6 +367,71 @@ footer {
 .movie__mainContent__card img:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+/*************** PopUp Personajes ************/
+.overlay {
+    background: rgba(0, 0, 0,.2);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+  /*  visibility: hidden;               solo para que este activo mientras, hay que habilitarlo denuevo
+}*/
+.overlay.active {
+    visibility: visible;
+}
+.popup {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    background: var(--white-color);
+    box-shadow: 0px 0px 15px 0px rgba(12, 73, 163, 0.781);
+    border-radius: 5px;
+    padding: 25px;
+    width: 500px;
+    height: 300px;
+    transition: .3s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+}
+.popup img{
+    width: 50%;
+}
+.popup .character__description h5 {
+    color: var(--blue--color);
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.popup .character__description p{
+    font-size: 18px;
+    line-height: 24px;
+}
+.popup .character__description .black{
+    font-size: 18px;
+    font-weight: bold;
+}
+/*
+.popup a{
+    text-decoration: none;
+    padding: 5px 20px;
+    line-height: 65px;
+    color: #fff;
+    background: #079215;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px gray;
+    font-size: 14px;
+    transition: .3s ease all;
+}
+.popup a:hover{
+    background: #005c09;
+} */
+.popup.active {opacity: 1; transform: scale(1); /*animacion*/
 }
 
 /****************** Sección vehiculos  **********************/
