@@ -84,40 +84,6 @@ const displayCardGhibli = (ghibliData) => {
             <a class="movie__sidebar__button" href="index.html">VOLVER</a>`;
             // Container de pestañas Tab
             let tabContainer = document.createElement("section");
-
-         
-            tabContainer.classList.add('movie__mainContent')
-            tabContainer.innerHTML = `<input type="radio" name="tabs" id="tabone" checked="checked">
-            <label for="tabone">Descripción</label>
-            <div class="tab">
-              <p>${arr.description}</p>
-              </div>        
-            <input type="radio" name="tabs" id="tabtwo">
-            <label for="tabtwo">Personajes</label>
-            <div class="tab">
-                <p id="countCharacters"></p>
-                
-              <p>Función de tarjeta de personajes.</p>
-                        
-                    <div class="overlay active" id="overlay">
-                        <div class="popup active" id="popup">
-                            <img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg" alt="imagen del personaje">
-                            <div class="character__description">
-                                <h5>${arr.people.name}</h5>
-                                <p><spam class="black">Edad:</spam> ${arr.people.age}</p>
-                                <p><spam class="black">Género:</spam> ${arr.people.gender}</p>
-                                <p><spam class="black">Color de ojos:</spam> ${arr.people.eye_color}</p>
-                                <p><spam class="black">Color de pelo:</spam> ${arr.people.hair_color}</p>
-                                <p><spam class="black">Especie:</spam> ${arr.people.specie}</p>
-                            	        <!--agregar boton para cerrar popup-->         </div>
-                    </div></div>
-              </div>
-
-            <input type="radio" name="tabs" id="tabthree">
-            <label for="tabthree">Locación y Vehículo</label>
-            <div class="tab">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>`;
-
             tabContainer.classList.add('movie__mainContent');
             // Sección Descripción pelicula.
             let inputDescription = document.createElement('input');
@@ -137,6 +103,30 @@ const displayCardGhibli = (ghibliData) => {
             let inputCharacters = document.createElement('input');
             let labelCharacters = document.createElement('label');
             let divCharacters = document.createElement('div');
+            let divFilterAndCount = document.createElement('div');
+            divFilterAndCount.classList.add('main__filtersAndCount');
+            divFilterAndCount.innerHTML = `<p>Estas visualizando: ${arr.people.length} personajes</p>
+                    <div class="filters">
+                       <select id="filters__initial" class="filters__initial">
+                         <option value="0">A-Z</option>
+                         <option value="1">Z-A </option>
+                       </select>
+                       <select id="filters__director" class="filters__director">
+                         <option selected value="all">Edad</option>
+                         <option value="0">Hayao Miyazaki</option>
+                         <option value="1">Goro Miyazaki</option>
+                         <option value="2">Isao Takahata</option>
+                         <option value="3">Hiroyuki Morita</option>
+                         <option value="4">Hiromasa Yonebayashi</option>
+                         <option value="5">Yoshifumi Kondo</option>
+                       </select>
+                       <select id="filters__producer" class="filters__producer">
+                         <option selected value="all">Género</option>
+                         <option value="0">Femenino</option>
+                         <option value="1">Masculino</option>
+                         <option value="2">No binario</option>
+                       </select>
+                     </div>`;
             divCharacters.classList.add('tab');
             let divCharactersSub = document.createElement('div');
             divCharactersSub.classList.add('movie__mainContent__card');
@@ -170,8 +160,6 @@ const displayCardGhibli = (ghibliData) => {
 
             // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
 
-            //contador de personajes - hay que agregarlo dentro de la funcion de tarjeta de personajes
-            document.getElementById("countCharacters").innerHTML = `Estas visualizando: ${arr.people.length} personajes`;
 
             // Despliega en la pantalla el contenedor del Main
             body.appendChild(peliContainer);
@@ -187,6 +175,7 @@ const displayCardGhibli = (ghibliData) => {
             tabContainer.appendChild(inputCharacters);
             tabContainer.appendChild(labelCharacters);
             tabContainer.appendChild(divCharacters);
+            divCharacters.appendChild(divFilterAndCount);
             divCharacters.appendChild(divCharactersSub);
             // Despliegue sección vehiculos y locación:
             tabContainer.appendChild(inputOther);
@@ -287,3 +276,16 @@ crearconst.addEventListener('click', function(e){     //agregar const de tarjeta
     popup.classList.add('active');
 });
 
+/*<div class="overlay active" id="overlay">
+<div class="popup active" id="popup">
+<img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg" alt="imagen del personaje">
+<div class="character__description">
+    <h5>${arr.people.name}</h5>
+    <p><spam class="black">Edad:</spam> ${arr.people.age}</p>
+    <p><spam class="black">Género:</spam> ${arr.people.gender}</p>
+    <p><spam class="black">Color de ojos:</spam> ${arr.people.eye_color}</p>
+    <p><spam class="black">Color de pelo:</spam> ${arr.people.hair_color}</p>
+    <p><spam class="black">Especie:</spam> ${arr.people.specie}</p>
+            <!--agregar boton para cerrar popup-->         </div>
+</div></div>
+</div>*/
