@@ -23,57 +23,30 @@
       <p>Productor: lorem</p>
       <p>score: 3213</p>
     </section>
+
     <section class="movie__mainContent">
-      <ul class="movie__mainContent__tab">
-        <li class="li active">Descripción</li>
-        </li>
-        <li class="li">Personajes</li>
-        <li class="li">Locación y Vehículo</li>
-      </ul>
-      <div class="movie__mainContent__articles">
-        <section class="movie__mainContent__filterAndCount">
-          <!--contador de peliculas-->
-          <p id="countFilms"></p>
-          <div class="filters">
-            <select id="filters__initial" class="filters__initial">
-              <option value="0">A-Z</option>
-              <option value="1">Z-A </option>
-            </select>
-            <select id="filters__gender" class="filters__gender">
-              <option selected value="all">Género</option>
-              <option value="0">Femenino</option>
-              <option value="1">Masculino</option>
-              <option value="2">No binario</option>
-            </select>
-            <select id="filters__species" class="filters__species">
-              <option selected value="all">Especies</option>
-              <option value="0">Isao Takahata</option>
-              <option value="1">Toshio Suzuki</option>
-              <option value="2">Toru Hara</option>
-              <option value="3">Hayao Miyazaki</option>
-              <option value="4">Yoshiaki Nishimura</option>
-            </select>
-          </div>
-        </section>
-        <div class="block " id="description">
-          a
-        </div>
-        <div class="block active movie__mainContent__card" id="characters">
-          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
-          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
-          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
-          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
-          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
-          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
-          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
-          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
-          <div><img src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
-        </div>
-        <div class="block" id="location">
-          i
-        </div>
-      </div>
-    </section>
+       <input type="radio" name="tabs" id="tabone" checked="checked">
+       <label for="tabone">Descripción</label>
+         <div class="tab">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem expedita dolores nobis vitae fugit doloribus recusandae sunt dolore! Odit, necessitatibus? </p>
+          </div>        
+       <input type="radio" name="tabs" id="tabtwo">
+       <label for="tabtwo">Personajes</label>
+          <div class="tab" id="characters">
+            <div class="movie__mainContent__card">
+              <div class="movie__div"><img class="movie__img" src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+              <div class="movie__div"><img class="movie__img" src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+              <div class="movie__div"><img class="movie__img" src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+              <div class="movie__div"><img class="movie__img" src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+              <div class="movie__div"><img class="movie__img" src="https://picsum.photos/700/400?random" alt="Imagen de personaje totoro"></div>
+            </div>
+          </div >
+        <input type="radio" name="tabs" id="tabthree">
+        <label for="tabthree">Locación y Vehículo</label>
+            <div class="tab">
+                
+            </div>
+            </section>
   </main>
 
 
