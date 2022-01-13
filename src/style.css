@@ -110,10 +110,13 @@ p {
 }
 /* contador*/
 #countFilms{
-    font-size: 18px;
+    font-size: 2rem;
 }
-/* falta posicionarlo correctamente en pantallas pequeñas */
-.filters {
+.countBlue{
+    color: var(--blue--color);
+    font-size: 2rem;
+}
+.filters, .movie__filters {
     display: flex;
     justify-content: flex-end;
     gap: 0px 10px;
@@ -123,6 +126,13 @@ p {
     height: 25px;
     font-size: 16px;
     border-radius: 5px;
+    border: 1px solid var(--blue--color);
+}
+.filters .filters__initial{
+    width: 50px;
+}
+.filters .filters__year{
+    width: 50px;
 }
 select option {
     font-size: 16px;
@@ -177,9 +187,9 @@ select option {
 
 footer {
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     text-align: center;
-    line-height: 10rem;
+    line-height: 8rem;
     background-color: var(--blue--color);
     color: var(--white-color);
 }
@@ -229,7 +239,10 @@ footer {
 }
 .movie__sidebar .black{
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 2rem;
+}
+.movie__sidebar p{
+    font-size: 2rem;
 }
 .movie__sidebar__img {
     width: 30em;
@@ -307,6 +320,7 @@ footer {
     width: 100%;
     margin-right: 0;
     margin-top: 0.2rem;
+    padding: 0px;
   }
 }
 /*fin pestañas dinamicas*/
@@ -315,7 +329,7 @@ footer {
     .movie__mainContent__filterAndCount {
         justify-content:center;
         margin-right: 0px;
-    }
+     }
     .movie__header {
         height: 200px;
     }
@@ -329,7 +343,7 @@ footer {
     .movie__sidebar {
         display: none;
     }
-    
+   
 }
 
 /****************** Sección Personajes  **********************/
@@ -338,14 +352,20 @@ footer {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    margin-bottom: 30px;
+}
+.movie__filters select{
+    border: 1px solid var(--blue--color);
+}
+.movie__filters .filters__initial{
+    width: 50px;
 }
 .movie__mainContent__card {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
     gap: 40px 0px;
-    flex-wrap: wrap;
-    margin-top: 60px;
 }
 .movie__div {
     width: 30rem;
@@ -363,6 +383,41 @@ footer {
     cursor: pointer;
     transform: scale(1.05);
 }
+
+.movie__filtersAndCount {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 0px 25px;
+    margin-top: 50px;
+}
+.movie__filters select {
+    width: 95px;
+    height: 25px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.movie__filters select option {
+    font-size: 16px;
+}
+
+.movie__filters select {
+    width: 95px;
+    height: 25px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+@media (max-width: 575.98px) { 
+    .movie__mainContent__filterAndCount {
+        justify-content:center;
+    }
+    .movie__filtersAndCount {
+        padding: 0px;
+        justify-content:center;
+    }
+    
+}
+
 
 /*************** PopUp Personajes ************/
 .overlay {
