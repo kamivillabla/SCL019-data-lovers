@@ -13,9 +13,6 @@ const filterXDirector = document.getElementById('filters__director');
 const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 const body = document.querySelector('body');
-//POPUP PERSONAJE
-const overlay = document.getElementById('overlay');
-const popup = document.getElementById('popup');
 
 
 // Creación de tarjetas dinamicas que llama información del objeto.data.ghibli
@@ -138,41 +135,40 @@ const displayCardGhibli = (ghibliData) => {
             inputCharacters.setAttribute("id", "tabtwo");
             labelCharacters.setAttribute("for", "tabtwo");
             labelCharacters.innerHTML = `Personajes`;
+            let movieDiv = document.createElement('div');
+            movieDiv.classList.add('movie__div');
             for (let i = 0; i < characters.length; i++) {
-                divCharactersSub.innerHTML += `<div class="movie__div"><img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro"></div>`;
+
+                movieDiv.innerHTML += `
+                <img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro">`;
+                let movieImg = movieDiv.querySelector('.movie__img');
+
+                const charactersId = characters[i].id;
+                movieImg.setAttribute("id", charactersId);
+
+                divCharactersSub.appendChild(movieImg);
+
+                // Tiene que ir adentro para que funcione al dar click en todas las tarjetas, incluso a las que se toman con filtro. 
+
+                //Evento a la tarjeta con el id incluido y llamá a la función que crea la nueva pantalla.
+
+                movieImg.addEventListener("click", () => {
+                    divCharactersSub.innerHTML += ` <div class="overlay active" id="overlay">
+                        <div class="popup active" id="popup">
+                            <img src="${characters[i].img}" alt="imagen del personaje">
+                            <div class="character__description">
+                                <h5>${characters[i].name}</h5>
+                                <p><spam class="black">Edad:</spam> ${characters[i].age}</p>
+                                <p><spam class="black">Género:</spam> ${characters[i].gender}</p>
+                                <p><spam class="black">Color de ojos:</spam> ${characters[i].eye_color}</p>
+                                <p><spam class="black">Color de pelo:</spam> ${characters[i].hair_color}</p>
+                                <p><spam class="black">Especie:</spam> ${characters[i].specie}</p>
+                            </div>
+                        </div>
+                    </div>`
+                });
             }
-            //guardo el id del personaje
-            const idPeopleCard = characters.id;
-            //agrego el atributo id a la tarjetas de personajes
-            divCharactersSub.setAttribute("id", idPeopleCard);
-            // creamos un evento al personaje y llamamos a una nueva funcion de popup
-            divCharactersSub.addEventListener("click", newCharacter); 
-            
-            //POPUP PERSONAJE
-            function newCharacter(e) {
-                e.preventDefault();
-                const contentCharacterOverlay = document.createElement("div");
-                const contentCharacterPopup = document.createElement("div");
-                contentCharacterOverlay.classList.add("overlay");
-                contentCharacterOverlay.classList.add("active");
-                contentCharacterPopup.classList.add("popup");
-                contentCharacterPopup.classList.add("active")
-                contentCharacterOverlay.setAttribute("id", "overlay");
-                contentCharacterPopup.setAttribute("id", "popup");
-                contentCharacterPopup.innerHTML = `<img src="${characters.img}" alt="imagen del personaje">
-                <div class="character__description">
-                    <h5>${characters.name}</h5>
-                    <p><spam class="black">Edad:</spam> ${characters.age}</p>
-                    <p><spam class="black">Género:</spam> ${characters.gender}</p>
-                    <p><spam class="black">Color de ojos:</spam> ${characters.eye_color}</p>
-                    <p><spam class="black">Color de pelo:</spam> ${characters.hair_color}</p>
-                    <p><spam class="black">Especie:</spam> ${characters.specie}</p>
-                </div>`;
-                //desplegamos pop up personaje
-                body.appendChild(contentCharacterOverlay);
-                contentCharacterOverlay.appendChild(contentCharacterPopup);
-            };
-            
+
             // Sección Vehiculos y locación;
             let location = arr.locations;
             let vehicle = arr.vehicles;
@@ -224,7 +220,7 @@ const displayCardGhibli = (ghibliData) => {
             body.appendChild(footerMain);
 
             // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
-             
+
         }
 
     });
