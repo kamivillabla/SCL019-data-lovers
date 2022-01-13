@@ -110,7 +110,11 @@ p {
 }
 /* contador*/
 #countFilms{
-    font-size: 18px;
+    font-size: 2rem;
+}
+.countBlue{
+    color: var(--blue--color);
+    font-size: 2rem;
 }
 .countFilms {
     margin-bottom: 20px;
@@ -125,6 +129,13 @@ p {
     height: 25px;
     font-size: 16px;
     border-radius: 5px;
+    border: 1px solid var(--blue--color);
+}
+.filters .filters__initial{
+    width: 50px;
+}
+.filters .filters__year{
+    width: 50px;
 }
 select option {
     font-size: 16px;
@@ -179,9 +190,9 @@ select option {
 
 footer {
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     text-align: center;
-    line-height: 10rem;
+    line-height: 8rem;
     background-color: var(--blue--color);
     color: var(--white-color);
 }
@@ -230,7 +241,10 @@ footer {
 }
 .movie__sidebar .black{
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 2rem;
+}
+.movie__sidebar p{
+    font-size: 2rem;
 }
 .movie__sidebar__img {
     width: 30em;
@@ -342,22 +356,24 @@ footer {
 
 /****************** Sección Personajes  **********************/
 
-.movie__mainContent__filterAndCount {
+.characters__filtersAndCount {
     display: flex;
-    flex-wrap: wrap;
-    justify-content:flex-end;
-    margin-right: 78px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
-.countCharacters{
-    margin-bottom: 20px;
+.movie__filters select{
+    border: 1px solid var(--blue--color);
+}
+.movie__filters .filters__initial{
+    width: 50px;
 }
 .movie__mainContent__card {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
     gap: 40px 0px;
-    flex-wrap: wrap;
-    margin-top: 60px;
 }
 .movie__div {
     width: 30rem;
@@ -421,9 +437,9 @@ footer {
     right: 0;
     display: flex;
     align-items: center;
-    justify-content: center;}
-  /*  visibility: hidden;               solo para que este activo mientras, hay que habilitarlo denuevo
-}*/
+    justify-content: center;
+    visibility: hidden;
+}
 .overlay.active {
     visibility: visible;
 }

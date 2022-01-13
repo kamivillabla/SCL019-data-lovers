@@ -13,6 +13,9 @@ const filterXDirector = document.getElementById('filters__director');
 const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 const body = document.querySelector('body');
+//POPUP PERSONAJE
+const overlay = document.getElementById('overlay');
+const popup = document.getElementById('popup');
 
 
 // Creación de tarjetas dinamicas que llama información del objeto.data.ghibli
@@ -23,7 +26,7 @@ const body = document.querySelector('body');
 const displayCardGhibli = (ghibliData) => {
     containerAnimationes.innerHTML = "";
     //contador de peliculas segun filtro
-    document.getElementById("countFilms").innerHTML = `Estas visualizando: ${ghibliData.length} peliculas`;
+    document.getElementById("countFilms").innerHTML = `<spam class="countBlue">Estas visualizando:</spam> ${ghibliData.length} peliculas`;
     ghibliData.forEach((arr) => {
         // Article donde ira cada tarjeta
         const cardAnimations = document.createElement("article"); //article para cada tarjeta
@@ -104,8 +107,8 @@ const displayCardGhibli = (ghibliData) => {
             let labelCharacters = document.createElement('label');
             let divCharacters = document.createElement('div');
             let divFilterAndCount = document.createElement('div');
-            divFilterAndCount.classList.add('movie__filtersAndCount');
-            divFilterAndCount.innerHTML = `<p class="countCharacters">Estas visualizando: ${arr.people.length} personajes</p>
+            divFilterAndCount.classList.add('characters__filtersAndCount');
+            divFilterAndCount.innerHTML = `<p id="countFilms"><spam class="countBlue">Estas visualizando:</spam> ${arr.people.length} personajes</p>
                     <div class="movie__filters">
                        <select id="filters__initial" class="filters__initial">
                          <option value="0">A-Z</option>
@@ -138,6 +141,38 @@ const displayCardGhibli = (ghibliData) => {
             for (let i = 0; i < characters.length; i++) {
                 divCharactersSub.innerHTML += `<div class="movie__div"><img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro"></div>`;
             }
+            //guardo el id del personaje
+            const idPeopleCard = characters.id;
+            //agrego el atributo id a la tarjetas de personajes
+            divCharactersSub.setAttribute("id", idPeopleCard);
+            // creamos un evento al personaje y llamamos a una nueva funcion de popup
+            divCharactersSub.addEventListener("click", newCharacter); 
+            
+            //POPUP PERSONAJE
+            function newCharacter(e) {
+                e.preventDefault();
+                const contentCharacterOverlay = document.createElement("div");
+                const contentCharacterPopup = document.createElement("div");
+                contentCharacterOverlay.classList.add("overlay");
+                contentCharacterOverlay.classList.add("active");
+                contentCharacterPopup.classList.add("popup");
+                contentCharacterPopup.classList.add("active")
+                contentCharacterOverlay.setAttribute("id", "overlay");
+                contentCharacterPopup.setAttribute("id", "popup");
+                contentCharacterPopup.innerHTML = `<img src="${characters.img}" alt="imagen del personaje">
+                <div class="character__description">
+                    <h5>${characters.name}</h5>
+                    <p><spam class="black">Edad:</spam> ${characters.age}</p>
+                    <p><spam class="black">Género:</spam> ${characters.gender}</p>
+                    <p><spam class="black">Color de ojos:</spam> ${characters.eye_color}</p>
+                    <p><spam class="black">Color de pelo:</spam> ${characters.hair_color}</p>
+                    <p><spam class="black">Especie:</spam> ${characters.specie}</p>
+                </div>`;
+                //desplegamos pop up personaje
+                body.appendChild(contentCharacterOverlay);
+                contentCharacterOverlay.appendChild(contentCharacterPopup);
+            };
+            
             // Sección Vehiculos y locación;
             let location = arr.locations;
             let vehicle = arr.vehicles;
@@ -170,16 +205,6 @@ const displayCardGhibli = (ghibliData) => {
             peliContainer.appendChild(sideBar);
             // Despliega en la pantalla el contenedor donde iras las pestallas tab.
             peliContainer.appendChild(tabContainer);
-
-            // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
-
-
-            // Despliega en la pantalla el contenedor del Main
-            body.appendChild(peliContainer);
-            // Despliega en la pantalla el contenedor del sidebar.
-            peliContainer.appendChild(sideBar);
-            // Despliega en la pantalla el contenedor donde iras las pestallas tab.
-            peliContainer.appendChild(tabContainer);
             // Despliegue sección descripción:
             tabContainer.appendChild(inputDescription);
             tabContainer.appendChild(labelDescription);
@@ -198,6 +223,8 @@ const displayCardGhibli = (ghibliData) => {
             // Despliega el footer
             body.appendChild(footerMain);
 
+            // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
+             
         }
 
     });
@@ -281,27 +308,3 @@ filterYear.addEventListener('change', () => {
         displayCardGhibli(filterXYear)
     }
 });
-
-/* POPUP PERSONAJE
-let overlay = document.getElementById('overlay');
-let popup = document.getElementById('popup');
-
-crearconst.addEventListener('click', function(e){     //agregar const de tarjeta personaje
-    e.preventDefault();
-    overlay.classList.add('active');
-    popup.classList.add('active');
-});
-
-/*<div class="overlay active" id="overlay">
-<div class="popup active" id="popup">
-<img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg" alt="imagen del personaje">
-<div class="character__description">
-    <h5>${arr.people.name}</h5>
-    <p><spam class="black">Edad:</spam> ${arr.people.age}</p>
-    <p><spam class="black">Género:</spam> ${arr.people.gender}</p>
-    <p><spam class="black">Color de ojos:</spam> ${arr.people.eye_color}</p>
-    <p><spam class="black">Color de pelo:</spam> ${arr.people.hair_color}</p>
-    <p><spam class="black">Especie:</spam> ${arr.people.specie}</p>
-            <!--agregar boton para cerrar popup-->         </div>
-</div></div>
-</div>*/
