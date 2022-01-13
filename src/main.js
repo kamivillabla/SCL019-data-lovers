@@ -97,6 +97,7 @@ const displayCardGhibli = (ghibliData) => {
             labelDescription.innerHTML = `Descripción`;
             divDescription.classList.add('movie__description')
             divDescription.innerHTML = `<p>${arr.description}</p>`;
+
             // Sección Personajes.
             //  personajes
             const characters = arr.people;
@@ -172,6 +173,7 @@ const displayCardGhibli = (ghibliData) => {
             // Sección Vehiculos y locación;
             let location = arr.locations;
             let vehicle = arr.vehicles;
+
             let inputOther = document.createElement('input');
             let labelOther = document.createElement('label');
             let divOther = document.createElement('div');
@@ -183,16 +185,64 @@ const displayCardGhibli = (ghibliData) => {
             inputOther.setAttribute("id", "tabthree");
             labelOther.setAttribute("for", "tabthree");
             labelOther.innerHTML = `Locación y Vehículo`;
+
+            let movieDivLocation = document.createElement('div');
+            movieDivLocation.classList.add('movie__div');
+
             if (location.length === 0 && vehicle.length === 0) {
                 divOtherSub.innerHTML = `<p> Aquí no hay nada!!</p>
                 <div><img class="movie__img" src="https://static.vix.com/es/sites/default/files/s/studio_ghibli-5.gif" alt="No hay locaciones ni vehiculos!"></div>`
             } else {
                 for (let i = 0; i < location.length; i++) {
-                    divOtherSub.innerHTML += `<div class="movie__div"><img class="movie__img" src="${location[i].img}" alt="imagen de locaciones"></div>`;
+                    movieDivLocation.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">`;
+
+                    let movieDivImg = movieDivLocation.querySelector('.movie__img');
+                    const locationId = location[i].id;
+
+                    movieDivImg.setAttribute("id", locationId);
+                    divOtherSub.appendChild(movieDivImg);
+
+                    movieDivImg.addEventListener("click", () => {
+                        divOtherSub.innerHTML += ` <div class="overlay active" id="overlay">
+                            <div class="popup active" id="popup">
+                                <img src="${location[i].img}" alt="imagen del personaje">
+                                <div class="character__description">
+                                    <h5>${location[i].name}</h5>
+                                    <p><spam class="black">Clima:</spam> ${location[i].climate}</p>
+                                    <p><spam class="black">Terreno:</spam> ${location[i].terrain}</p>
+                                    <p><spam class="black">Superficie de agua:</spam> ${location[i].surface_water}</p>
+                                    <p><spam class="black">Habitantes:</spam> ${location[i].residents.name}</p>
+                                 </div>
+                            </div>
+                        </div>`
+                    });
+                    // Queda pendiente que locación[i].residents.name muestre los nombres;
+
+                    for (let i = 0; i < vehicle.length; i++) {
+                        movieDivLocation.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">`;
+
+                        let movieVehicle = movieDivLocation.querySelector('.movie__img');
+                        const vehicleId = vehicle[i].id;
+                        movieVehicle.setAttribute("id", vehicleId);
+                        divOtherSub.appendChild(movieVehicle);
+
+                        movieVehicle.addEventListener("click", () => {
+                            divOtherSub.innerHTML += ` <div class="overlay active" id="overlay">
+                            <div class="popup active" id="popup">
+                                <img src="${vehicle[i].img}" alt="imagen del personaje">
+                                <div class="character__description">
+                                    <h5>${vehicle[i].name}</h5>
+                                    <p><spam class="black">Descripción::</spam> ${vehicle[i].description}</p>
+                                    <p><spam class="black">Clase:</spam> ${vehicle[i].vehicle_class}</p>
+                                    <p><spam class="black">Length:</spam> ${vehicle[i].length}</p>
+                                    <p><spam class="black">Piloto:</spam> ${vehicle[i].pilot.name}</p>
+                                </div>
+                            </div>
+                        </div>`
+                        });
+                    }
                 }
-                for (let i = 0; i < vehicle.length; i++) {
-                    divOtherSub.innerHTML += `<div class="movie__div"><img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos"></div>`;
-                }
+
             }
 
             // Despliega en la pantalla el contenedor del Main

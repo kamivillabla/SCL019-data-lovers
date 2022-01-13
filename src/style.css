@@ -375,11 +375,9 @@ footer {
     align-items: center;
     gap: 40px 0px;
 }
-.movie__div {
-    width: 30rem;
-}
+
 .movie__img {
-    width: 100%;
+    width: 30rem;
     height: 30rem;
     border-radius: 8px;
     box-shadow: 0px 1px 10px var(--shadow-black);
@@ -451,14 +449,14 @@ footer {
     box-shadow: 0px 0px 15px 0px rgba(12, 73, 163, 0.781);
     border-radius: 5px;
     padding: 25px;
-    width: 500px;
-    height: 270px;
+    width: 60%;
+    height: 55%;
     transition: .3s ease all;
     transform: scale(0.7);
     opacity: 0;
 }
 .popup img{
-    width: 50%;
+    width: 40%;
     object-fit: cover;
 }
 .popup .character__description{
