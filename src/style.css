@@ -334,15 +334,10 @@ footer {
 
 /****************** Sección Personajes  **********************/
 
-.movie__mainContent__filterAndCount {
+.characters__filtersAndCount {
     display: flex;
-    flex-wrap: wrap;
-    justify-content:flex-end;
-    margin-right: 78px;
-}
-#countCharacters{
-    font-size: 18px;
-    margin-bottom: 20px;
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
 .movie__mainContent__card {
     display: flex;
@@ -379,9 +374,9 @@ footer {
     right: 0;
     display: flex;
     align-items: center;
-    justify-content: center;}
-  /*  visibility: hidden;               solo para que este activo mientras, hay que habilitarlo denuevo
-}*/
+    justify-content: center;
+    visibility: hidden;
+}
 .overlay.active {
     visibility: visible;
 }

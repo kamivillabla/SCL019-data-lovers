@@ -13,6 +13,9 @@ const filterXDirector = document.getElementById('filters__director');
 const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 const body = document.querySelector('body');
+//POPUP PERSONAJE
+const overlay = document.getElementById('overlay');
+const popup = document.getElementById('popup');
 
 
 // Creación de tarjetas dinamicas que llama información del objeto.data.ghibli
@@ -104,8 +107,8 @@ const displayCardGhibli = (ghibliData) => {
             let labelCharacters = document.createElement('label');
             let divCharacters = document.createElement('div');
             let divFilterAndCount = document.createElement('div');
-            divFilterAndCount.classList.add('main__filtersAndCount');
-            divFilterAndCount.innerHTML = `<p>Estas visualizando: ${arr.people.length} personajes</p>
+            divFilterAndCount.classList.add('characters__filtersAndCount');
+            divFilterAndCount.innerHTML = `<p id="countFilms">Estas visualizando: ${arr.people.length} personajes</p>
                     <div class="filters">
                        <select id="filters__initial" class="filters__initial">
                          <option value="0">A-Z</option>
@@ -138,6 +141,37 @@ const displayCardGhibli = (ghibliData) => {
             for (let i = 0; i < characters.length; i++) {
                 divCharactersSub.innerHTML += `<div class="movie__div"><img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro"></div>`;
             }
+            //guardo el id del personaje
+            const idPeopleCard = arr.people.id;
+            //agrego el atributo id a la tarjetas de personajes
+            divCharactersSub.setAttribute("id", idPeopleCard);
+            // creamos un evento al personaje y llamamos a una nueva funcion de popup
+            divCharactersSub.addEventListener("click", newCharacter); 
+            
+            //POPUP
+            function newCharacter(e) {
+                e.preventDefault();
+                overlay.classList.add('active');
+                popup.classList.add('active');
+                const contentCharacterOverlay = document.createElement("div");
+                const contentCharacterPopup = document.createElement("div");
+                contentCharacterOverlay.classList.add("overlay");
+                contentCharacterPopup.classList.add("popup");
+                contentCharacterOverlay.setAttribute("id", "overlay");
+                contentCharacterPopup.setAttribute("id", "popup");
+                contentCharacterPopup.innerHTML = `<img src="${arr.people.img}" alt="imagen del personaje">
+                <div class="character__description">
+                    <h5>${arr.people.name}</h5>
+                    <p><spam class="black">Edad:</spam> ${arr.people.age}</p>
+                    <p><spam class="black">Género:</spam> ${arr.people.gender}</p>
+                    <p><spam class="black">Color de ojos:</spam> ${arr.people.eye_color}</p>
+                    <p><spam class="black">Color de pelo:</spam> ${arr.people.hair_color}</p>
+                    <p><spam class="black">Especie:</spam> ${arr.people.specie}</p>
+                </div>`;
+                body.appendChild(contentCharacterOverlay);
+                contentCharacterOverlay.appendChild(contentCharacterPopup);
+            };
+            
             // Sección Vehiculos y locación;
             let inputOther = document.createElement('input');
             let labelOther = document.createElement('label');
@@ -149,18 +183,9 @@ const displayCardGhibli = (ghibliData) => {
             labelOther.setAttribute("for", "tabthree");
             labelOther.innerHTML = `Locación y Vehículo`;
             divOther.innerHTML = `<p>aaaaaaaaaaaaaaaaaaa</p>`;
-
-
-            // Despliega en la pantalla el contenedor del Main
-            body.appendChild(peliContainer);
-            // Despliega en la pantalla el contenedor del sidebar.
-            peliContainer.appendChild(sideBar);
-            // Despliega en la pantalla el contenedor donde iras las pestallas tab.
-            peliContainer.appendChild(tabContainer);
-
-            // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
-
-
+            
+            
+            
             // Despliega en la pantalla el contenedor del Main
             body.appendChild(peliContainer);
             // Despliega en la pantalla el contenedor del sidebar.
@@ -182,6 +207,8 @@ const displayCardGhibli = (ghibliData) => {
             tabContainer.appendChild(labelOther);
             tabContainer.appendChild(divOther);
 
+            // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
+             
         }
 
     });
@@ -266,26 +293,4 @@ filterYear.addEventListener('change', () => {
     }
 });
 
-//POPUP PERSONAJE
-let overlay = document.getElementById('overlay');
-let popup = document.getElementById('popup');
 
-crearconst.addEventListener('click', function(e){     //agregar const de tarjeta personaje
-    e.preventDefault();
-    overlay.classList.add('active');
-    popup.classList.add('active');
-});
-
-/*<div class="overlay active" id="overlay">
-<div class="popup active" id="popup">
-<img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg" alt="imagen del personaje">
-<div class="character__description">
-    <h5>${arr.people.name}</h5>
-    <p><spam class="black">Edad:</spam> ${arr.people.age}</p>
-    <p><spam class="black">Género:</spam> ${arr.people.gender}</p>
-    <p><spam class="black">Color de ojos:</spam> ${arr.people.eye_color}</p>
-    <p><spam class="black">Color de pelo:</spam> ${arr.people.hair_color}</p>
-    <p><spam class="black">Especie:</spam> ${arr.people.specie}</p>
-            <!--agregar boton para cerrar popup-->         </div>
-</div></div>
-</div>*/
