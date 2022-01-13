@@ -1,4 +1,4 @@
-import { filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector, filterDataProducer } from './data.js';
+import { filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector, filterDataProducer, filterAZcharacter, filterZAcharacter } from './data.js';
 
 import data from './data/ghibli/ghibli.js';
 
@@ -9,14 +9,11 @@ const containerMain = document.getElementById('main__animations');
 const footerMain = document.getElementById('footer');
 const containerAnimationes = document.getElementById('animations');
 const filterLetterOrder = document.getElementById('filters__initial');
+const filterLetterCharacter = document.getElementById("filter__initial__character")
 const filterXDirector = document.getElementById('filters__director');
 const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 const body = document.querySelector('body');
-//POPUP PERSONAJE
-const overlay = document.getElementById('overlay');
-const popup = document.getElementById('popup');
-
 
 // Creación de tarjetas dinamicas que llama información del objeto.data.ghibli
 // Se crea una función que lleva dentro un forEach que recorre el parametro que le de creando así las tarjetas. Al final llamo a la función y le doy el parametro de la data del estudio ghibli para que pueda crear las tarjetas.
@@ -108,7 +105,7 @@ const displayCardGhibli = (ghibliData) => {
             divFilterAndCount.classList.add('characters__filtersAndCount');
             divFilterAndCount.innerHTML = `<p id="countFilms"><spam class="countBlue">Estas visualizando:</spam> ${arr.people.length} personajes</p>
                     <div class="movie__filters">
-                       <select id="filters__initial" class="filters__initial">
+                       <select id="filters__initial__character" class="filters__initial">
                          <option value="0">A-Z</option>
                          <option value="1">Z-A </option>
                        </select>
@@ -129,7 +126,7 @@ const displayCardGhibli = (ghibliData) => {
                        </select>
                      </div>`;
             divCharacters.classList.add('tab');
-            let divCharactersSub = document.createElement('div');
+            const divCharactersSub = document.createElement('div');
             divCharactersSub.classList.add('movie__mainContent__card');
             inputCharacters.setAttribute("type", "radio");
             inputCharacters.setAttribute("name", "tabs");
@@ -145,7 +142,7 @@ const displayCardGhibli = (ghibliData) => {
             divCharactersSub.setAttribute("id", idPeopleCard);
             // creamos un evento al personaje y llamamos a una nueva funcion de popup
             divCharactersSub.addEventListener("click", newCharacter); 
-            
+
             //POPUP PERSONAJE
             function newCharacter(e) {
                 e.preventDefault();
@@ -154,7 +151,7 @@ const displayCardGhibli = (ghibliData) => {
                 contentCharacterOverlay.classList.add("overlay");
                 contentCharacterOverlay.classList.add("active");
                 contentCharacterPopup.classList.add("popup");
-                contentCharacterPopup.classList.add("active")
+                contentCharacterPopup.classList.add("active");
                 contentCharacterOverlay.setAttribute("id", "overlay");
                 contentCharacterPopup.setAttribute("id", "popup");
                 contentCharacterPopup.innerHTML = `<img src="${characters.img}" alt="imagen del personaje">
@@ -165,11 +162,35 @@ const displayCardGhibli = (ghibliData) => {
                     <p><spam class="black">Color de ojos:</spam> ${characters.eye_color}</p>
                     <p><spam class="black">Color de pelo:</spam> ${characters.hair_color}</p>
                     <p><spam class="black">Especie:</spam> ${characters.specie}</p>
+                    <a href="#" id="btn__cerrar">CERRAR</a>
                 </div>`;
                 //desplegamos pop up personaje
                 body.appendChild(contentCharacterOverlay);
                 contentCharacterOverlay.appendChild(contentCharacterPopup);
+                //evento para cerrar pop up
+                const cerrarPopup = document.getElementById("btn__cerrar");
+                cerrarPopup.addEventListener("click", function(e){
+                e.preventDefault();
+                contentCharacterOverlay.classList.remove("active");
+                contentCharacterPopup.classList.remove("active");
+                });
             };
+            /*for (let i = 0; i < characters.length; i++) {
+                divCharactersSub.innerHTML += `
+                <div class="movie__div">
+                    <img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro">
+                </div>`;
+                //let movieDiv = document.querySelector('.movie__div');
+                //console.log(movieDiv);
+                divCharactersSub.addEventListener("click", () => {
+                    divCharactersSub.innerHTML += ` <div class="overlay active" id="overlay">
+                        <div class="popup active" id="popup">
+                            <img src="${characters[i].img}" alt="imagen del personaje">
+                            <div class="character__description">
+                                <h5>${characters[i].name}</h5>
+                                <p><spam class="black">Edad:</spam> ${characters[i].age}</p>
+                                <p><spam class="black">Género:</spam> ${characters[i].gender}</p>
+*/
             
             // Sección Vehiculos y locación;
             let location = arr.locations;
@@ -306,3 +327,17 @@ filterYear.addEventListener('change', () => {
         displayCardGhibli(filterXYear)
     }
 });
+
+/******************************Filtros personajes **********************/
+
+            // Filtrar de la A a la Z y de la Z a la A
+            filterLetterCharacter.addEventListener('change', () => {
+                if (filterLetterCharacter.value === "0") {
+                    const filterLetterAZ = filterAZ(dataStudioGhibli);
+                    divCharactersSub(filterLetterAZ);
+                }
+                if (filterLetterCharacter.value === "1") {
+                    const filterLetterZA = filterZA(dataStudioGhibli);
+                    divCharactersSub(filterLetterZA);
+                }
+            });

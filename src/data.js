@@ -60,3 +60,18 @@ export const filterDataYearDesc = (data) => {
   });
   return filterDataYearDes;
 } 
+
+
+/*************************Filtros personajes **********/
+export const filterAZcharacter = (data) => {
+  const sortLettersAZ = data.people.sort((a, b) => {
+    return a.name.localeCompare(b.name);
+  });
+  return sortLettersAZ;
+}
+export const filterZAcharacter = (data) => {
+  const sortLetterZA = data.people.sort((a, b) => {
+    return b.name.localeCompare(a.name);
+  });
+  return sortLetterZA;
+}
