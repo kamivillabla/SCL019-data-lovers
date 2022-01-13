@@ -64,6 +64,7 @@ const displayCardGhibli = (ghibliData) => {
             containerMain.style.display = 'none';
             footerMain.remove();
 
+
             //Crea el nuevo contenedor main de los personajes
             let peliContainer = document.createElement("main");
             // Agrego el estilo para el contenedor main creado en css.
@@ -94,6 +95,7 @@ const displayCardGhibli = (ghibliData) => {
             inputDescription.setAttribute("checked", "checked");
             labelDescription.setAttribute("for", "tabone");
             labelDescription.innerHTML = `Descripción`;
+            divDescription.classList.add('movie__description')
             divDescription.innerHTML = `<p>${arr.description}</p>`;
             // Sección Personajes.
             //  personajes
@@ -193,7 +195,7 @@ const displayCardGhibli = (ghibliData) => {
             tabContainer.appendChild(labelOther);
             tabContainer.appendChild(divOther);
             divOther.appendChild(divOtherSub);
-
+            // Despliega el footer
             body.appendChild(footerMain);
 
         }
