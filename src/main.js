@@ -106,28 +106,7 @@ const displayCardGhibli = (ghibliData) => {
             let divCharacters = document.createElement('div');
             let divFilterAndCount = document.createElement('div');
             divFilterAndCount.classList.add('characters__filtersAndCount');
-            divFilterAndCount.innerHTML = `<p id="countFilms"><spam class="countBlue">Estas visualizando:</spam> ${arr.people.length} personajes</p>
-                    <div class="movie__filters">
-                       <select id="filters__initial" class="filters__initial">
-                         <option value="0">A-Z</option>
-                         <option value="1">Z-A </option>
-                       </select>
-                       <select id="filters__director" class="filters__director">
-                         <option selected value="all">Edad</option>
-                         <option value="0">Hayao Miyazaki</option>
-                         <option value="1">Goro Miyazaki</option>
-                         <option value="2">Isao Takahata</option>
-                         <option value="3">Hiroyuki Morita</option>
-                         <option value="4">Hiromasa Yonebayashi</option>
-                         <option value="5">Yoshifumi Kondo</option>
-                       </select>
-                       <select id="filters__producer" class="filters__producer">
-                         <option selected value="all">Género</option>
-                         <option value="0">Femenino</option>
-                         <option value="1">Masculino</option>
-                         <option value="2">No binario</option>
-                       </select>
-                     </div>`;
+            divFilterAndCount.innerHTML = `<p id="countFilms"><spam class="countBlue">Estas visualizando:</spam> ${arr.people.length} personajes</p>`;
             divCharacters.classList.add('tab');
             let divCharactersSub = document.createElement('div');
             divCharactersSub.classList.add('movie__mainContent__card');
