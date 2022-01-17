@@ -89,19 +89,51 @@ export function newContainer(e) {
         divCharactersSub.appendChild(movieImg);
 
         movieImg.addEventListener("click", () => {
-            divCharactersSub.innerHTML += ` <div class="overlay active" id="overlay">
-                <div class="popup active" id="popup">
-                    <img src="${characters[i].img}" alt="imagen del personaje">
-                    <div class="character__description">
-                        <h5>${characters[i].name}</h5>
-                        <p><spam class="black">Edad:</spam> ${characters[i].age}</p>
-                        <p><spam class="black">Género:</spam> ${characters[i].gender}</p>
-                        <p><spam class="black">Color de ojos:</spam> ${characters[i].eye_color}</p>
-                        <p><spam class="black">Color de pelo:</spam> ${characters[i].hair_color}</p>
-                        <p><spam class="black">Especie:</spam> ${characters[i].specie}</p>
-                    </div>
-                </div>
-            </div>`
+            let divCharacters = document.createElement('div');
+            divCharacters.classList.add('overlay');
+            divCharacters.classList.add('active');
+            divCharacters.setAttribute('id', 'overlay');
+            let divPopupCharacters = document.createElement('div');
+            divPopupCharacters.classList.add('popup');
+            divPopupCharacters.classList.add('active');
+            divPopupCharacters.setAttribute('id', 'popup');
+            let divPopupImgCharacters = document.createElement('img');
+            divPopupImgCharacters.setAttribute('src', characters[i].img);
+            divPopupImgCharacters.setAttribute('alt', "imagen del personaje");
+            let divPopupDescriptionChar = document.createElement('div');
+            divPopupDescriptionChar.classList.add('character__description');
+            let datePopupH5Char = document.createElement('h5');
+            datePopupH5Char.innerHTML = `${characters[i].name}`;
+            let datePopupAgeChar = document.createElement('p');
+            datePopupAgeChar.innerHTML = `<spam class="black">Edad:</spam> ${characters[i].age}`;
+            let datePopupGenderChar = document.createElement('p');
+            datePopupGenderChar.innerHTML = `<spam class="black">Género:</spam> ${characters[i].gender}`;
+            let datePopupEyeChar = document.createElement('p');
+            datePopupEyeChar.innerHTML = `<spam class="black">Color de ojos:</spam> ${characters[i].eye_color}`;
+            let datePopupHair = document.createElement('p');
+            datePopupHair.innerHTML = `<spam class="black">Color de pelo:</spam> ${characters[i].hair_color}`;
+            let datePopupspecieChar = document.createElement('p');
+            datePopupspecieChar.innerHTML = `<spam class="black">Especie:</spam> ${characters[i].specie}`;
+
+            let buttonClose = document.createElement('a');
+            buttonClose.classList.add('button-close');
+            buttonClose.setAttribute('href', '#')
+            buttonClose.setAttribute('id', 'button-close');
+            buttonClose.innerHTML = 'Volver';
+
+
+            divCharactersSub.appendChild(divCharacters);
+            divCharacters.appendChild(divPopupCharacters);
+            divPopupCharacters.appendChild(divPopupImgCharacters);
+            divPopupCharacters.appendChild(divPopupDescriptionChar);
+            divPopupDescriptionChar.appendChild(datePopupH5Char);
+            divPopupDescriptionChar.appendChild(datePopupAgeChar);
+            divPopupDescriptionChar.appendChild(datePopupGenderChar);
+            divPopupDescriptionChar.appendChild(datePopupEyeChar);
+            divPopupDescriptionChar.appendChild(datePopupHair);
+            divPopupDescriptionChar.appendChild(datePopupspecieChar);
+            divPopupDescriptionChar.appendChild(buttonClose);
+            //divCharactersSub.appendChild(buttonClose);
         });
     }
 
@@ -161,7 +193,12 @@ export function newContainer(e) {
                 datePopupWater.innerHTML = `<spam class="black">Superficie de agua:</spam> ${location[i].surface_water}`;
                 let datePopupresidents = document.createElement('p');
                 datePopupresidents.innerHTML = `<spam class="black">Habitantes:</spam> ${location[i].residents}`;
+                let buttonClose = document.createElement('a');
+                buttonClose.classList.add('button-close');
+                buttonClose.setAttribute('href', '#')
+                buttonClose.setAttribute('id', 'button-close');
 
+                buttonClose.innerHTML = 'Volver';
                 divPopupContainer.appendChild(divPopup);
                 divPopup.appendChild(divPopupImg);
                 divPopup.appendChild(divPopupDescription);
@@ -170,6 +207,9 @@ export function newContainer(e) {
                 divPopupDescription.appendChild(datePopupTerrain);
                 divPopupDescription.appendChild(datePopupWater);
                 divPopupDescription.appendChild(datePopupresidents);
+                divPopupDescription.appendChild(buttonClose);
+
+
 
                 divOtherSub.appendChild(divPopupContainer);
             });
@@ -207,7 +247,11 @@ export function newContainer(e) {
                 datePopuplength.innerHTML = `<spam class="black">Length:</spam> ${vehicle[i].length}`;
                 let datePopupPiloto = document.createElement('p');
                 datePopupPiloto.innerHTML = `<spam class="black">Piloto:</spam> ${vehicle[i].pilot.name}`;
-
+                let buttonClose = document.createElement('a');
+                buttonClose.classList.add('button-close');
+                buttonClose.setAttribute('href', '#')
+                buttonClose.setAttribute('id', 'button-close');
+                buttonClose.innerHTML = 'Volver';
 
 
                 divPopupContainer.appendChild(divPopup);
@@ -218,12 +262,13 @@ export function newContainer(e) {
                 divPopupDescription.appendChild(datePopupClass);
                 divPopupDescription.appendChild(datePopuplength);
                 divPopupDescription.appendChild(datePopupPiloto);
-
-
+                divPopupDescription.appendChild(buttonClose);
 
 
                 divOtherSub.appendChild(divPopupContainer);
+
             });
+
         }
 
     }

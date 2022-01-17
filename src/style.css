@@ -385,7 +385,7 @@ footer {
     object-fit: cover;
 }
 
-.movie__mainContent__card img:hover {
+.movie__mainContent__card .movie__img:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
@@ -477,21 +477,21 @@ footer {
     font-size: 18px;
     font-weight: bold;
 }
-/*
-.popup a{
+
+.popup .button-close{
     text-decoration: none;
     padding: 5px 20px;
     line-height: 65px;
-    color: #fff;
+    color: black;
     background: #079215;
     border-radius: 15px;
     box-shadow: 2px 2px 5px gray;
     font-size: 14px;
     transition: .3s ease all;
 }
-.popup a:hover{
+.popup .button-close:hover{
     background: #005c09;
-} */
+} 
 .popup.active {opacity: 1; transform: scale(1); /*animacion*/
 }
 
