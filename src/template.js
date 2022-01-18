@@ -3,6 +3,8 @@ const containerMain = document.getElementById('main__animations');
 const footerMain = document.getElementById('footer');
 const body = document.querySelector('body');
 
+
+
 export function newContainer(e) {
     e.preventDefault;
     // Hace que al ingresar a la nueva pantalla la vista se vea desde el comienzo del html.
@@ -18,6 +20,7 @@ export function newContainer(e) {
     headerH1.classList.add('movie__header__h1')
     containerMain.style.display = 'none';
     footerMain.remove();
+
 
     //Crea el nuevo contenedor main que abarcara las pestañas
     let peliContainer = document.createElement("main");
@@ -53,6 +56,7 @@ export function newContainer(e) {
     divDescription.classList.add('movie__description')
     divDescription.innerHTML = `<p>${e.description}</p>`;
 
+
     // Sección Personajes.
     //  personajes
     const characters = e.people;
@@ -73,6 +77,8 @@ export function newContainer(e) {
     labelCharacters.innerHTML = `Personajes`;
     let movieDiv = document.createElement('div');
     movieDiv.classList.add('movie__div');
+
+
     for (let i = 0; i < characters.length; i++) {
 
         movieDiv.innerHTML += `
@@ -139,8 +145,13 @@ export function newContainer(e) {
 
             cerrarPopup.addEventListener("click", function (e) {
                 e.preventDefault();
-                overlay.classList.remove("active");
-                popup.classList.remove("active");
+                if (e.target) {
+                    overlay.classList.remove("active");
+                    popup.classList.remove("active");
+                } else {
+                    overlay.classList.add("active");
+                    popup.classList.add("active");
+                }
             });
         });
     }
@@ -148,6 +159,7 @@ export function newContainer(e) {
     // Sección Vehiculos y locación;
     let location = e.locations;
     let vehicle = e.vehicles;
+
     let inputOther = document.createElement('input');
     let labelOther = document.createElement('label');
     let divOther = document.createElement('div');
@@ -172,10 +184,6 @@ export function newContainer(e) {
 
             let movieDivImg = movieDivLocation.querySelector('.movie__img');
             const locationId = location[i].id;
-
-            let movieDivImg = movieDivLocation.querySelector('.movie__img');
-            const locationId = location[i].id;
-
 
             movieDivImg.setAttribute("id", locationId);
             divOtherSub.appendChild(movieDivImg);
@@ -230,6 +238,8 @@ export function newContainer(e) {
                 divPopupDescription.appendChild(datePopupWater);
                 divPopupDescription.appendChild(datePopupresidents);
                 divPopupDescription.appendChild(buttonClose);
+
+
 
                 divOtherSub.appendChild(divPopupContainer);
                 //cerrar pop up, solo cierra una vez - ARREGLAR
@@ -294,14 +304,12 @@ export function newContainer(e) {
                 divPopupDescription.appendChild(datePopuplength);
                 divPopupDescription.appendChild(datePopupPiloto);
                 divPopupDescription.appendChild(buttonClose);
-
                 divOtherSub.appendChild(divPopupContainer);
 
                 //cerrar pop up, solo cierra una vez - ARREGLAR
                 const overlay = document.getElementById("overlay");
                 const popup = document.getElementById("popup");
                 const cerrarPopup = document.getElementById("btn__cerrar__popup");
-
 
                 cerrarPopup.addEventListener("click", function (e) {
                     e.preventDefault();
@@ -314,10 +322,6 @@ export function newContainer(e) {
         }
 
     }
-
-
-    }
-
 
     // Despliega en la pantalla el contenedor del Main
     body.appendChild(peliContainer);
@@ -342,9 +346,7 @@ export function newContainer(e) {
     divOther.appendChild(divOtherSub);
     // Despliega el footer
     body.appendChild(footerMain);
-}
 
 
 
 }
-
