@@ -2,6 +2,7 @@ const headerMain = document.getElementById('header')
 const containerMain = document.getElementById('main__animations');
 const footerMain = document.getElementById('footer');
 const body = document.querySelector('body');
+
 export function newContainer(e) {
     e.preventDefault;
     // Hace que al ingresar a la nueva pantalla la vista se vea desde el comienzo del html.
@@ -17,6 +18,7 @@ export function newContainer(e) {
     headerH1.classList.add('movie__header__h1')
     containerMain.style.display = 'none';
     footerMain.remove();
+
     //Crea el nuevo contenedor main que abarcara las pestañas
     let peliContainer = document.createElement("main");
     // Agrego el estilo para el contenedor main creado en css.
@@ -36,6 +38,7 @@ export function newContainer(e) {
     // Container de pestañas Tab
     let tabContainer = document.createElement("section");
     tabContainer.classList.add('movie__mainContent');
+
     // Sección Descripción pelicula.
     let inputDescription = document.createElement('input');
     let labelDescription = document.createElement('label');
@@ -49,6 +52,7 @@ export function newContainer(e) {
     labelDescription.innerHTML = `Descripción`;
     divDescription.classList.add('movie__description')
     divDescription.innerHTML = `<p>${e.description}</p>`;
+
     // Sección Personajes.
     //  personajes
     const characters = e.people;
@@ -58,6 +62,7 @@ export function newContainer(e) {
     let divFilterAndCount = document.createElement('div');
     divFilterAndCount.classList.add('characters__filtersAndCount');
     divFilterAndCount.innerHTML = `<p id="countFilms"><spam class="countBlue">Estas visualizando:</spam> ${e.people.length} personajes</p>`;
+
     divCharacters.classList.add('tab');
     let divCharactersSub = document.createElement('div');
     divCharactersSub.classList.add('movie__mainContent__card');
@@ -69,9 +74,11 @@ export function newContainer(e) {
     let movieDiv = document.createElement('div');
     movieDiv.classList.add('movie__div');
     for (let i = 0; i < characters.length; i++) {
+
         movieDiv.innerHTML += `
         <img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro">`;
         let movieImg = movieDiv.querySelector('.movie__img');
+
         const charactersId = characters[i].id;
         movieImg.setAttribute("id", charactersId);
 
@@ -152,16 +159,24 @@ export function newContainer(e) {
     inputOther.setAttribute("id", "tabthree");
     labelOther.setAttribute("for", "tabthree");
     labelOther.innerHTML = `Locación y Vehículo`;
+
     let movieDivLocation = document.createElement('div');
     movieDivLocation.classList.add('movie__div');
+
     if (location.length === 0 && vehicle.length === 0) {
         divOtherSub.innerHTML = `<p> Aquí no hay nada!!</p>
         <div><img class="movie__img" src="https://static.vix.com/es/sites/default/files/s/studio_ghibli-5.gif" alt="No hay locaciones ni vehiculos!"></div>`
     } else {
         for (let i = 0; i < location.length; i++) {
             movieDivLocation.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">`;
+
             let movieDivImg = movieDivLocation.querySelector('.movie__img');
             const locationId = location[i].id;
+
+            let movieDivImg = movieDivLocation.querySelector('.movie__img');
+            const locationId = location[i].id;
+
+
             movieDivImg.setAttribute("id", locationId);
             divOtherSub.appendChild(movieDivImg);
 
@@ -216,7 +231,6 @@ export function newContainer(e) {
                 divPopupDescription.appendChild(datePopupresidents);
                 divPopupDescription.appendChild(buttonClose);
 
-
                 divOtherSub.appendChild(divPopupContainer);
                 //cerrar pop up, solo cierra una vez - ARREGLAR
                 const overlay = document.getElementById("overlay");
@@ -234,10 +248,12 @@ export function newContainer(e) {
         }
         for (let i = 0; i < vehicle.length; i++) {
             movieDivLocation.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">`;
+
             let movieVehicle = movieDivLocation.querySelector('.movie__img');
             const vehicleId = vehicle[i].id;
             movieVehicle.setAttribute("id", vehicleId);
             divOtherSub.appendChild(movieVehicle);
+
             movieVehicle.addEventListener("click", () => {
                 let divPopupContainer = document.createElement('div');
                 divPopupContainer.classList.add('overlay');
@@ -296,7 +312,13 @@ export function newContainer(e) {
             });
 
         }
+
     }
+
+
+    }
+
+
     // Despliega en la pantalla el contenedor del Main
     body.appendChild(peliContainer);
     // Despliega en la pantalla el contenedor del sidebar.
@@ -321,3 +343,8 @@ export function newContainer(e) {
     // Despliega el footer
     body.appendChild(footerMain);
 }
+
+
+
+}
+

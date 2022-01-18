@@ -123,7 +123,7 @@ p {
 .countFilms {
     margin-bottom: 20px;
 }
-.filters, .movie__filters {
+.filters {
     display: flex;
     justify-content: flex-end;
     gap: 0px 10px;
@@ -363,7 +363,7 @@ footer {
 .characters__filtersAndCount {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: start;
     margin-bottom: 30px;
 }
 
@@ -384,7 +384,7 @@ footer {
     object-fit: cover;
 }
 
-.movie__mainContent__card img:hover {
+.movie__mainContent__card .movie__img:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
@@ -461,6 +461,7 @@ footer {
     font-size: 2rem;
     font-weight: bold;
 }
+
 .btn__cerrar__popup{
     text-decoration: none;
     padding: 5px 20px;
@@ -474,11 +475,13 @@ footer {
 }
 .btn__cerrar__popup:hover{
     background: var(--bluedark--color);
-}
+
 .popup.active {
     opacity: 1;
     transform: scale(1); /*animacion*/
-}
 
-/****************** Sección vehiculos  **********************/
+} 
+.popup.active {opacity: 1; transform: scale(1); /*animacion*/
+
+
 
