@@ -1,5 +1,4 @@
 import { filterAZ, filterZA, filterDataYearAsc, filterDataYearDesc, filterDataDirector, filterDataProducer } from './data.js';
-import { newContainer } from './template.js';
 
 import { newContainer } from './template.js';
 
@@ -12,8 +11,13 @@ const filterXDirector = document.getElementById('filters__director');
 const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 
+
+
 // Creación de tarjetas dinamicas que llama información del objeto.data.ghibli
 // Se crea una función que lleva dentro un forEach que recorre el parametro que le de creando así las tarjetas. Al final llamo a la función y le doy el parametro de la data del estudio ghibli para que pueda crear las tarjetas.
+
+
+
 const displayCardGhibli = (ghibliData) => {
     containerAnimationes.innerHTML = "";
     //contador de peliculas segun filtro
@@ -36,15 +40,24 @@ const displayCardGhibli = (ghibliData) => {
         cardAnimations.setAttribute("id", idObjetCard);
         // Despligue tarjetas de peliculas.
         containerAnimationes.appendChild(cardAnimations);
+
         // Tiene que ir adentro para que funcione al dar click en todas las tarjetas, incluso a las que se toman con filtro. 
+
         //Evento a la tarjeta con el id incluido y llamá a la función que crea la nueva pantalla.
         cardAnimations.addEventListener("click", () => {
             newContainer(arr);
         });
+
+
+
     });
+
 };
 displayCardGhibli(dataStudioGhibli);
+
+
 // Filtrar de la A a la Z y de la Z a la A
+
 filterLetterOrder.addEventListener('change', () => {
     if (filterLetterOrder.value === "0") {
         const filterLetterAZ = filterAZ(dataStudioGhibli,);
@@ -55,6 +68,7 @@ filterLetterOrder.addEventListener('change', () => {
         displayCardGhibli(filterLetterZA);
     }
 })
+
 //filtrar por director
 filterXDirector.addEventListener('change', () => {
     switch (filterXDirector.value) {
@@ -81,6 +95,7 @@ filterXDirector.addEventListener('change', () => {
             break;
     }
 })
+
 //filtrar por productor
 filterXProducer.addEventListener('change', () => {
     switch (filterXProducer.value) {
@@ -104,6 +119,7 @@ filterXProducer.addEventListener('change', () => {
             break;
     }
 })
+
 // Ordenar los años de menor a mayor y viceversa
 filterYear.addEventListener('change', () => {
     if (filterYear.value === '0') {
