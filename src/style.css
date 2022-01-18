@@ -366,12 +366,7 @@ footer {
     justify-content: space-between;
     margin-bottom: 30px;
 }
-.movie__filters select{
-    border: 1px solid var(--blue--color);
-}
-.movie__filters .filters__initial{
-    width: 50px;
-}
+
 .movie__mainContent__card {
     display: flex;
     flex-wrap: wrap;
@@ -401,22 +396,7 @@ footer {
     padding: 0px 25px;
     margin-top: 50px;
 }
-.movie__filters select {
-    width: 95px;
-    height: 25px;
-    font-size: 16px;
-    border-radius: 5px;
-}
-.movie__filters select option {
-    font-size: 16px;
-}
 
-.movie__filters select {
-    width: 95px;
-    height: 25px;
-    font-size: 16px;
-    border-radius: 5px;
-}
 @media (max-width: 575.98px) { 
     .movie__mainContent__filterAndCount {
         justify-content:center;
@@ -445,7 +425,7 @@ footer {
 .overlay.active {
     visibility: visible;
 }
-.overlay .popup {
+.popup {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -459,29 +439,29 @@ footer {
     transform: scale(0.7);
     opacity: 0;
 }
-.overlay .popup img{
+.popup img{
     width: 40%;
     object-fit: cover;
 }
-.overlay .popup .character__description{
+.popup .character__description{
     width: 50%;
     padding-left: 20px;
 }
-.overlay .popup .character__description h5 {
+.popup .character__description h5 {
     color: var(--blue--color);
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-.overlay .popup .character__description p{
+.popup .character__description p{
     font-size: 2rem;
     line-height: 24px;
 }
-.overlay .popup .character__description p .black{
+.popup .character__description p .black{
     font-size: 2rem;
     font-weight: bold;
 }
-.overlay .popup .character__description a{
+.btn__cerrar__popup{
     text-decoration: none;
     padding: 5px 20px;
     line-height: 65px;
@@ -492,10 +472,10 @@ footer {
     font-size: 14px;
     transition: .3s ease all;
 }
-.overlay .popup .character__description a:hover{
+.btn__cerrar__popup:hover{
     background: var(--bluedark--color);
 }
-.overlay .popup.active {
+.popup.active {
     opacity: 1;
     transform: scale(1); /*animacion*/
 }
