@@ -64,6 +64,7 @@ const displayCardGhibli = (ghibliData) => {
             containerMain.style.display = 'none';
             footerMain.remove();
 
+
             //Crea el nuevo contenedor main de los personajes
             let peliContainer = document.createElement("main");
             // Agrego el estilo para el contenedor main creado en css.
@@ -94,7 +95,9 @@ const displayCardGhibli = (ghibliData) => {
             inputDescription.setAttribute("checked", "checked");
             labelDescription.setAttribute("for", "tabone");
             labelDescription.innerHTML = `Descripción`;
+            divDescription.classList.add('movie__description')
             divDescription.innerHTML = `<p>${arr.description}</p>`;
+
             // Sección Personajes.
             //  personajes
             const characters = arr.people;
@@ -133,56 +136,24 @@ const displayCardGhibli = (ghibliData) => {
             inputCharacters.setAttribute("id", "tabtwo");
             labelCharacters.setAttribute("for", "tabtwo");
             labelCharacters.innerHTML = `Personajes`;
+            let movieDiv = document.createElement('div');
+            movieDiv.classList.add('movie__div');
             for (let i = 0; i < characters.length; i++) {
-                divCharactersSub.innerHTML += `<div class="movie__div"><img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro"></div>`;
-            }
-            //guardo el id del personaje
-            const idPeopleCard = characters.id;
-            //agrego el atributo id a la tarjetas de personajes
-            divCharactersSub.setAttribute("id", idPeopleCard);
-            // creamos un evento al personaje y llamamos a una nueva funcion de popup
-            divCharactersSub.addEventListener("click", newCharacter); 
 
-            //POPUP PERSONAJE
-            function newCharacter(e) {
-                e.preventDefault();
-                const contentCharacterOverlay = document.createElement("div");
-                const contentCharacterPopup = document.createElement("div");
-                contentCharacterOverlay.classList.add("overlay");
-                contentCharacterOverlay.classList.add("active");
-                contentCharacterPopup.classList.add("popup");
-                contentCharacterPopup.classList.add("active");
-                contentCharacterOverlay.setAttribute("id", "overlay");
-                contentCharacterPopup.setAttribute("id", "popup");
-                contentCharacterPopup.innerHTML = `<img src="${characters.img}" alt="imagen del personaje">
-                <div class="character__description">
-                    <h5>${characters.name}</h5>
-                    <p><spam class="black">Edad:</spam> ${characters.age}</p>
-                    <p><spam class="black">Género:</spam> ${characters.gender}</p>
-                    <p><spam class="black">Color de ojos:</spam> ${characters.eye_color}</p>
-                    <p><spam class="black">Color de pelo:</spam> ${characters.hair_color}</p>
-                    <p><spam class="black">Especie:</spam> ${characters.specie}</p>
-                    <a href="#" id="btn__cerrar">CERRAR</a>
-                </div>`;
-                //desplegamos pop up personaje
-                body.appendChild(contentCharacterOverlay);
-                contentCharacterOverlay.appendChild(contentCharacterPopup);
-                //evento para cerrar pop up
-                const cerrarPopup = document.getElementById("btn__cerrar");
-                cerrarPopup.addEventListener("click", function(e){
-                e.preventDefault();
-                contentCharacterOverlay.classList.remove("active");
-                contentCharacterPopup.classList.remove("active");
-                });
-            };
-            /*for (let i = 0; i < characters.length; i++) {
-                divCharactersSub.innerHTML += `
-                <div class="movie__div">
-                    <img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro">
-                </div>`;
-                //let movieDiv = document.querySelector('.movie__div');
-                //console.log(movieDiv);
-                divCharactersSub.addEventListener("click", () => {
+                movieDiv.innerHTML += `
+                <img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro">`;
+                let movieImg = movieDiv.querySelector('.movie__img');
+
+                const charactersId = characters[i].id;
+                movieImg.setAttribute("id", charactersId);
+
+                divCharactersSub.appendChild(movieImg);
+
+                // Tiene que ir adentro para que funcione al dar click en todas las tarjetas, incluso a las que se toman con filtro. 
+
+                //Evento a la tarjeta con el id incluido y llamá a la función que crea la nueva pantalla.
+
+                movieImg.addEventListener("click", () => {
                     divCharactersSub.innerHTML += ` <div class="overlay active" id="overlay">
                         <div class="popup active" id="popup">
                             <img src="${characters[i].img}" alt="imagen del personaje">
@@ -190,11 +161,28 @@ const displayCardGhibli = (ghibliData) => {
                                 <h5>${characters[i].name}</h5>
                                 <p><spam class="black">Edad:</spam> ${characters[i].age}</p>
                                 <p><spam class="black">Género:</spam> ${characters[i].gender}</p>
-*/
-            
+                                <p><spam class="black">Color de ojos:</spam> ${characters[i].eye_color}</p>
+                                <p><spam class="black">Color de pelo:</spam> ${characters[i].hair_color}</p>
+                                <p><spam class="black">Especie:</spam> ${characters[i].specie}</p>
+                                <a href="#" id="btn__cerrar__popup">CERRAR</a>
+                            </div>
+                        </div>
+                    </div>`;
+                    //cerrar pop up, solo cierra una vez - ARREGLAR
+                    const overlay = document.getElementById("overlay");
+                    const popup = document.getElementById("popup");
+                    const cerrarPopup = document.getElementById("btn__cerrar__popup");
+                    cerrarPopup.addEventListener("click", function(e){
+                        e.preventDefault();
+                        overlay.classList.remove("active");
+                        popup.classList.remove("active");
+                    });
+                });
+            }
             // Sección Vehiculos y locación;
             let location = arr.locations;
             let vehicle = arr.vehicles;
+
             let inputOther = document.createElement('input');
             let labelOther = document.createElement('label');
             let divOther = document.createElement('div');
@@ -206,16 +194,94 @@ const displayCardGhibli = (ghibliData) => {
             inputOther.setAttribute("id", "tabthree");
             labelOther.setAttribute("for", "tabthree");
             labelOther.innerHTML = `Locación y Vehículo`;
+
+            let movieDivLocation = document.createElement('div');
+            movieDivLocation.classList.add('movie__div');
+
             if (location.length === 0 && vehicle.length === 0) {
                 divOtherSub.innerHTML = `<p> Aquí no hay nada!!</p>
                 <div><img class="movie__img" src="https://static.vix.com/es/sites/default/files/s/studio_ghibli-5.gif" alt="No hay locaciones ni vehiculos!"></div>`
             } else {
                 for (let i = 0; i < location.length; i++) {
-                    divOtherSub.innerHTML += `<div class="movie__div"><img class="movie__img" src="${location[i].img}" alt="imagen de locaciones"></div>`;
+                    movieDivLocation.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">`;
+
+                    let movieDivImg = movieDivLocation.querySelector('.movie__img');
+                    const locationId = location[i].id;
+
+                    movieDivImg.setAttribute("id", locationId);
+                    divOtherSub.appendChild(movieDivImg);
+
+                    //busqueda de los residentes
+                    const arrayResidents = location[i].residents;
+                    console.log(arrayResidents);
+                    let arrayNamesResidents = arrayResidents.map((habitantes) => {
+                        if(habitantes === "TODO"){
+                            return "Todos los personajes";
+                        } else{
+                            return habitantes.name;
+                        }
+                    });
+                        
+                    movieDivImg.addEventListener("click", () => {
+                        divOtherSub.innerHTML += ` <div class="overlay active" id="overlay">
+                            <div class="popup active" id="popup">
+                                <img src="${location[i].img}" alt="imagen del personaje">
+                                <div class="character__description">
+                                    <h5>${location[i].name}</h5>
+                                    <p><spam class="black">Clima:</spam> ${location[i].climate}</p>
+                                    <p><spam class="black">Terreno:</spam> ${location[i].terrain}</p>
+                                    <p><spam class="black">Superficie de agua:</spam> ${location[i].surface_water}</p>
+                                    <p><spam class="black">Habitantes:</spam> ${arrayNamesResidents}</p>
+                                    <a href="#" id="btn__cerrar__popup">CERRAR</a>
+                                 </div>
+                            </div>
+                        </div>`;
+                        //cerrar pop up, solo cierra una vez - ARREGLAR
+                    const overlay = document.getElementById("overlay");
+                    const popup = document.getElementById("popup");
+                    const cerrarPopup = document.getElementById("btn__cerrar__popup");
+                    cerrarPopup.addEventListener("click", function(e){
+                        e.preventDefault();
+                        overlay.classList.remove("active");
+                        popup.classList.remove("active");
+                    });
+                    });
+
+                    for (let i = 0; i < vehicle.length; i++) {
+                        movieDivLocation.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">`;
+
+                        let movieVehicle = movieDivLocation.querySelector('.movie__img');
+                        const vehicleId = vehicle[i].id;
+                        movieVehicle.setAttribute("id", vehicleId);
+                        divOtherSub.appendChild(movieVehicle);
+
+                        movieVehicle.addEventListener("click", () => {
+                            divOtherSub.innerHTML += ` <div class="overlay active" id="overlay">
+                            <div class="popup active" id="popup">
+                                <img src="${vehicle[i].img}" alt="imagen del personaje">
+                                <div class="character__description">
+                                    <h5>${vehicle[i].name}</h5>
+                                    <p><spam class="black">Descripción::</spam> ${vehicle[i].description}</p>
+                                    <p><spam class="black">Clase:</spam> ${vehicle[i].vehicle_class}</p>
+                                    <p><spam class="black">Length:</spam> ${vehicle[i].length}</p>
+                                    <p><spam class="black">Piloto:</spam> ${vehicle[i].pilot.name}</p>
+                                    <a href="#" id="btn__cerrar__popup">CERRAR</a>
+                                </div>
+                            </div>
+                        </div>`;
+                        //cerrar pop up, solo cierra una vez - ARREGLAR
+                    const overlay = document.getElementById("overlay");
+                    const popup = document.getElementById("popup");
+                    const cerrarPopup = document.getElementById("btn__cerrar__popup");
+                    cerrarPopup.addEventListener("click", function(e){
+                        e.preventDefault();
+                        overlay.classList.remove("active");
+                        popup.classList.remove("active");
+                    });
+                        });
+                    }
                 }
-                for (let i = 0; i < vehicle.length; i++) {
-                    divOtherSub.innerHTML += `<div class="movie__div"><img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos"></div>`;
-                }
+
             }
 
             // Despliega en la pantalla el contenedor del Main
@@ -239,11 +305,11 @@ const displayCardGhibli = (ghibliData) => {
             tabContainer.appendChild(labelOther);
             tabContainer.appendChild(divOther);
             divOther.appendChild(divOtherSub);
-
+            // Despliega el footer
             body.appendChild(footerMain);
 
             // Ahora hay que seguir creando las siguientes secciones basado en el contenido que tengamos en peliculas.html
-             
+
         }
 
     });
@@ -330,7 +396,7 @@ filterYear.addEventListener('change', () => {
 
 /******************************Filtros personajes **********************/
 
-            // Filtrar de la A a la Z y de la Z a la A
+            /* Filtrar de la A a la Z y de la Z a la A
             filterLetterCharacter.addEventListener('change', () => {
                 if (filterLetterCharacter.value === "0") {
                     const filterLetterAZ = filterAZ(dataStudioGhibli);
@@ -340,4 +406,4 @@ filterYear.addEventListener('change', () => {
                     const filterLetterZA = filterZA(dataStudioGhibli);
                     divCharactersSub(filterLetterZA);
                 }
-            });
+            });*/

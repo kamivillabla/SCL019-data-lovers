@@ -710,7 +710,7 @@ export default {
         {
           "id": "4a2e2cee-08ca-4d44-9564-2b3e5421bafb",
           "name": "Fio Piccolo",
-          "img": "https://static.wikia.nocookie.net/studio-ghibli/images/1/16/Fio_%282%29.jpg",
+          "img": "https://static.wikia.nocookie.net/disney/images/0/0f/Fio_2.jpg",
           "gender": "Female",
           "age": "17",
           "eye_color": "Brown",

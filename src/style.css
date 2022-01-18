@@ -54,7 +54,7 @@ p {
 }
 
 .header p {
-    max-width: 50%;
+    width: 50%;
     color: var(--white-color);
     font-size: 2.3rem;
 }
@@ -81,7 +81,7 @@ p {
         font-size: 1.6rem;
     }
     .header p {
-        max-width: 100%;
+        width: 100%;
     }
 }
 /* Se agregan cambios de estilo hasta pantallas máxima de 991. Osea de pantallas de tipo tablet. */
@@ -119,6 +119,9 @@ p {
 .countBlue{
     color: var(--blue--color);
     font-size: 2rem;
+}
+.countFilms {
+    margin-bottom: 20px;
 }
 .filters, .movie__filters {
     display: flex;
@@ -216,7 +219,6 @@ footer {
 .movie__container{
     display: flex;
     flex-wrap: nowrap;
-    margin: 0 50px;
 }
 
 .movie__sidebar {
@@ -350,6 +352,12 @@ footer {
    
 }
 
+/************************** Sección descripción ************/
+
+.movie__description {
+    height: 100vh;
+}
+
 /****************** Sección Personajes  **********************/
 
 .characters__filtersAndCount {
@@ -371,11 +379,9 @@ footer {
     align-items: center;
     gap: 40px 0px;
 }
-.movie__div {
-    width: 30rem;
-}
+
 .movie__img {
-    width: 100%;
+    width: 30rem;
     height: 30rem;
     border-radius: 8px;
     box-shadow: 0px 1px 10px var(--shadow-black);
@@ -447,14 +453,14 @@ footer {
     box-shadow: 0px 0px 15px 0px rgba(12, 73, 163, 0.781);
     border-radius: 5px;
     padding: 25px;
-    width: 500px;
-    height: 270px;
+    width: 60%;
+    height: 55%;
     transition: .3s ease all;
     transform: scale(0.7);
     opacity: 0;
 }
 .overlay .popup img{
-    width: 50%;
+    width: 40%;
     object-fit: cover;
 }
 .overlay .popup .character__description{
