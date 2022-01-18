@@ -3,8 +3,6 @@ const containerMain = document.getElementById('main__animations');
 const footerMain = document.getElementById('footer');
 const body = document.querySelector('body');
 
-
-
 export function newContainer(e) {
     e.preventDefault;
     // Hace que al ingresar a la nueva pantalla la vista se vea desde el comienzo del html.
@@ -20,7 +18,6 @@ export function newContainer(e) {
     headerH1.classList.add('movie__header__h1')
     containerMain.style.display = 'none';
     footerMain.remove();
-
 
     //Crea el nuevo contenedor main que abarcara las pestañas
     let peliContainer = document.createElement("main");
@@ -55,7 +52,6 @@ export function newContainer(e) {
     labelDescription.innerHTML = `Descripción`;
     divDescription.classList.add('movie__description')
     divDescription.innerHTML = `<p>${e.description}</p>`;
-
 
     // Sección Personajes.
     //  personajes
@@ -152,7 +148,6 @@ export function newContainer(e) {
     // Sección Vehiculos y locación;
     let location = e.locations;
     let vehicle = e.vehicles;
-
     let inputOther = document.createElement('input');
     let labelOther = document.createElement('label');
     let divOther = document.createElement('div');
@@ -177,6 +172,10 @@ export function newContainer(e) {
 
             let movieDivImg = movieDivLocation.querySelector('.movie__img');
             const locationId = location[i].id;
+
+            let movieDivImg = movieDivLocation.querySelector('.movie__img');
+            const locationId = location[i].id;
+
 
             movieDivImg.setAttribute("id", locationId);
             divOtherSub.appendChild(movieDivImg);
@@ -231,8 +230,6 @@ export function newContainer(e) {
                 divPopupDescription.appendChild(datePopupWater);
                 divPopupDescription.appendChild(datePopupresidents);
                 divPopupDescription.appendChild(buttonClose);
-
-
 
                 divOtherSub.appendChild(divPopupContainer);
                 //cerrar pop up, solo cierra una vez - ARREGLAR
@@ -298,7 +295,6 @@ export function newContainer(e) {
                 divPopupDescription.appendChild(datePopupPiloto);
                 divPopupDescription.appendChild(buttonClose);
 
-
                 divOtherSub.appendChild(divPopupContainer);
 
                 //cerrar pop up, solo cierra una vez - ARREGLAR
@@ -318,6 +314,10 @@ export function newContainer(e) {
         }
 
     }
+
+
+    }
+
 
     // Despliega en la pantalla el contenedor del Main
     body.appendChild(peliContainer);
@@ -342,7 +342,9 @@ export function newContainer(e) {
     divOther.appendChild(divOtherSub);
     // Despliega el footer
     body.appendChild(footerMain);
+}
 
 
 
 }
+
