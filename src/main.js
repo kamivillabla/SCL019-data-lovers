@@ -4,7 +4,6 @@ import { newContainer } from './template.js';
 
 import data from './data/ghibli/ghibli.js';
 
-// variables globales
 const dataStudioGhibli = data.films;
 const containerAnimationes = document.getElementById('animations');
 const filterLetterOrder = document.getElementById('filters__initial');

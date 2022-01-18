@@ -86,6 +86,8 @@ export function newContainer(e) {
         const charactersId = characters[i].id;
         movieImg.setAttribute("id", charactersId);
 
+
+
         divCharactersSub.appendChild(movieImg);
 
         movieImg.addEventListener("click", () => {
@@ -116,11 +118,10 @@ export function newContainer(e) {
             datePopupspecieChar.innerHTML = `<spam class="black">Especie:</spam> ${characters[i].specie}`;
 
             let buttonClose = document.createElement('a');
-            buttonClose.classList.add('button-close');
             buttonClose.setAttribute('href', '#')
-            buttonClose.setAttribute('id', 'button-close');
-            buttonClose.innerHTML = 'Volver';
-
+            buttonClose.setAttribute('id', 'btn__cerrar__popup')
+            buttonClose.classList.add('btn__cerrar__popup');
+            buttonClose.innerHTML = 'Cerrar';
 
             divCharactersSub.appendChild(divCharacters);
             divCharacters.appendChild(divPopupCharacters);
@@ -133,7 +134,18 @@ export function newContainer(e) {
             divPopupDescriptionChar.appendChild(datePopupHair);
             divPopupDescriptionChar.appendChild(datePopupspecieChar);
             divPopupDescriptionChar.appendChild(buttonClose);
-            //divCharactersSub.appendChild(buttonClose);
+
+            //cerrar pop up, solo cierra una vez - ARREGLAR
+            const overlay = document.getElementById("overlay");
+            const popup = document.getElementById("popup");
+            const cerrarPopup = document.getElementById("btn__cerrar__popup");
+
+
+            cerrarPopup.addEventListener("click", function (e) {
+                e.preventDefault();
+                overlay.classList.remove("active");
+                popup.classList.remove("active");
+            });
         });
     }
 
@@ -169,6 +181,17 @@ export function newContainer(e) {
             movieDivImg.setAttribute("id", locationId);
             divOtherSub.appendChild(movieDivImg);
 
+            //busqueda de los residentes
+            const arrayResidents = location[i].residents;
+            //console.log(arrayResidents);
+            let arrayNamesResidents = arrayResidents.map((habitantes) => {
+                if (habitantes === "TODO") {
+                    return "Todos los personajes";
+                } else {
+                    return habitantes.name;
+                }
+            });
+
             movieDivImg.addEventListener("click", () => {
                 let divPopupContainer = document.createElement('div');
                 divPopupContainer.classList.add('overlay');
@@ -192,13 +215,13 @@ export function newContainer(e) {
                 let datePopupWater = document.createElement('p');
                 datePopupWater.innerHTML = `<spam class="black">Superficie de agua:</spam> ${location[i].surface_water}`;
                 let datePopupresidents = document.createElement('p');
-                datePopupresidents.innerHTML = `<spam class="black">Habitantes:</spam> ${location[i].residents}`;
+                datePopupresidents.innerHTML = `<spam class="black">Habitantes:</spam> ${arrayNamesResidents}`;
                 let buttonClose = document.createElement('a');
-                buttonClose.classList.add('button-close');
                 buttonClose.setAttribute('href', '#')
-                buttonClose.setAttribute('id', 'button-close');
+                buttonClose.setAttribute('id', 'btn__cerrar__popup')
+                buttonClose.classList.add('btn__cerrar__popup');
+                buttonClose.innerHTML = 'Cerrar';
 
-                buttonClose.innerHTML = 'Volver';
                 divPopupContainer.appendChild(divPopup);
                 divPopup.appendChild(divPopupImg);
                 divPopup.appendChild(divPopupDescription);
@@ -212,6 +235,17 @@ export function newContainer(e) {
 
 
                 divOtherSub.appendChild(divPopupContainer);
+                //cerrar pop up, solo cierra una vez - ARREGLAR
+                const overlay = document.getElementById("overlay");
+                const popup = document.getElementById("popup");
+                const cerrarPopup = document.getElementById("btn__cerrar__popup");
+
+
+                cerrarPopup.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    overlay.classList.remove("active");
+                    popup.classList.remove("active");
+                });
             });
 
         }
@@ -248,10 +282,10 @@ export function newContainer(e) {
                 let datePopupPiloto = document.createElement('p');
                 datePopupPiloto.innerHTML = `<spam class="black">Piloto:</spam> ${vehicle[i].pilot.name}`;
                 let buttonClose = document.createElement('a');
-                buttonClose.classList.add('button-close');
                 buttonClose.setAttribute('href', '#')
-                buttonClose.setAttribute('id', 'button-close');
-                buttonClose.innerHTML = 'Volver';
+                buttonClose.setAttribute('id', 'btn__cerrar__popup')
+                buttonClose.classList.add('btn__cerrar__popup');
+                buttonClose.innerHTML = 'Cerrar';
 
 
                 divPopupContainer.appendChild(divPopup);
@@ -266,6 +300,18 @@ export function newContainer(e) {
 
 
                 divOtherSub.appendChild(divPopupContainer);
+
+                //cerrar pop up, solo cierra una vez - ARREGLAR
+                const overlay = document.getElementById("overlay");
+                const popup = document.getElementById("popup");
+                const cerrarPopup = document.getElementById("btn__cerrar__popup");
+
+
+                cerrarPopup.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    overlay.classList.remove("active");
+                    popup.classList.remove("active");
+                });
 
             });
 

@@ -362,12 +362,7 @@ footer {
     justify-content: start;
     margin-bottom: 30px;
 }
-/* .movie__filters select{
-    border: 1px solid var(--blue--color);
-}
-.movie__filters .filters__initial{
-    width: 50px;
-} */
+
 .movie__mainContent__card {
     display: flex;
     flex-wrap: wrap;
@@ -397,22 +392,7 @@ footer {
     padding: 0px 25px;
     margin-top: 50px;
 }
-/* .movie__filters select {
-    width: 95px;
-    height: 25px;
-    font-size: 16px;
-    border-radius: 5px;
-}
-.movie__filters select option {
-    font-size: 16px;
-}
 
-.movie__filters select {
-    width: 95px;
-    height: 25px;
-    font-size: 16px;
-    border-radius: 5px;
-} */
 @media (max-width: 575.98px) { 
     .movie__mainContent__filterAndCount {
         justify-content:center;
@@ -478,22 +458,21 @@ footer {
     font-weight: bold;
 }
 
-.popup .button-close{
+.btn__cerrar__popup{
     text-decoration: none;
     padding: 5px 20px;
     line-height: 65px;
-    color: black;
-    background: #079215;
+    color: #fff;
+    background: var(--blue--color);
     border-radius: 15px;
     box-shadow: 2px 2px 5px gray;
     font-size: 14px;
     transition: .3s ease all;
 }
-.popup .button-close:hover{
-    background: #005c09;
+.btn__cerrar__popup:hover{
+    background: var(--bluedark--color);
 } 
 .popup.active {opacity: 1; transform: scale(1); /*animacion*/
 }
 
-/****************** Sección vehiculos  **********************/
 
