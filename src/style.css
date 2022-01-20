@@ -5,7 +5,9 @@
     font-size: 9px;
     font-family: 'Didact Gothic', sans-serif;
 }
-
+html{
+    scroll-behavior: smooth;
+}
     /* Colores predeterminados */
 :root { 
     --white-color: white;
@@ -407,7 +409,7 @@ footer {
 
 /*************** PopUp Personajes ************/
 .overlay {
-    background: rgba(0, 0, 0,.2);
+    background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -440,7 +442,7 @@ footer {
     object-fit: cover;
 }
 .popup .character__description{
-    width: 50%;
+    width: 60%;
     padding-left: 20px;
 }
 .popup .character__description h5 {
@@ -457,13 +459,12 @@ footer {
     font-size: 18px;
     font-weight: bold;
 }
-
 .btn__cerrar__popup{
-    text-decoration: none;
     padding: 5px 20px;
-    line-height: 65px;
+    margin-top: 20px;
     color: #fff;
     background: var(--blue--color);
+    border: none;
     border-radius: 15px;
     box-shadow: 2px 2px 5px gray;
     font-size: 14px;
@@ -474,10 +475,3 @@ footer {
 } 
 .popup.active {opacity: 1; transform: scale(1); /*animacion*/
 }
-
-
-
-
-
-
-
