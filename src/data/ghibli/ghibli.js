@@ -2426,7 +2426,11 @@ export default {
           "climate": "Mild",
           "terrain": "Marsh",
           "surface_water": "60",
-          "residents": []
+          "residents": [
+            {
+              "name": "No especificado"
+            },
+          ]
         }
       ],
       "vehicles": []

@@ -3,8 +3,6 @@ const containerMain = document.getElementById('main__animations');
 const footerMain = document.getElementById('footer');
 const body = document.querySelector('body');
 
-
-
 export function newContainer(e) {
     e.preventDefault;
     // Hace que al ingresar a la nueva pantalla la vista se vea desde el comienzo del html.
@@ -56,7 +54,6 @@ export function newContainer(e) {
     divDescription.classList.add('movie__description')
     divDescription.innerHTML = `<p>${e.description}</p>`;
 
-
     // Sección Personajes.
     //  personajes
     const characters = e.people;
@@ -80,73 +77,65 @@ export function newContainer(e) {
 
 
     for (let i = 0; i < characters.length; i++) {
-
         movieDiv.innerHTML += `
         <img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro">`;
-        let movieImg = movieDiv.querySelector('.movie__img');
 
+        let movieImg = movieDiv.querySelector('.movie__img');
         const charactersId = characters[i].id;
         movieImg.setAttribute("id", charactersId);
 
+        // POPUP / MODAL
+        let divCharacters = document.createElement('div');
+        divCharacters.classList.add('overlay');
+        divCharacters.setAttribute('id', 'overlay');
+        let divPopupCharacters = document.createElement('div');
+        divPopupCharacters.classList.add('popup');
+        divPopupCharacters.setAttribute('id', 'popup');
+        let divPopupImgCharacters = document.createElement('img');
+        divPopupImgCharacters.setAttribute('src', characters[i].img);
+        divPopupImgCharacters.setAttribute('alt', "imagen del personaje");
+        let divPopupDescriptionChar = document.createElement('div');
+        divPopupDescriptionChar.classList.add('character__description');
+        let datePopupH5Char = document.createElement('h5');
+        datePopupH5Char.innerHTML = `${characters[i].name}`;
+        let datePopupAgeChar = document.createElement('p');
+        datePopupAgeChar.innerHTML = `<spam class="black">Edad:</spam> ${characters[i].age}`;
+        let datePopupGenderChar = document.createElement('p');
+        datePopupGenderChar.innerHTML = `<spam class="black">Género:</spam> ${characters[i].gender}`;
+        let datePopupEyeChar = document.createElement('p');
+        datePopupEyeChar.innerHTML = `<spam class="black">Color de ojos:</spam> ${characters[i].eye_color}`;
+        let datePopupHair = document.createElement('p');
+        datePopupHair.innerHTML = `<spam class="black">Color de pelo:</spam> ${characters[i].hair_color}`;
+        let datePopupspecieChar = document.createElement('p');
+        datePopupspecieChar.innerHTML = `<spam class="black">Especie:</spam> ${characters[i].specie}`;
 
+        let buttonClose = document.createElement('button');
+        buttonClose.classList.add('btn__cerrar__popup');
+        buttonClose.innerHTML = 'CERRAR';
 
         divCharactersSub.appendChild(movieImg);
+        divCharactersSub.appendChild(divCharacters);
+        divCharacters.appendChild(divPopupCharacters);
+        divPopupCharacters.appendChild(divPopupImgCharacters);
+        divPopupCharacters.appendChild(divPopupDescriptionChar);
+        divPopupDescriptionChar.appendChild(datePopupH5Char);
+        divPopupDescriptionChar.appendChild(datePopupAgeChar);
+        divPopupDescriptionChar.appendChild(datePopupGenderChar);
+        divPopupDescriptionChar.appendChild(datePopupEyeChar);
+        divPopupDescriptionChar.appendChild(datePopupHair);
+        divPopupDescriptionChar.appendChild(datePopupspecieChar);
+        divPopupDescriptionChar.appendChild(buttonClose);
 
-        movieImg.addEventListener("click", () => {
-            let divCharacters = document.createElement('div');
-            divCharacters.classList.add('overlay');
-            divCharacters.classList.add('active');
-            divCharacters.setAttribute('id', 'overlay');
-            let divPopupCharacters = document.createElement('div');
-            divPopupCharacters.classList.add('popup');
-            divPopupCharacters.classList.add('active');
-            divPopupCharacters.setAttribute('id', 'popup');
-            let divPopupImgCharacters = document.createElement('img');
-            divPopupImgCharacters.setAttribute('src', characters[i].img);
-            divPopupImgCharacters.setAttribute('alt', "imagen del personaje");
-            let divPopupDescriptionChar = document.createElement('div');
-            divPopupDescriptionChar.classList.add('character__description');
-            let datePopupH5Char = document.createElement('h5');
-            datePopupH5Char.innerHTML = `${characters[i].name}`;
-            let datePopupAgeChar = document.createElement('p');
-            datePopupAgeChar.innerHTML = `<spam class="black">Edad:</spam> ${characters[i].age}`;
-            let datePopupGenderChar = document.createElement('p');
-            datePopupGenderChar.innerHTML = `<spam class="black">Género:</spam> ${characters[i].gender}`;
-            let datePopupEyeChar = document.createElement('p');
-            datePopupEyeChar.innerHTML = `<spam class="black">Color de ojos:</spam> ${characters[i].eye_color}`;
-            let datePopupHair = document.createElement('p');
-            datePopupHair.innerHTML = `<spam class="black">Color de pelo:</spam> ${characters[i].hair_color}`;
-            let datePopupspecieChar = document.createElement('p');
-            datePopupspecieChar.innerHTML = `<spam class="black">Especie:</spam> ${characters[i].specie}`;
-
-            let buttonClose = document.createElement('a');
-            buttonClose.setAttribute('href', '#')
-            buttonClose.setAttribute('id', 'btn__cerrar__popup')
-            buttonClose.classList.add('btn__cerrar__popup');
-            buttonClose.innerHTML = 'Cerrar';
-
-            divCharactersSub.appendChild(divCharacters);
-            divCharacters.appendChild(divPopupCharacters);
-            divPopupCharacters.appendChild(divPopupImgCharacters);
-            divPopupCharacters.appendChild(divPopupDescriptionChar);
-            divPopupDescriptionChar.appendChild(datePopupH5Char);
-            divPopupDescriptionChar.appendChild(datePopupAgeChar);
-            divPopupDescriptionChar.appendChild(datePopupGenderChar);
-            divPopupDescriptionChar.appendChild(datePopupEyeChar);
-            divPopupDescriptionChar.appendChild(datePopupHair);
-            divPopupDescriptionChar.appendChild(datePopupspecieChar);
-            divPopupDescriptionChar.appendChild(buttonClose);
-
-            //cerrar pop up, solo cierra una vez - ARREGLAR
-            const overlay = document.getElementById("overlay");
-            const popup = document.getElementById("popup");
-            const cerrarPopup = document.getElementById("btn__cerrar__popup");
-
-            cerrarPopup.addEventListener("click", function (e) {
-                e.preventDefault();
-                overlay.classList.remove("active");
-                popup.classList.remove("active");
-            });
+        //ABRIR Y CERRAR POP UP / MODAL
+        movieImg.addEventListener("click", function (e) {
+            e.preventDefault();
+            divCharacters.classList.add("active");
+            divPopupCharacters.classList.add("active");
+        });
+        buttonClose.addEventListener("click", function (e) {
+            e.preventDefault();
+            divCharacters.classList.remove("active");
+            divPopupCharacters.classList.remove("active");
         });
     }
 
@@ -178,13 +167,10 @@ export function newContainer(e) {
 
             let movieDivImg = movieDivLocation.querySelector('.movie__img');
             const locationId = location[i].id;
-
             movieDivImg.setAttribute("id", locationId);
-            divOtherSub.appendChild(movieDivImg);
 
-            //busqueda de los residentes
+            // Mostrar array de los residentes
             const arrayResidents = location[i].residents;
-            //console.log(arrayResidents);
             let arrayNamesResidents = arrayResidents.map((habitantes) => {
                 if (habitantes === "TODO") {
                     return "Todos los personajes";
@@ -193,65 +179,55 @@ export function newContainer(e) {
                 }
             });
 
-            movieDivImg.addEventListener("click", () => {
-                let divPopupContainer = document.createElement('div');
-                divPopupContainer.classList.add('overlay');
-                divPopupContainer.classList.add('active');
-                divPopupContainer.setAttribute('id', 'overlay');
-                let divPopup = document.createElement('div');
-                divPopup.classList.add('popup');
-                divPopup.classList.add('active');
-                divPopup.setAttribute('id', 'popup');
-                let divPopupImg = document.createElement('img');
-                divPopupImg.setAttribute('src', location[i].img);
-                divPopupImg.setAttribute('alt', "imagen del personaje");
-                let divPopupDescription = document.createElement('div');
-                divPopupDescription.classList.add('character__description');
-                let datePopupH5 = document.createElement('h5');
-                datePopupH5.innerHTML = `${location[i].name}`;
-                let datePopupClimate = document.createElement('p');
-                datePopupClimate.innerHTML = `<spam class="black">Clima:</spam> ${location[i].climate}`;
-                let datePopupTerrain = document.createElement('p');
-                datePopupTerrain.innerHTML = `<spam class="black">Terreno:</spam> ${location[i].terrain}`;
-                let datePopupWater = document.createElement('p');
-                datePopupWater.innerHTML = `<spam class="black">Superficie de agua:</spam> ${location[i].surface_water}`;
-                let datePopupresidents = document.createElement('p');
-                datePopupresidents.innerHTML = `<spam class="black">Habitantes:</spam> ${arrayNamesResidents}`;
-                let buttonClose = document.createElement('a');
-                buttonClose.setAttribute('href', '#')
-                buttonClose.setAttribute('id', 'btn__cerrar__popup')
-                buttonClose.classList.add('btn__cerrar__popup');
-                buttonClose.innerHTML = 'Cerrar';
+            // POPUP / MODAL
+            let divPopupContainer = document.createElement('div');
+            divPopupContainer.classList.add('overlay');
+            divPopupContainer.setAttribute('id', 'overlay');
+            let divPopup = document.createElement('div');
+            divPopup.classList.add('popup');
+            divPopup.setAttribute('id', 'popup');
+            let divPopupImg = document.createElement('img');
+            divPopupImg.setAttribute('src', location[i].img);
+            divPopupImg.setAttribute('alt', "imagen del personaje");
+            let divPopupDescription = document.createElement('div');
+            divPopupDescription.classList.add('character__description');
+            let datePopupH5 = document.createElement('h5');
+            datePopupH5.innerHTML = `${location[i].name}`;
+            let datePopupClimate = document.createElement('p');
+            datePopupClimate.innerHTML = `<spam class="black">Clima:</spam> ${location[i].climate}`;
+            let datePopupTerrain = document.createElement('p');
+            datePopupTerrain.innerHTML = `<spam class="black">Terreno:</spam> ${location[i].terrain}`;
+            let datePopupWater = document.createElement('p');
+            datePopupWater.innerHTML = `<spam class="black">Superficie de agua:</spam> ${location[i].surface_water}`;
+            let datePopupresidents = document.createElement('p');
+            datePopupresidents.innerHTML = `<spam class="black">Habitantes:</spam> ${arrayNamesResidents}`;
 
-                divPopupContainer.appendChild(divPopup);
-                divPopup.appendChild(divPopupImg);
-                divPopup.appendChild(divPopupDescription);
-                divPopupDescription.appendChild(datePopupH5);
-                divPopupDescription.appendChild(datePopupClimate);
-                divPopupDescription.appendChild(datePopupTerrain);
-                divPopupDescription.appendChild(datePopupWater);
-                divPopupDescription.appendChild(datePopupresidents);
-                divPopupDescription.appendChild(buttonClose);
+            let buttonClose = document.createElement('button');
+            buttonClose.classList.add('btn__cerrar__popup');
+            buttonClose.innerHTML = 'CERRAR';
 
+            divOtherSub.appendChild(movieDivImg);
+            divOtherSub.appendChild(divPopupContainer);
+            divPopupContainer.appendChild(divPopup);
+            divPopup.appendChild(divPopupImg);
+            divPopup.appendChild(divPopupDescription);
+            divPopupDescription.appendChild(datePopupH5);
+            divPopupDescription.appendChild(datePopupClimate);
+            divPopupDescription.appendChild(datePopupTerrain);
+            divPopupDescription.appendChild(datePopupWater);
+            divPopupDescription.appendChild(datePopupresidents);
+            divPopupDescription.appendChild(buttonClose);
 
-
-                divOtherSub.appendChild(divPopupContainer);
-                //cerrar pop up, solo cierra una vez - ARREGLAR
-                const overlay = document.getElementById("overlay");
-                const popup = document.getElementById("popup");
-                const cerrarPopup = document.getElementById("btn__cerrar__popup");
-
-
-                cerrarPopup.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    if (overlay == 'active') {
-                        overlay.classList.remove("active");
-                        popup.classList.remove("active")
-                    } else if (overlay != 'active') {
-                        overlay.classList.add("active");
-                        popup.classList.add("active")
-                    }
-                });
+            //ABRIR Y CERRAR POPUP / MODAL
+            movieDivImg.addEventListener("click", function (e) {
+                e.preventDefault();
+                divPopupContainer.classList.add("active");
+                divPopup.classList.add("active");
+            });
+            buttonClose.addEventListener("click", function (e) {
+                e.preventDefault();
+                divPopupContainer.classList.remove("active");
+                divPopup.classList.remove("active");
             });
 
         }
@@ -261,61 +237,56 @@ export function newContainer(e) {
             let movieVehicle = movieDivLocation.querySelector('.movie__img');
             const vehicleId = vehicle[i].id;
             movieVehicle.setAttribute("id", vehicleId);
+
+            // POPUP / MODAL
+            let divPopupContainer = document.createElement('div');
+            divPopupContainer.classList.add('overlay');
+            divPopupContainer.setAttribute('id', 'overlay');
+            let divPopup = document.createElement('div');
+            divPopup.classList.add('popup');
+            divPopup.setAttribute('id', 'popup');
+            let divPopupImg = document.createElement('img');
+            divPopupImg.setAttribute('src', vehicle[i].img);
+            divPopupImg.setAttribute('alt', "imagen del personaje");
+            let divPopupDescription = document.createElement('div');
+            divPopupDescription.classList.add('character__description');
+            let datePopupH5 = document.createElement('h5');
+            datePopupH5.innerHTML = `${vehicle[i].name}`;
+            let datepopupDescripcion = document.createElement('p');
+            datepopupDescripcion.innerHTML = `<spam class="black">Descripción:</spam> ${vehicle[i].description}`;
+            let datePopupClass = document.createElement('p');
+            datePopupClass.innerHTML = `<spam class="black">Clase:</spam> ${vehicle[i].vehicle_class}`;
+            let datePopuplength = document.createElement('p');
+            datePopuplength.innerHTML = `<spam class="black">Length:</spam> ${vehicle[i].length}`;
+            let datePopupPiloto = document.createElement('p');
+            datePopupPiloto.innerHTML = `<spam class="black">Piloto:</spam> ${vehicle[i].pilot.name}`;
+
+            let buttonClose = document.createElement('button');
+            buttonClose.classList.add('btn__cerrar__popup');
+            buttonClose.innerHTML = 'CERRAR';
+
             divOtherSub.appendChild(movieVehicle);
+            divOtherSub.appendChild(divPopupContainer);
+            divPopupContainer.appendChild(divPopup);
+            divPopup.appendChild(divPopupImg);
+            divPopup.appendChild(divPopupDescription);
+            divPopupDescription.appendChild(datePopupH5);
+            divPopupDescription.appendChild(datepopupDescripcion);
+            divPopupDescription.appendChild(datePopupClass);
+            divPopupDescription.appendChild(datePopuplength);
+            divPopupDescription.appendChild(datePopupPiloto);
+            divPopupDescription.appendChild(buttonClose);
 
-            movieVehicle.addEventListener("click", () => {
-                let divPopupContainer = document.createElement('div');
-                divPopupContainer.classList.add('overlay');
-                divPopupContainer.classList.add('active');
-                divPopupContainer.setAttribute('id', 'overlay');
-                let divPopup = document.createElement('div');
-                divPopup.classList.add('popup');
-                divPopup.classList.add('active');
-                divPopup.setAttribute('id', 'popup');
-                let divPopupImg = document.createElement('img');
-                divPopupImg.setAttribute('src', vehicle[i].img);
-                divPopupImg.setAttribute('alt', "imagen del personaje");
-                let divPopupDescription = document.createElement('div');
-                divPopupDescription.classList.add('character__description');
-                let datePopupH5 = document.createElement('h5');
-                datePopupH5.innerHTML = `${vehicle[i].name}`;
-                let datepopupDescripcion = document.createElement('p');
-                datepopupDescripcion.innerHTML = `<spam class="black">Descripción::</spam> ${vehicle[i].description}`;
-                let datePopupClass = document.createElement('p');
-                datePopupClass.innerHTML = `<spam class="black">Clase:</spam> ${vehicle[i].vehicle_class}`;
-                let datePopuplength = document.createElement('p');
-                datePopuplength.innerHTML = `<spam class="black">Length:</spam> ${vehicle[i].length}`;
-                let datePopupPiloto = document.createElement('p');
-                datePopupPiloto.innerHTML = `<spam class="black">Piloto:</spam> ${vehicle[i].pilot.name}`;
-                let buttonClose = document.createElement('a');
-                buttonClose.setAttribute('href', '#')
-                buttonClose.setAttribute('id', 'btn__cerrar__popup')
-                buttonClose.classList.add('btn__cerrar__popup');
-                buttonClose.innerHTML = 'Cerrar';
-
-
-                divPopupContainer.appendChild(divPopup);
-                divPopup.appendChild(divPopupImg);
-                divPopup.appendChild(divPopupDescription);
-                divPopupDescription.appendChild(datePopupH5);
-                divPopupDescription.appendChild(datepopupDescripcion);
-                divPopupDescription.appendChild(datePopupClass);
-                divPopupDescription.appendChild(datePopuplength);
-                divPopupDescription.appendChild(datePopupPiloto);
-                divPopupDescription.appendChild(buttonClose);
-                divOtherSub.appendChild(divPopupContainer);
-
-                //cerrar pop up, solo cierra una vez - ARREGLAR
-                const overlay = document.getElementById("overlay");
-                const popup = document.getElementById("popup");
-                const cerrarPopup = document.getElementById("btn__cerrar__popup");
-
-                cerrarPopup.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    overlay.classList.remove("active");
-                    popup.classList.remove("active");
-                });
-
+            //ABRIR Y CERRAR POP UP / MODAL
+            movieVehicle.addEventListener("click", function (e) {
+                e.preventDefault();
+                divPopupContainer.classList.add("active");
+                divPopup.classList.add("active");
+            });
+            buttonClose.addEventListener("click", function (e) {
+                e.preventDefault();
+                divPopupContainer.classList.remove("active");
+                divPopup.classList.remove("active");
             });
 
         }
@@ -345,7 +316,4 @@ export function newContainer(e) {
     divOther.appendChild(divOtherSub);
     // Despliega el footer
     body.appendChild(footerMain);
-
-
-
 }
