@@ -1,23 +1,14 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterAZ } from '../src/data.js';
+// import data from './data/ghibli/ghibli.js';
 
 
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+
+describe('filterAZ ordena todas las peliculas en orden de la A a la Z', () => {
+  it('Debería ser una función', () => {
+    expect(typeof filterAZ).toBe('function');
   });
-
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
-
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('Debería ordenar todas las peliculas en forma ascendente', () => {
+    //expect(data[0].title).toBe('Castle in the Sky');
   });
 });
+

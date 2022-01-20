@@ -77,6 +77,8 @@ export function newContainer(e) {
     labelCharacters.innerHTML = `Personajes`;
     let movieDiv = document.createElement('div');
     movieDiv.classList.add('movie__div');
+
+
     for (let i = 0; i < characters.length; i++) {
 
         movieDiv.innerHTML += `
@@ -139,7 +141,6 @@ export function newContainer(e) {
             const overlay = document.getElementById("overlay");
             const popup = document.getElementById("popup");
             const cerrarPopup = document.getElementById("btn__cerrar__popup");
-
 
             cerrarPopup.addEventListener("click", function (e) {
                 e.preventDefault();
@@ -243,8 +244,13 @@ export function newContainer(e) {
 
                 cerrarPopup.addEventListener("click", function (e) {
                     e.preventDefault();
-                    overlay.classList.remove("active");
-                    popup.classList.remove("active");
+                    if (overlay == 'active') {
+                        overlay.classList.remove("active");
+                        popup.classList.remove("active")
+                    } else if (overlay != 'active') {
+                        overlay.classList.add("active");
+                        popup.classList.add("active")
+                    }
                 });
             });
 
@@ -297,15 +303,12 @@ export function newContainer(e) {
                 divPopupDescription.appendChild(datePopuplength);
                 divPopupDescription.appendChild(datePopupPiloto);
                 divPopupDescription.appendChild(buttonClose);
-
-
                 divOtherSub.appendChild(divPopupContainer);
 
                 //cerrar pop up, solo cierra una vez - ARREGLAR
                 const overlay = document.getElementById("overlay");
                 const popup = document.getElementById("popup");
                 const cerrarPopup = document.getElementById("btn__cerrar__popup");
-
 
                 cerrarPopup.addEventListener("click", function (e) {
                     e.preventDefault();

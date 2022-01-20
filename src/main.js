@@ -48,8 +48,6 @@ const displayCardGhibli = (ghibliData) => {
             newContainer(arr);
         });
 
-
-
     });
 
 };
