@@ -49,8 +49,6 @@ export const filterDataYearDesc = (data) => {
   return filterDataYearDes;
 }
 
-
-
 // filtrar las 10 mejores peliculas
 export const compute = (data) => {
   let filter = data.sort((a, b) => {
