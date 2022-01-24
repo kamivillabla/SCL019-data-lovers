@@ -1,8 +1,3 @@
-// estas funciones son de ejemplo
-
-export const example = () => 'example';
-
-
 // Ordena las peliculas de la A a la Z y de la Z a la A
 
 /*Si son iguales, devolveremos 0.
@@ -12,13 +7,6 @@ Si "a" debe ir ordenado después que "b", entonces devolvemos un número mayor q
 'localeCompare' permite comprarar dos cadenas teniendo en cuenta acentos y otras características específicas de cada idioma para la ordenación. Lo mejor de todo, es que esta función devuelve -1, 1 o 0 según si es mayor, menor o igual, que es exactamente lo que necesitamos:
 
 */
-
-// export const arrayData = (data) => {
-//   const arrayDataGhibli = data.map((arr) => {
-//     return arr;
-//   });
-//   return arrayDataGhibli;
-// }
 
 export const filterAZ = (data) => {
   const sortLettersAZ = data.sort((a, b) => {
@@ -59,19 +47,16 @@ export const filterDataYearDesc = (data) => {
     return b.release_date - a.release_date;
   });
   return filterDataYearDes;
-} 
+}
 
 
-/*************************Filtros personajes **********/
-export const filterAZcharacter = (data) => {
-  const sortLettersAZ = data.people.sort((a, b) => {
-    return a.name.localeCompare(b.name);
+
+// filtrar las 10 mejores peliculas
+export const compute = (data) => {
+  let filter = data.sort((a, b) => {
+    return a.rt_score - b.rt_score;
   });
-  return sortLettersAZ;
+  let filterCompute = filter.slice(filter.length - 5)
+  return filterCompute;
 }
-export const filterZAcharacter = (data) => {
-  const sortLetterZA = data.people.sort((a, b) => {
-    return b.name.localeCompare(a.name);
-  });
-  return sortLetterZA;
-}
+

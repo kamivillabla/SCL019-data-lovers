@@ -185,7 +185,6 @@ select option {
         justify-content: center;
         margin-top: 30px;
     }
-
 }
 
 /*************************** Footer ***************************/
@@ -236,7 +235,6 @@ footer {
     .movie__sidebar {
         display: none;
     }
-
 }
 .movie__sidebar h4{
     font-size: 3em;
@@ -475,3 +473,69 @@ footer {
 } 
 .popup.active {opacity: 1; transform: scale(1); /*animacion*/
 }
+
+/* Sectión grafico */
+.graphic {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+ }
+ .graphic__imgTotoro {
+     height: 800px;
+ }
+
+ .graphic__imgTotoro--tamaño {
+     width: 90%;
+     animation: arribaAndAbajo 5s infinite linear;
+ }
+
+@keyframes arribaAndAbajo {
+	0% {
+		margin-top: 5px;
+
+	}
+	25% {
+		margin-top: 40px;
+		
+	}
+	50% {
+		margin-top: 100px;
+		
+	}
+	75% {
+		margin-top: 40px;
+		
+	}
+	100% {
+		margin-top: 5px;
+		
+	}
+}
+
+@media (max-width: 575.98px) { 
+    .graphic__imgTotoro {
+        height: 250px;
+    }
+    .graphic__imgTotoro--tamaño{
+        width: 90%;
+        height: 200px;
+    }
+ }
+ @media (max-width: 991.98px){
+     .graphic__imgTotoro {
+        height: 400px;
+    }
+    .graphic__imgTotoro--tamaño{
+        width: 90%;
+        height: 350px;
+    }
+ }
+
+ .background {
+     background-color:var(--bluedark--color);
+     height: 100px;
+     line-height: 100px;
+     color: white;
+ }

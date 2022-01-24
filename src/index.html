@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <link rel="icon" type="image.png" href="img/iconTotoro.png">
@@ -19,7 +18,6 @@
        <a class="header__row" href="#animationsTitle"><img class="header__container-img__img" src="img/flecha.png"
        alt="Flecha para pasar del header al a la sección de personajes"></a>
     </div>
-  
   </header>
 
   <main id="main__animations" class="main__animations">
@@ -58,18 +56,24 @@
     <section class="animations" id="animations">
       <!-- Se crean las tarjetas de forma dinamica -->
     </section>
+    <div class="background">
+      <h2>Las mejores 5 peliculas</h2>
+    </div>
+    <section class="graphic">
+      <div class="graphic__imgTotoro">
+        <img class="graphic__imgTotoro--tamaño" src="img/totoro.png" alt="">
+      </div>
+      <article class="graphic__canvas">
+        <canvas id="myChart" role="img" class="myChart" style="height: 400px; width: 80vh;"></canvas>
+      </article>
+    </section>
   </main>
 
- 
   <footer id="footer">
     <p>Copyright &copy; 2022 - Luna González and Kamila Villablanca.</p>
   </footer>
 
-
-  <!-- <div id="root"></div> -->
   <script src="main.js" type="module"></script>
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
 </body>
-
 </html>
