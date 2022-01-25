@@ -1,3 +1,6 @@
+/* Start https://www.cursors-4u.com */
+* {cursor: url(https://cur.cursors-4u.net/anime/ani-10/ani933.cur), auto !important;}
+/* End https://www.cursors-4u.com */
 * {
     margin: 0;
     padding: 0;
@@ -126,6 +129,19 @@ p {
     justify-content: flex-end;
     gap: 0px 10px;
 }
+.filters a{
+    text-decoration: none;
+    text-align: center;
+    width: 75px;
+    height: 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: var(--blue--color);
+    color: var(--white-color);
+}
+.filters a:hover{
+    background-color: var(--bluedark--color);
+}
 .filters select {
     width: 95px;
     height: 25px;
@@ -187,16 +203,6 @@ select option {
     }
 }
 
-/*************************** Footer ***************************/
-
-footer {
-    width: 100%;
-    height: 8rem;
-    text-align: center;
-    line-height: 8rem;
-    background-color: var(--blue--color);
-    color: var(--white-color);
-}
 /***************** Página peliculas Peliculas ***********************/
 
 .movie__header {
@@ -367,7 +373,7 @@ footer {
 .movie__mainContent__card {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 30px 0px;
 }
 
@@ -476,25 +482,39 @@ footer {
 
 /* Sección grafico  */
 
-.graphic {
+.background {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row nowrap;
     justify-content: center;
-    align-items: center;
-    height: 600px;
+    align-items: flex-end;
+    gap: 30px;
+    height: 100px;
+    margin-top: 150px;
+    margin-bottom: 80px;
+}
+.background img{
+    height: 90px;
+}
+.background h2{
+   color: var(--blue--color);
 }
 
+.graphic {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: 400px;
+    margin: 0 50px;
+}
  .graphic__imgTotoro{
-height: 70vh;
+    height: 70vh;
 }
 .graphic__imgTotoro--tamaño {
     width: 60%;
     animation: arribaAndAbajo 5s infinite linear; 
 }
 .graphic__canvas {
-    width: 50%;
- 
+    width: 40%;
 }
 
 @keyframes arribaAndAbajo {
@@ -545,18 +565,13 @@ height: 70vh;
     }
  }
 
- .background {
-     display: flex;
-     flex-flow: row nowrap;
-     justify-content: center;
-     align-items: flex-end;
-     gap: 30px;
-     height: 100px;
-     margin-top: 150px;
- }
- .background img{
-     height: 90px;
- }
- .background h2{
-    color: var(--blue--color);
- }
+ /*************************** Footer ***************************/
+
+footer {
+    width: 100%;
+    height: 8rem;
+    text-align: center;
+    line-height: 8rem;
+    background-color: var(--blue--color);
+    color: var(--white-color);
+}
