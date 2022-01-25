@@ -132,44 +132,47 @@ fetch("./data/ghibli/ghibli.json")
             let titleBestMovies = element.title;
             return titleBestMovies;
         })
+        nameBestMovies;
         let scoreBestMovies = nameMovies.map((element) => {
             let score = element.rt_score;
             return score;
         })
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: nameBestMovies,
-                datasets: [{
-                    label: '#Score',
-                    data: scoreBestMovies,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+        scoreBestMovies;
 
+        /*
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: nameBestMovies,
+                        datasets: [{
+                            label: '#Score',
+                            data: scoreBestMovies,
+                            backgroundColor: [
+                                'rgba(227,77,43,0.6)',
+                                'rgba(135,183,197, 0.6)',
+                                'rgba(95,104,144, 0.6)',
+                                'rgba(0,129,192, 0.6)',
+                                'rgba(163,102,102, 0.6)',
+                            ],
+                            borderColor: [
+                                'rgba(227,77,43,1)',
+                                'rgba(135,183,197, 1)',
+                                'rgba(95,104,144, 1)',
+                                'rgba(0,129,192, 1)',
+                                'rgba(163,102,102, 1)',
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+        
+                */
     })
