@@ -142,7 +142,7 @@ fetch("./data/ghibli/ghibli.json")
             data: {
                 labels: nameBestMovies,
                 datasets: [{
-                    label: '#Score',
+                    label: 'Score',
                     data: scoreBestMovies,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
