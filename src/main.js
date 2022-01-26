@@ -171,5 +171,7 @@ fetch("./data/ghibli/ghibli.json")
                 }
             }
         });
-
+       /* let newCompute = compute(dataStudioGhibli);
+        console.log(newCompute); */
     })
+
