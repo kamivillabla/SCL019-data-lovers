@@ -74,7 +74,7 @@ p {
 }
 
 /* Se agregan cambios de estilo hasta pantalla de maximo 576 px o sea pantallas de telefono */
-@media (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) { 
     h1 {
         font-size: 6rem;
     }
@@ -86,7 +86,7 @@ p {
     }
 }
 /* Se agregan cambios de estilo hasta pantallas máxima de 991. Osea de pantallas de tipo tablet. */
-@media (max-width: 991.98px) { 
+@media only screen and (max-width: 991.98px) { 
     .header {
         height: 70vh;
     }
@@ -195,7 +195,7 @@ select option {
     font-size: 1.8rem;
 }
 
-@media (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) { 
     .filters {
         width: 50%;
         justify-content: center;
@@ -238,7 +238,7 @@ select option {
     top: 0;
 }
 
-@media (max-width: 1000px) { 
+@media only screen and (max-width: 1000px) { 
     .movie__sidebar {
         display: none;
     }
@@ -320,7 +320,7 @@ select option {
 	display: block;
 }
 
-@media (max-width: 45em) {
+@media only screen and (max-width: 45em) {
   .movie__mainContent .tab,
   .movie__mainContent label {
     order: initial;
@@ -334,7 +334,7 @@ select option {
 }
 /*fin pestañas dinamicas*/
 
-@media (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) { 
     .movie__mainContent__filterAndCount {
         justify-content:center;
         margin-right: 0px;
@@ -348,7 +348,7 @@ select option {
         margin-top: 50px;
     } 
 }
-@media (max-width: 1025px) { 
+@media only screen and (max-width: 1025px) { 
     .movie__sidebar {
         display: none;
     }
@@ -378,8 +378,8 @@ select option {
 }
 
 .movie__img {
-    width: 30rem;
-    height: 30rem;
+    width: 26rem;
+    height: 26rem;
     border-radius: 8px;
     box-shadow: 0px 1px 10px var(--shadow-black);
     transition: .3s ease-in-out;
@@ -399,7 +399,7 @@ select option {
     margin-top: 50px;
 }
 
-@media (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) { 
     .movie__mainContent__filterAndCount {
         justify-content:center;
     }
@@ -540,7 +540,7 @@ select option {
 	}
 }
  
-@media (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) { 
     .graphic__imgTotoro{
         height: 10vh;
     }
@@ -552,7 +552,18 @@ select option {
     }
  }
  
- @media (max-width: 991.98px){
+ @media only screen and (max-width: 991.98px){
+      .background img{
+        height: 6.8rem;
+        
+    }
+    .background h2{
+       color: var(--blue--color);
+       font-size: 4rem;
+    }
+     .graphic {
+         margin-bottom: 40%;
+     }
     .graphic__imgTotoro{
         height: 50%;
     }
@@ -561,8 +572,8 @@ select option {
         height: 100%;
     }
     .graphic__canvas {
-         width: 100%;
-    }
+         width: 90%;
+     }
  }
 
  /*************************** Footer ***************************/

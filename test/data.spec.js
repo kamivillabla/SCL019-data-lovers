@@ -1,4 +1,4 @@
-import { filterAZ, filterZA, filterDataDirector, filterDataProducer, filterDataYearAsc, filterDataYearDesc } from '../src/data.js';
+import { filterAZ, filterZA, filterDataDirector, filterDataProducer, filterDataYearAsc, filterDataYearDesc, compute } from '../src/data.js';
 
 /*
  Referencia para aprender los distintos matches
@@ -7,7 +7,6 @@ import { filterAZ, filterZA, filterDataDirector, filterDataProducer, filterDataY
  toBe utiliza Object.is para probar la igualdad exacta, generamentel se ocupa en valores primitivos.
  toEqual comprueba recursivamente cada campo de un objeto o matriz.
 */
-
 // Cree una pequeña data aleatoria que servira para probar los test
 const dataGhibli = [
   {
@@ -15,6 +14,7 @@ const dataGhibli = [
     "director": "Hayao Miyazaki",
     "producer": "Isao Takahata",
     "release_date": "1986",
+    "rt_score": "95"
 
   },
   {
@@ -22,18 +22,20 @@ const dataGhibli = [
     "director": "Gorō Miyazaki",
     "producer": "Toshio Suzuki",
     "release_date": "2011",
+    "rt_score": "83"
   },
   {
     "title": "My Neighbor Totoro",
     "director": "Hayao Miyazaki",
     "producer": "Hayao Miyazaki",
     "release_date": "1988",
+    "rt_score": "93"
   },
 ]
 
 // Test filtrado en orden alfabetico 
 
-describe('filterAZ ordena todas las peliculas en orden de la Z a la A', () => {
+describe('filterAZ ordena todas las peliculas en orden de la A a la Z', () => {
   it('Debería retornar una función', () => {
     expect(typeof filterAZ).toBe('function');
   });
@@ -57,9 +59,7 @@ describe('filterZA ordena todas las peliculas en orden de la Z a la A', () => {
     expect(dataDescendente[2].title).toEqual('Castle in the Sky');
     expect(dataDescendente[1].title).toEqual('From Up on Poppy Hill');
     expect(dataDescendente[0].title).toEqual('My Neighbor Totoro');
-
   });
-
 });
 
 // Prueba filtrado por director
@@ -129,5 +129,19 @@ describe('filterDataYearDesc retorna las peliculas ordenadas según año Descend
     expect(dataYear[2].title).toEqual('Castle in the Sky');
     expect(dataYear[1].title).toEqual('My Neighbor Totoro');
     expect(dataYear[0].title).toEqual('From Up on Poppy Hill');
+  });
+});
+
+// Test funcción compute
+
+describe('compute retorna las peliculas con puntaje mayor o igual a 96', () => {
+  it('Debería retornar una función', () => {
+    expect(typeof compute).toBe('function');
+  });
+  it('Debería retornar las peliculas con mayor puntaje en orden ascendente', () => {
+    let filCompute = compute(dataGhibli);
+
+    expect(filCompute[0].rt_score).toEqual('93');
+    expect(filCompute[1].rt_score).toEqual('95');
   });
 });
