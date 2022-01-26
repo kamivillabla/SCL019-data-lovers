@@ -134,7 +134,7 @@ describe('filterDataYearDesc retorna las peliculas ordenadas según año Descend
 
 // Test funcción compute
 
-describe('compute retorna las ultimas mejores peliculas', () => {
+describe('compute retorna las peliculas con puntaje mayor o igual a 96', () => {
   it('Debería retornar una función', () => {
     expect(typeof compute).toBe('function');
   });
