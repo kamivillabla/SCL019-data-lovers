@@ -31,6 +31,13 @@ const dataGhibli = [
     "release_date": "1988",
     "rt_score": "93"
   },
+  {
+    "title": "Spirited Away",
+    "director": "Hayao Miyazaki",
+    "producer": "Toshio Suzuki",
+    "release_date": "2001",
+    "rt_score": "97"
+  }
 ]
 
 // Test filtrado en orden alfabetico 
@@ -45,6 +52,7 @@ describe('filterAZ ordena todas las peliculas en orden de la A a la Z', () => {
     expect(dataAscendente[0].title).toEqual('Castle in the Sky');
     expect(dataAscendente[1].title).toEqual('From Up on Poppy Hill');
     expect(dataAscendente[2].title).toEqual('My Neighbor Totoro');
+    expect(dataAscendente[3].title).toEqual('Spirited Away');
   });
 });
 
@@ -53,12 +61,14 @@ describe('filterZA ordena todas las peliculas en orden de la Z a la A', () => {
     expect(typeof filterZA).toBe('function');
   });
 
-  it('Debería retornar todas las peliculas en forma descendente [My Neighbor Totoro],[From Up on Poppy Hill],[Castle in the Sky]', () => {
+  it('Debería retornar todas las peliculas en forma descendente[My Neighbor Totoro],[From Up on Poppy Hill],[Castle in the Sky]', () => {
 
     let dataDescendente = filterZA(dataGhibli);
-    expect(dataDescendente[2].title).toEqual('Castle in the Sky');
-    expect(dataDescendente[1].title).toEqual('From Up on Poppy Hill');
-    expect(dataDescendente[0].title).toEqual('My Neighbor Totoro');
+
+    expect(dataDescendente[3].title).toEqual('Castle in the Sky');
+    expect(dataDescendente[2].title).toEqual('From Up on Poppy Hill');
+    expect(dataDescendente[1].title).toEqual('My Neighbor Totoro');
+    expect(dataDescendente[0].title).toEqual('Spirited Away');
   });
 });
 
@@ -114,7 +124,8 @@ describe('filterDataYearAsc retorna las peliculas ordenadas según año Ascenden
 
     expect(dataYear[0].title).toEqual('Castle in the Sky');
     expect(dataYear[1].title).toEqual('My Neighbor Totoro');
-    expect(dataYear[2].title).toEqual('From Up on Poppy Hill');
+    expect(dataYear[2].title).toEqual('Spirited Away');
+    expect(dataYear[3].title).toEqual('From Up on Poppy Hill');
   });
 });
 
@@ -126,9 +137,12 @@ describe('filterDataYearDesc retorna las peliculas ordenadas según año Descend
   it('Debería retornar las peliculas en orden [From Up on Poppy Hill], [My Neighbor Totoro], [Castle in the Sky]', () => {
     let dataYear = filterDataYearDesc(dataGhibli);
 
-    expect(dataYear[2].title).toEqual('Castle in the Sky');
-    expect(dataYear[1].title).toEqual('My Neighbor Totoro');
     expect(dataYear[0].title).toEqual('From Up on Poppy Hill');
+    expect(dataYear[1].title).toEqual('Spirited Away');
+    expect(dataYear[2].title).toEqual('My Neighbor Totoro');
+    expect(dataYear[3].title).toEqual('Castle in the Sky');
+
+
   });
 });
 
@@ -138,10 +152,9 @@ describe('compute retorna las peliculas con puntaje mayor o igual a 96', () => {
   it('Debería retornar una función', () => {
     expect(typeof compute).toBe('function');
   });
-  it('Debería retornar las peliculas con mayor puntaje en orden ascendente', () => {
-    let filCompute = compute(dataGhibli);
+  it('Debería retornar todas las peliculas con mayor puntaje', () => {
+    let filterComputeData = compute(dataGhibli);
 
-    expect(filCompute[0].rt_score).toEqual('93');
-    expect(filCompute[1].rt_score).toEqual('95');
+    expect(filterComputeData[0].title).toEqual('Spirited Away');
   });
 });
