@@ -1,3 +1,6 @@
+/* Start https://www.cursors-4u.com */
+* {cursor: url(https://cur.cursors-4u.net/anime/ani-10/ani933.cur), auto !important;}
+/* End https://www.cursors-4u.com */
 * {
     margin: 0;
     padding: 0;
@@ -71,7 +74,7 @@ p {
 }
 
 /* Se agregan cambios de estilo hasta pantalla de maximo 576 px o sea pantallas de telefono */
-@media (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) { 
     h1 {
         font-size: 6rem;
     }
@@ -83,7 +86,7 @@ p {
     }
 }
 /* Se agregan cambios de estilo hasta pantallas máxima de 991. Osea de pantallas de tipo tablet. */
-@media (max-width: 991.98px) { 
+@media only screen and (max-width: 991.98px) { 
     .header {
         height: 70vh;
     }
@@ -125,6 +128,19 @@ p {
     display: flex;
     justify-content: flex-end;
     gap: 0px 10px;
+}
+.filters a{
+    text-decoration: none;
+    text-align: center;
+    width: 75px;
+    height: 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: var(--blue--color);
+    color: var(--white-color);
+}
+.filters a:hover{
+    background-color: var(--bluedark--color);
 }
 .filters select {
     width: 95px;
@@ -179,7 +195,7 @@ select option {
     font-size: 1.8rem;
 }
 
-@media (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) { 
     .filters {
         width: 50%;
         justify-content: center;
@@ -187,16 +203,6 @@ select option {
     }
 }
 
-/*************************** Footer ***************************/
-
-footer {
-    width: 100%;
-    height: 8rem;
-    text-align: center;
-    line-height: 8rem;
-    background-color: var(--blue--color);
-    color: var(--white-color);
-}
 /***************** Página peliculas Peliculas ***********************/
 
 .movie__header {
@@ -232,7 +238,7 @@ footer {
     top: 0;
 }
 
-@media (max-width: 1000px) { 
+@media only screen and (max-width: 1000px) { 
     .movie__sidebar {
         display: none;
     }
@@ -314,7 +320,7 @@ footer {
 	display: block;
 }
 
-@media (max-width: 45em) {
+@media only screen and (max-width: 45em) {
   .movie__mainContent .tab,
   .movie__mainContent label {
     order: initial;
@@ -328,7 +334,7 @@ footer {
 }
 /*fin pestañas dinamicas*/
 
-@media (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) { 
     .movie__mainContent__filterAndCount {
         justify-content:center;
         margin-right: 0px;
@@ -342,7 +348,7 @@ footer {
         margin-top: 50px;
     } 
 }
-@media (max-width: 1025px) { 
+@media only screen and (max-width: 1025px) { 
     .movie__sidebar {
         display: none;
     }
@@ -367,13 +373,13 @@ footer {
 .movie__mainContent__card {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 30px 0px;
 }
 
 .movie__img {
-    width: 30rem;
-    height: 30rem;
+    width: 26rem;
+    height: 26rem;
     border-radius: 8px;
     box-shadow: 0px 1px 10px var(--shadow-black);
     transition: .3s ease-in-out;
@@ -393,7 +399,7 @@ footer {
     margin-top: 50px;
 }
 
-@media (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) { 
     .movie__mainContent__filterAndCount {
         justify-content:center;
     }
@@ -476,25 +482,39 @@ footer {
 
 /* Sección grafico  */
 
-.graphic {
+.background {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row nowrap;
     justify-content: center;
-    align-items: center;
-    height: 600px;
+    align-items: flex-end;
+    gap: 30px;
+    height: 100px;
+    margin-top: 150px;
+    margin-bottom: 80px;
+}
+.background img{
+    height: 90px;
+}
+.background h2{
+   color: var(--blue--color);
 }
 
+.graphic {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: 400px;
+    margin: 0 50px;
+}
  .graphic__imgTotoro{
-height: 70vh;
+    height: 70vh;
 }
 .graphic__imgTotoro--tamaño {
     width: 60%;
     animation: arribaAndAbajo 5s infinite linear; 
 }
 .graphic__canvas {
-    width: 50%;
- 
+    width: 40%;
 }
 
 @keyframes arribaAndAbajo {
@@ -520,7 +540,7 @@ height: 70vh;
 	}
 }
  
-@media (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) { 
     .graphic__imgTotoro{
         height: 10vh;
     }
@@ -532,7 +552,18 @@ height: 70vh;
     }
  }
  
- @media (max-width: 991.98px){
+ @media only screen and (max-width: 991.98px){
+      .background img{
+        height: 6.8rem;
+        
+    }
+    .background h2{
+       color: var(--blue--color);
+       font-size: 4rem;
+    }
+     .graphic {
+         margin-bottom: 40%;
+     }
     .graphic__imgTotoro{
         height: 50%;
     }
@@ -541,22 +572,17 @@ height: 70vh;
         height: 100%;
     }
     .graphic__canvas {
-         width: 100%;
-    }
+         width: 90%;
+     }
  }
 
- .background {
-     display: flex;
-     flex-flow: row nowrap;
-     justify-content: center;
-     align-items: flex-end;
-     gap: 30px;
-     height: 100px;
-     margin-top: 150px;
- }
- .background img{
-     height: 90px;
- }
- .background h2{
-    color: var(--blue--color);
- }
+ /*************************** Footer ***************************/
+
+footer {
+    width: 100%;
+    height: 8rem;
+    text-align: center;
+    line-height: 8rem;
+    background-color: var(--blue--color);
+    color: var(--white-color);
+}

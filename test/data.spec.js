@@ -138,7 +138,7 @@ describe('compute retorna las ultimas mejores peliculas', () => {
   it('Debería retornar una función', () => {
     expect(typeof compute).toBe('function');
   });
-  it('Debería retornar las peliculas con mayor puntaje', () => {
+  it('Debería retornar las peliculas con mayor puntaje en orden ascendente', () => {
     let filCompute = compute(dataGhibli);
 
     expect(filCompute[0].rt_score).toEqual('93');
