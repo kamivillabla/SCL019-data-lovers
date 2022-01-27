@@ -1,5 +1,5 @@
 /* Start https://www.cursors-4u.com */
-* {cursor: url(https://cur.cursors-4u.net/anime/ani-10/ani933.cur), auto !important;}
+* {cursor: url(https://cur.cursors-4u.net/anime/ani-10/ani933.cur), auto;}
 /* End https://www.cursors-4u.com */
 * {
     margin: 0;
@@ -69,7 +69,6 @@ p {
     transition: .3s ease-in-out;
 }
 .header__container-img__img:hover{
-    cursor: pointer;
     transform: scale(1.2);
 }
 
@@ -88,7 +87,7 @@ p {
 /* Se agregan cambios de estilo hasta pantallas máxima de 991. Osea de pantallas de tipo tablet. */
 @media only screen and (max-width: 991.98px) { 
     .header {
-        height: 70vh;
+        height: 100%;
     }
  }
 
@@ -175,7 +174,6 @@ select option {
     text-align: center;
 }
 .animations__card:hover  {
-    cursor: pointer;
     transform: scale(1.05);
 }
 .animations__card__img {
@@ -194,10 +192,16 @@ select option {
     font-weight: bold;
     font-size: 1.8rem;
 }
-
-@media only screen and (max-width: 575.98px) { 
+@media only screen and (max-width: 320px) { 
     .filters {
-        width: 50%;
+      display: flex;
+      flex-direction: column;
+
+  }
+}
+
+@media only screen and (max-width: 520px) { 
+      .filters {
         justify-content: center;
         margin-top: 30px;
     }
@@ -238,11 +242,6 @@ select option {
     top: 0;
 }
 
-@media only screen and (max-width: 1000px) { 
-    .movie__sidebar {
-        display: none;
-    }
-}
 .movie__sidebar h4{
     font-size: 3em;
 }
@@ -284,7 +283,6 @@ select option {
 	order: 1; /* Put the labels first*/
 	padding: 0px 50px;
     padding-bottom: 5px;
-	cursor: pointer;
     text-align: center;
     font-size: 20px;
     color: var(--white-color);
@@ -320,25 +318,7 @@ select option {
 	display: block;
 }
 
-@media only screen and (max-width: 45em) {
-  .movie__mainContent .tab,
-  .movie__mainContent label {
-    order: initial;
-  }
-  .movie__mainContent label {
-    width: 100%;
-    margin-right: 0;
-    margin-top: 0.2rem;
-    padding: 0px;
-  }
-}
-/*fin pestañas dinamicas*/
-
 @media only screen and (max-width: 575.98px) { 
-    .movie__mainContent__filterAndCount {
-        justify-content:center;
-        margin-right: 0px;
-     }
     .movie__header {
         height: 200px;
     }
@@ -349,21 +329,48 @@ select option {
     } 
 }
 
+@media only screen and (max-width: 1123px) { 
+    .movie__sidebar {
+        position:static;
+        height: 38rem;
+        margin-left: 0px;
+        border-right: none;
+    }
+    .movie__sidebar__img {
+        width: 20rem;
+        height: 20rem;
+        margin: 20px 0px;
+    }
+    .movie__sidebar p{
+        display: none;
+    }
+    .movie__mainContent {
+        margin: 70px 10px;
+    }
+    .movie__mainContent .tab,
+    .movie__mainContent label {
+      order: initial;
+    }
+    .movie__mainContent label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+      padding: 0px;
+    }
+}
+
+
 /************************** Sección descripción ************/
 
 .movie__description {
-    height: 100vh;
+    max-height: 100vh;
+    margin: 5rem 0;
 }
-
 /****************** Sección Personajes  **********************/
 
 .characters__filtersAndCount {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: start;
     margin-bottom: 30px;
 }
-
 .movie__mainContent__card {
     display: flex;
     flex-wrap: wrap;
@@ -381,30 +388,8 @@ select option {
 }
 
 .movie__mainContent__card .movie__img:hover {
-    cursor: pointer;
     transform: scale(1.05);
 }
-
-.movie__filtersAndCount {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    padding: 0px 25px;
-    margin-top: 50px;
-}
-
-@media only screen and (max-width: 575.98px) { 
-    .movie__mainContent__filterAndCount {
-        justify-content:center;
-    }
-    .movie__filtersAndCount {
-        padding: 0px;
-        justify-content:center;
-    }
-    
-}
-
-
 /*************** PopUp Personajes ************/
 .overlay {
     background: rgba(0, 0, 0, 0.5);
@@ -556,7 +541,7 @@ select option {
        font-size: 4rem;
     }
      .graphic {
-         margin-bottom: 40%;
+         margin-bottom: 45%;
      }
     .graphic__imgTotoro{
         height: 50%;

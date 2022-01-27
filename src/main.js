@@ -7,6 +7,10 @@ const filterXDirector = document.getElementById('filters__director');
 const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 
+// Volumen de la música del sitio
+const reproducer = document.getElementById("reproducer");
+reproducer.volume = 0.05;
+
 
 // // https://www.youtube.com/watch?v=xqBvtvXh9Z4&ab_channel=C%C3%B3digoconJuan video para estudiar llamado a json; 
 fetch("./data/ghibli/ghibli.json")
@@ -170,6 +174,6 @@ fetch("./data/ghibli/ghibli.json")
         });
 
 
-
     })
+
 
