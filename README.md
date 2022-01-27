@@ -10,7 +10,7 @@ Nuestro sitio web es una fanpage con temática de Studio Ghibli para sus fans, e
 
 ### Imagen final del sitio.
 
-![nombre](ruta)
+![nombre](src/img/imagen1.png)
 
 ## 2. Investigación UX:
 ### 2.1 ¿Quiénes son los principales usuarios de producto?
