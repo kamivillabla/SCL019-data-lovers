@@ -1,6 +1,6 @@
 # Data-lovers - Fanpage Studio Ghibli
 
-Link proyecto: [Ir al sitio](src/index.html) ó https:
+Link proyecto: [Ir al sitio](https://kuveee.github.io/SCL019-data-lovers/src/index.html) ó https:
 Link a Zeplin: (?)
    
 
