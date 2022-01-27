@@ -125,7 +125,6 @@ fetch("./data/ghibli/ghibli.json")
             }
         })
 
-
         //Mejores peliculas 
         const nameMovies = compute(dataStudioGhibli);
         let nameBestMovies = nameMovies.map((element) => {
@@ -171,7 +170,6 @@ fetch("./data/ghibli/ghibli.json")
                 }
             }
         });
-       /* let newCompute = compute(dataStudioGhibli);
-        console.log(newCompute); */
+
     })
 
