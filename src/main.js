@@ -7,6 +7,10 @@ const filterXDirector = document.getElementById('filters__director');
 const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 
+// Volumen de la música del sitio
+const reproducer = document.getElementById("reproducer");
+reproducer.volume = 0.05;
+
 
 // // https://www.youtube.com/watch?v=xqBvtvXh9Z4&ab_channel=C%C3%B3digoconJuan video para estudiar llamado a json; 
 fetch("./data/ghibli/ghibli.json")
@@ -144,18 +148,20 @@ fetch("./data/ghibli/ghibli.json")
                     label: 'Score',
                     data: scoreBestMovies,
                     backgroundColor: [
-                        'rgba(135,183,197,0.8)',
-                        'rgba(95,104,144, 0.8)',
-                        'rgba(23,71,124, 0.8)',
-                        'rgba(163,102,102, 0.8)',
-                        'rgba(223,196,82, 0.8)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(135,183,197,1)',
-                        'rgba(95,104,144, 1)',
-                        'rgba(23,71,124,1)',
-                        'rgba(163,102,102, 1)',
-                        'rgba(223,196,82, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
                     ],
                     borderWidth: 1
                 }]
@@ -170,4 +176,3 @@ fetch("./data/ghibli/ghibli.json")
         });
 
     })
-
