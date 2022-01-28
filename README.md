@@ -2,7 +2,6 @@
 
 Link proyecto: [Ir al sitio](https://kuveee.github.io/SCL019-data-lovers/src/index.html) ó https:
 Link a Zeplin: (?)
-   
 
 ## 1. Definición del proyecto
 
@@ -10,7 +9,12 @@ Nuestro sitio web es una fanpage con temática de Studio Ghibli para sus fans, e
 
 ### Imagen final del sitio.
 
-![nombre](src/img/imagen1.png)
+![Página Inicial de bienvenida más peliculas](images/proyectoFinal1.jpeg)
+![Página de descripción de la pelicula](images/proyectoFinal2.jpeg)
+![Pestaña de personajes](images/proyectoFinal3.jpeg)
+![Modal con las características del personaje](images/proyectoFinal4.jpeg)
+![Pestaña de locaciones y vehiculos](images/proyectoFinal5.jpeg)
+![Modal con las características de la locación o vehículo](images/proyectoFinal6.jpeg)
 
 ## 2. Investigación UX:
 ### 2.1 ¿Quiénes son los principales usuarios de producto?
