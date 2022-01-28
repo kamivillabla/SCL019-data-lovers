@@ -28,7 +28,8 @@ Mayormente se utilizaría en tiempos libres, de ocio y procrastinación, pero ta
 ## 3. Diseño UI
 ### Prototipo de baja fidelidad.
 
-![nombre](ruta)
+![Sitio Principal](images/protInicial-1.jpg)
+![Sitio Principal](images/protInicial-2.jpg)
 
 ### Prototipo de alta fidelidad.
 https://www.figma.com/proto/mX3iAYNfEhZmFD4gl8lXrR/Data-Lovers-Studio-Ghibli?node-id=5%3A3&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=5%3A3
