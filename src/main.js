@@ -173,4 +173,7 @@ fetch("./data/ghibli/ghibli.json")
             }
         });
 
+
     })
+
+
