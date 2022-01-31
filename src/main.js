@@ -7,7 +7,7 @@ const filterXDirector = document.getElementById('filters__director');
 const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 
-// Volumen de la música del sitio
+//Volumen de la música del sitio
 const reproducer = document.getElementById("reproducer");
 reproducer.volume = 0.05; //5% de volumen
 
@@ -38,10 +38,6 @@ fetch("./data/ghibli/ghibli.json")
                 <p><spam class="black">Director:</spam> ${arr.director}</p>
                 <p><spam class="black">Productor:</spam> ${arr.producer}</p>
                 <p><spam class="black">Score:</spam> ${arr.rt_score} </p>`;
-                // Guardo el id del objeto en una nueva constante.
-                const idObjetCard = arr.id;
-                // A la tarjeta le agrego el nuevo atributo de ID que toma el valor del id unico que trae el objeto. 
-                cardAnimations.setAttribute("id", idObjetCard);
                 // Despligue tarjetas de peliculas.
                 containerAnimationes.appendChild(cardAnimations);
 
@@ -135,7 +131,7 @@ fetch("./data/ghibli/ghibli.json")
             let titleBestMovies = element.title;
             return titleBestMovies;
         })
-        let scoreBestMovies = nameMovies.map((element) => {
+        let scoreBestMovies = elementMovies.map((element) => {
             let score = element.rt_score;
             return score;
         })
