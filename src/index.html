@@ -14,77 +14,80 @@
 
 <body>
   <header id="header" class="header">
-    <audio id="reproducer" src="img/Howls Moving Castle.mp3" autoplay="true"></audio>
+    <!-- <audio id="reproducer" src="img/Howls Moving Castle.mp3" autoplay="true"></audio> -->
     <a href="index.html">
       <h1 id="header__h1">Studio Ghibli</h1>
     </a>
     <p class="header__p">Bienvenides a la fanpage de Studio Ghibli donde encontrarás la información de sus peliculas y
       personajes en spanglish.<br>Creada para ustedes con todo el cariño y respeto que se merece este estudio y sus fans
       de les cual formamos parte.</p>
-      <div class="header__container-img">
-        <a class="header__row" href="#animationsTitle"><img class="header__container-img__img" src="img/flecha.png"
-          alt="Flecha para pasar del header al a la sección de personajes"></a>
-        </div>
-      </header>
-      
-      <main id="main__animations" class="main__animations">
-        <h2 id="animationsTitle">Películas Animadas</h2>
-        <section class="main__filtersAndCount">
-          <!--contador de peliculas-->
-          <p id="countFilms" class="countFilms"></p>
-          <div class="filters">
-            <select id="filters__initial" class="filters__initial">
-               <option value="0">A-Z</option>
-              <option value="1">Z-A </option>
-            </select>
-            <select id="filters__director" class="filters__director">
-              <option selected value="all">Director</option>
-              <option value="0">Hayao Miyazaki</option>
-              <option value="1">Goro Miyazaki</option>
-              <option value="2">Isao Takahata</option>
-              <option value="3">Hiroyuki Morita</option>
-              <option value="4">Hiromasa Yonebayashi</option>
-              <option value="5">Yoshifumi Kondo</option>
-            </select>
-            <select id="filters__producer" class="filters__producer">
-              <option selected value="all">Productor</option>
-              <option value="0">Isao Takahata</option>
-              <option value="1">Toshio Suzuki</option>
-              <option value="2">Toru Hara</option>
-              <option value="3">Hayao Miyazaki</option>
-              <option value="4">Yoshiaki Nishimura</option>
-            </select>
-            <select id="filters__year" class="filters__year">
-              <option value="0">Año Asc</option>
-              <option value="1">Año Desc</option>
-            </select>
-            <a href="#theBestMovies">The Best</a>
-          </div>
-        </section>
-        <section class="animations" id="animations">
-          <!-- Se crean las tarjetas de forma dinamica -->
-        </section>
-        <div id="theBestMovies" class="background">
-          <img src="img/kodamas.png" alt="3 kodamas">
-          <h2>Las mejores 5 peliculas</h2>
-          <img src="img/kodamas.png" alt="3 kodamas">
-        </div>
-        <section class="graphic">
-          <div class="graphic__imgTotoro">
-            <img class="graphic__imgTotoro--tamaño" src="img/totoro.png" alt="">
-          </div>
-          <article class="graphic__canvas">
-            <canvas id="myChart" role="img" class="myChart" style="height: 400px; width: 80vh;"></canvas>
-          </article>
-        </section>
-      </main>
-      
-      <footer id="footer">
-        <p>Copyright &copy; 2022 - Luna González and Kamila Villablanca.</p>
-      </footer>
-      
-      <script src="main.js" type="module"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
-    </body>
-    
-    </html>
+    <div class="header__container-img">
+      <a class="header__row" href="#animationsTitle"><img class="header__container-img__img" src="img/flecha.png"
+      alt="Flecha para pasar del header al a la sección de personajes"></a>
+    </div>
+  </header>
+
+  <main id="main__animations" class="main__animations">
+    <h2 id="animationsTitle">Películas Animadas</h2>
+    <section class="main__filtersAndCount">
+     <!--contador de peliculas-->
+      <p id="countFilms" class="countFilms"></p>
+      <div class="filters">
+        <select id="filters__initial" class="filters__initial">
+          <option value="0">A-Z</option>
+          <option value="1">Z-A </option>
+        </select>
+        <select id="filters__director" class="filters__director">
+          <option selected value="all">Director</option>
+          <option value="0">Hayao Miyazaki</option>
+          <option value="1">Goro Miyazaki</option>
+          <option value="2">Isao Takahata</option>
+          <option value="3">Hiroyuki Morita</option>
+          <option value="4">Hiromasa Yonebayashi</option>
+          <option value="5">Yoshifumi Kondo</option>
+        </select>
+        <select id="filters__producer" class="filters__producer">
+          <option selected value="all">Productor</option>
+          <option value="0">Isao Takahata</option>
+          <option value="1">Toshio Suzuki</option>
+          <option value="2">Toru Hara</option>
+          <option value="3">Hayao Miyazaki</option>
+          <option value="4">Yoshiaki Nishimura</option>
+        </select>
+        <select id="filters__year" class="filters__year">
+          <option value="0">Año Asc</option>
+          <option value="1">Año Desc</option>
+        </select>
+        <a href="#theBestMovies">The Best</a>
+      </div>
+    </section>
+
+    <section class="animations" id="animations">
+       <!-- Se crean las tarjetas de forma dinamica -->
+    </section>
+
+    <div id="theBestMovies" class="background">
+      <img src="img/kodamas.png" alt="3 kodamas">
+      <h2>Las mejores 5 peliculas</h2>
+      <img src="img/kodamas.png" alt="3 kodamas">
+    </div>
+
+    <section class="graphic">
+      <div class="graphic__imgTotoro">
+        <img class="graphic__imgTotoro--tamaño" src="img/totoro.png" alt="">
+      </div>
+      <article class="graphic__canvas">
+        <canvas id="myChart" role="img" class="myChart" style="height: 400px; width: 80vh;"></canvas>
+      </article>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p>Copyright &copy; 2022 - Luna González and Kamila Villablanca.</p>
+  </footer>
+
+  <script src="main.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.js"></script>
+</body>
+
+</html>

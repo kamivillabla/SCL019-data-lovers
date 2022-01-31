@@ -8,8 +8,8 @@ const filterXProducer = document.getElementById('filters__producer');
 const filterYear = document.getElementById('filters__year');
 
 // Volumen de la música del sitio
-const reproducer = document.getElementById("reproducer");
-reproducer.volume = 0.05;
+//const reproducer = document.getElementById("reproducer");
+//reproducer.volume = 0.05;
 
 
 // // https://www.youtube.com/watch?v=xqBvtvXh9Z4&ab_channel=C%C3%B3digoconJuan video para estudiar llamado a json; 
@@ -39,10 +39,7 @@ fetch("./data/ghibli/ghibli.json")
                 <p><spam class="black">Productor:</spam> ${arr.producer}</p>
                 <p><spam class="black">Score:</spam> ${arr.rt_score} </p>`;
                 // Guardo el id del objeto en una nueva constante.
-                const idObjetCard = arr.id;
-                // A la tarjeta le agrego el nuevo atributo de ID que toma el valor del id unico que trae el objeto. 
-                cardAnimations.setAttribute("id", idObjetCard);
-                // Despligue tarjetas de peliculas.
+
                 containerAnimationes.appendChild(cardAnimations);
 
                 // Tiene que ir adentro para que funcione al dar click en todas las tarjetas, incluso a las que se toman con filtro. 
