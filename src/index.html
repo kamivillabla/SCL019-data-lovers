@@ -29,7 +29,7 @@
 
   <main id="main__animations" class="main__animations">
     <h2 id="animationsTitle">Películas Animadas</h2>
-    <section class="main__filtersAndCount">
+    <div class="main__filtersAndCount">
      <!--contador de peliculas-->
       <p id="countFilms" class="countFilms"></p>
       <div class="filters">
@@ -60,25 +60,28 @@
         </select>
         <a href="#theBestMovies">The Best</a>
       </div>
-    </section>
+    </div>
 
     <section class="animations" id="animations">
        <!-- Se crean las tarjetas de forma dinamica -->
     </section>
 
-    <div id="theBestMovies" class="background">
-      <img src="img/kodamas.png" alt="3 kodamas">
-      <h2>Las mejores 5 peliculas</h2>
-      <img src="img/kodamas.png" alt="3 kodamas">
-    </div>
-
-    <section class="graphic">
-      <div class="graphic__imgTotoro">
-        <img class="graphic__imgTotoro--tamaño" src="img/totoro.png" alt="">
+    <!-- Hacking -->
+    <section>
+      <div id="theBestMovies" class="background">
+        <img src="img/kodamas.png" alt="3 kodamas">
+        <h2>Las mejores 5 peliculas</h2>
+        <img src="img/kodamas.png" alt="3 kodamas">
       </div>
-      <article class="graphic__canvas">
-        <canvas id="myChart" role="img" class="myChart" style="height: 400px; width: 80vh;"></canvas>
-      </article>
+  
+      <div class="graphic">
+        <div class="graphic__imgTotoro">
+          <img class="graphic__imgTotoro--tamaño" src="img/totoro.png" alt="">
+        </div>
+        <div class="graphic__canvas">
+          <canvas id="myChart" role="img" class="myChart" style="height: 400px; width: 80vh;"></canvas>
+        </div>
+      </div>
     </section>
   </main>
 

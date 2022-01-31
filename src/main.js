@@ -126,12 +126,12 @@ fetch("./data/ghibli/ghibli.json")
         })
 
         //Mejores peliculas 
-        const nameMovies = compute(dataStudioGhibli);
-        let nameBestMovies = nameMovies.map((element) => {
+        const elementMovies = compute(dataStudioGhibli);
+        let nameBestMovies = elementMovies.map((element) => {
             let titleBestMovies = element.title;
             return titleBestMovies;
         })
-        let scoreBestMovies = nameMovies.map((element) => {
+        let scoreBestMovies = elementMovies.map((element) => {
             let score = element.rt_score;
             return score;
         })

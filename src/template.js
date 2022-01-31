@@ -17,8 +17,6 @@ export function newContainer(e) {
     headerMain.classList.add('movie__header');
     headerH1.classList.add('movie__header__h1')
     containerMain.style.display = 'none';
-    footerMain.remove();
-
 
     //Crea el nuevo contenedor main que abarcara las pestañas
     let peliContainer = document.createElement("main");
@@ -81,6 +79,8 @@ export function newContainer(e) {
         <img class="movie__img" src="${characters[i].img}" alt="Imagen de personaje totoro">`;
 
         let movieImg = movieDiv.querySelector('.movie__img');
+        // const charactersId = characters[i].id;
+        // movieImg.setAttribute("id", charactersId);
 
         // POPUP / MODAL
         let divCharacters = document.createElement('div');
@@ -164,6 +164,8 @@ export function newContainer(e) {
             movieDivLocation.innerHTML += `<img class="movie__img" src="${location[i].img}" alt="imagen de locaciones">`;
 
             let movieDivImg = movieDivLocation.querySelector('.movie__img');
+            // const locationId = location[i].id;
+            // movieDivImg.setAttribute("id", locationId);
 
             // Mostrar array de los residentes
             const arrayResidents = location[i].residents;
@@ -231,6 +233,8 @@ export function newContainer(e) {
             movieDivLocation.innerHTML += `<img class="movie__img" src="${vehicle[i].img}" alt="imagen de vehiculos">`;
 
             let movieVehicle = movieDivLocation.querySelector('.movie__img');
+            // const vehicleId = vehicle[i].id;
+            // movieVehicle.setAttribute("id", vehicleId);
 
             // POPUP / MODAL
             let divPopupContainer = document.createElement('div');
