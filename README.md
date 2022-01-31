@@ -2,6 +2,13 @@
 
 - Link proyecto: [Ir al sitio final](https://kuveee.github.io/SCL019-data-lovers/src/index.html)
 
+## ÍNDICE
+- [1. Definición del Proyecto](#1-definición-del-proyecto)
+- [2. Investigación UX](#2-investigación-ux)
+- [3. Diseño UI](#3-diseño-ui)
+- [4. Herramientas de Elaboración](#4-herramientas-de-elaboración-del-proyecto)
+
+
 ## 1. Definición del proyecto
 
 Nuestro sitio web es una fanpage con temática de Studio Ghibli para sus fans, en la cual pueden ver las carátulas de las películas animadas, su información como descripción, director, año de lanzamiento, personajes, locaciones y más, de cada una de estas. El objetivo es hacer un sitio donde el usuario se sienta cómodo al navegarla, que su interfaz sea amigable pero a la vez dinámica y cautivadora.
