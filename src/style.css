@@ -1,12 +1,10 @@
-/* Start https://www.cursors-4u.com */
-* {cursor: url(https://cur.cursors-4u.net/anime/ani-10/ani933.cur), auto;}
-/* End https://www.cursors-4u.com */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 9px;
     font-family: 'Didact Gothic', sans-serif;
+    cursor: url(https://cur.cursors-4u.net/anime/ani-10/ani933.cur), auto;
 }
 html{
     scroll-behavior: smooth;
@@ -113,7 +111,7 @@ p {
     margin-top: 50px;
 }
 /* contador*/
-#countFilms{
+.countFilms{
     font-size: 2rem;
 }
 .countBlue{

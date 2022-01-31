@@ -9,7 +9,7 @@ const filterYear = document.getElementById('filters__year');
 
 // Volumen de la música del sitio
 const reproducer = document.getElementById("reproducer");
-reproducer.volume = 0.05;
+reproducer.volume = 0.05; //5% de volumen
 
 
 // // https://www.youtube.com/watch?v=xqBvtvXh9Z4&ab_channel=C%C3%B3digoconJuan video para estudiar llamado a json; 
@@ -130,8 +130,8 @@ fetch("./data/ghibli/ghibli.json")
         })
 
         //Mejores peliculas 
-        const nameMovies = compute(dataStudioGhibli);
-        let nameBestMovies = nameMovies.map((element) => {
+        const elementMovies = compute(dataStudioGhibli);
+        let nameBestMovies = elementMovies.map((element) => {
             let titleBestMovies = element.title;
             return titleBestMovies;
         })

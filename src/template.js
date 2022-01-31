@@ -17,7 +17,6 @@ export function newContainer(e) {
     headerMain.classList.add('movie__header');
     headerH1.classList.add('movie__header__h1')
     containerMain.style.display = 'none';
-    footerMain.remove();
 
 
     //Crea el nuevo contenedor main que abarcara las pestañas
@@ -62,8 +61,7 @@ export function newContainer(e) {
     let divCharacters = document.createElement('div');
     let divFilterAndCount = document.createElement('div');
     divFilterAndCount.classList.add('characters__filtersAndCount');
-    divFilterAndCount.innerHTML = `<p id="countFilms"><spam class="countBlue">Estas visualizando:</spam> ${e.people.length} personajes</p>`;
-
+    divFilterAndCount.innerHTML = `<p id="countFilms"><spam class="countBlue">Estas visualizando:</spam> ${e.people.length} personajes</p>`
     divCharacters.classList.add('tab');
     let divCharactersSub = document.createElement('div');
     divCharactersSub.classList.add('movie__mainContent__card');
