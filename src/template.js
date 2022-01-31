@@ -60,8 +60,7 @@ export function newContainer(e) {
     let divCharacters = document.createElement('div');
     let divFilterAndCount = document.createElement('div');
     divFilterAndCount.classList.add('characters__filtersAndCount');
-    divFilterAndCount.innerHTML = `<p id="countFilms"><spam class="countBlue">Estas visualizando:</spam> ${e.people.length} personajes</p>`;
-
+    divFilterAndCount.innerHTML = `<p id="countFilms"><spam class="countBlue">Estas visualizando:</spam> ${e.people.length} personajes</p>`
     divCharacters.classList.add('tab');
     let divCharactersSub = document.createElement('div');
     divCharactersSub.classList.add('movie__mainContent__card');

@@ -47,7 +47,7 @@ describe('filterAZ ordena todas las peliculas en orden de la A a la Z', () => {
     expect(typeof filterAZ).toBe('function');
   });
 
-  it('Debería retornar las peliculas en orden asc [Castle in the Sky],[From Up on Poppy Hill],[My Neighbor Totoro]', () => {
+  it('Debería retornar las peliculas en orden asc [Castle in the Sky],[From Up on Poppy Hill],[My Neighbor Totoro],[Spirited Away]', () => {
     let dataAscendente = filterAZ(dataGhibli);
     expect(dataAscendente[0].title).toEqual('Castle in the Sky');
     expect(dataAscendente[1].title).toEqual('From Up on Poppy Hill');
@@ -61,7 +61,7 @@ describe('filterZA ordena todas las peliculas en orden de la Z a la A', () => {
     expect(typeof filterZA).toBe('function');
   });
 
-  it('Debería retornar todas las peliculas en forma descendente[My Neighbor Totoro],[From Up on Poppy Hill],[Castle in the Sky]', () => {
+  it('Debería retornar todas las peliculas en forma descendente [Spirited Away],[My Neighbor Totoro],[From Up on Poppy Hill],[Castle in the Sky]', () => {
 
     let dataDescendente = filterZA(dataGhibli);
 
@@ -118,7 +118,7 @@ describe('filterDataYearAsc retorna las peliculas ordenadas según año Ascenden
     expect(typeof filterDataYearAsc).toBe('function');
   });
 
-  it('Debería retornar peliculas en orden [Castle in the Sky],[My Neighbor Totoro],[From Up on Poppy Hill] ', () => {
+  it('Debería retornar peliculas en orden [Castle in the Sky],[My Neighbor Totoro],[Spirited Away],[From Up on Poppy Hill] ', () => {
 
     let dataYear = filterDataYearAsc(dataGhibli);
 
@@ -134,7 +134,7 @@ describe('filterDataYearDesc retorna las peliculas ordenadas según año Descend
     expect(typeof filterDataYearDesc).toBe('function');
   });
 
-  it('Debería retornar las peliculas en orden [From Up on Poppy Hill], [My Neighbor Totoro], [Castle in the Sky]', () => {
+  it('Debería retornar las peliculas en orden [From Up on Poppy Hill],[Spirited Away], [My Neighbor Totoro], [Castle in the Sky]', () => {
     let dataYear = filterDataYearDesc(dataGhibli);
 
     expect(dataYear[0].title).toEqual('From Up on Poppy Hill');
