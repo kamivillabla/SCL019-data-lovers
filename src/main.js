@@ -38,8 +38,7 @@ fetch("./data/ghibli/ghibli.json")
                 <p><spam class="black">Director:</spam> ${arr.director}</p>
                 <p><spam class="black">Productor:</spam> ${arr.producer}</p>
                 <p><spam class="black">Score:</spam> ${arr.rt_score} </p>`;
-                // Guardo el id del objeto en una nueva constante.
-
+                // Despligue tarjetas de peliculas.
                 containerAnimationes.appendChild(cardAnimations);
 
                 // Tiene que ir adentro para que funcione al dar click en todas las tarjetas, incluso a las que se toman con filtro. 
