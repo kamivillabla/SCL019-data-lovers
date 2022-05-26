@@ -1,6 +1,7 @@
 # Data-lovers - Fanpage Studio Ghibli
 
-- Link proyecto: [Ir al sitio final](https://kuveee.github.io/SCL019-data-lovers/src/index.html)
+- Link proyecto: [Ir al sitio final](https://kamivillabla.github.io/SCL019-data-lovers/src/index.html)
+
 
 ## ÍNDICE
 - [1. Definición del Proyecto](#1-definición-del-proyecto)
